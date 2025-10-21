@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "app.features.physiotherapy",
+        "name": "physiotherapy",
         "sources": [
             "app/features/physiotherapy.py"
         ]
     },
-    "module_name": "app.features.physiotherapy"
+    "module_name": "physiotherapy"
 }
 END: Cython Metadata */
 
@@ -1135,8 +1135,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__app__features__physiotherapy
-#define __PYX_HAVE_API__app__features__physiotherapy
+#define __PYX_HAVE__physiotherapy
+#define __PYX_HAVE_API__physiotherapy
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1481,6 +1481,9 @@ static const char* const __pyx_f[] = {
             __pyx_sub_acquisition_count_locked(__pyx_get_slice_count_pointer(memview), memview->lock)
 #endif
 
+/* IncludeStructmemberH.proto */
+#include <structmember.h>
+
 /* CriticalSections.proto */
 #if !CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
 #define __Pyx_PyCriticalSection void*
@@ -1510,6 +1513,54 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
+struct __pyx_defaults;
+struct __pyx_defaults1;
+struct __pyx_defaults2;
+
+/* "physiotherapy.py":18
+ * 
+ * 
+ * @physiotherapy_router.get("/physiotherapy/")             # <<<<<<<<<<<<<<
+ * def get_physiotherapys(
+ *     page: int = Query(1, gt=0),
+*/
+struct __pyx_defaults {
+  PyObject_HEAD
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+};
+
+
+/* "physiotherapy.py":105
+ * 
+ * 
+ * @physiotherapy_router.get("/physiotherapy/{slug}")             # <<<<<<<<<<<<<<
+ * def get_physiotherapy_details(slug: str, db: Session = Depends(get_db)):
+ *     # Safe raw SQL query using bind parameter
+*/
+struct __pyx_defaults1 {
+  PyObject_HEAD
+  PyObject *arg0;
+};
+
+
+/* "physiotherapy.py":132
+ * 
+ * 
+ * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
+ * def update_physiotherapy_meta(
+ *     id: UUID = Path(...),
+*/
+struct __pyx_defaults2 {
+  PyObject_HEAD
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+};
+
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -1995,6 +2046,42 @@ static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
 static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
                                                      int is_list, int wraparound, int boundscheck);
 
+/* CallTypeTraverse.proto */
+#if !CYTHON_USE_TYPE_SPECS || (!CYTHON_COMPILING_IN_LIMITED_API && PY_VERSION_HEX < 0x03090000)
+#define __Pyx_call_type_traverse(o, always_call, visit, arg) 0
+#else
+static int __Pyx_call_type_traverse(PyObject *o, int always_call, visitproc visit, void *arg);
+#endif
+
+/* LimitedApiGetTypeDict.proto */
+#if CYTHON_COMPILING_IN_LIMITED_API
+static PyObject *__Pyx_GetTypeDict(PyTypeObject *tp);
+#endif
+
+/* SetItemOnTypeDict.proto */
+static int __Pyx__SetItemOnTypeDict(PyTypeObject *tp, PyObject *k, PyObject *v);
+#define __Pyx_SetItemOnTypeDict(tp, k, v) __Pyx__SetItemOnTypeDict((PyTypeObject*)tp, k, v)
+
+/* FixUpExtensionType.proto */
+static CYTHON_INLINE int __Pyx_fix_up_extension_type_from_spec(PyType_Spec *spec, PyTypeObject *type);
+
+/* PyObjectCallNoArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
+
+/* PyObjectGetMethod.proto */
+static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method);
+
+/* PyObjectCallMethod0.proto */
+static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name);
+
+/* ValidateBasesTuple.proto */
+#if CYTHON_COMPILING_IN_CPYTHON || CYTHON_COMPILING_IN_LIMITED_API || CYTHON_USE_TYPE_SPECS
+static int __Pyx_validate_bases_tuple(const char *type_name, Py_ssize_t dictoffset, PyObject *bases);
+#endif
+
+/* PyType_Ready.proto */
+CYTHON_UNUSED static int __Pyx_PyType_Ready(PyTypeObject *t);
+
 /* ListPack.proto */
 static PyObject *__Pyx_PyList_Pack(Py_ssize_t n, ...);
 
@@ -2007,6 +2094,123 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name);
 /* ImportDottedModule.proto */
 static PyObject *__Pyx_ImportDottedModule(PyObject *name, PyObject *parts_tuple);
 static PyObject *__Pyx_ImportDottedModule_WalkParts(PyObject *module, PyObject *name, PyObject *parts_tuple);
+
+/* FetchSharedCythonModule.proto */
+static PyObject *__Pyx_FetchSharedCythonABIModule(void);
+
+/* dict_setdefault.proto */
+static CYTHON_INLINE PyObject *__Pyx_PyDict_SetDefault(PyObject *d, PyObject *key, PyObject *default_value, int is_safe_type);
+
+/* FetchCommonType.proto */
+static PyTypeObject* __Pyx_FetchCommonTypeFromSpec(PyTypeObject *metaclass, PyObject *module, PyType_Spec *spec, PyObject *bases);
+
+/* CommonTypesMetaclass.proto */
+static int __pyx_CommonTypesMetaclass_init(PyObject *module);
+#define __Pyx_CommonTypesMetaclass_USED
+
+/* PyMethodNew.proto */
+static PyObject *__Pyx_PyMethod_New(PyObject *func, PyObject *self, PyObject *typ);
+
+/* PyVectorcallFastCallDict.proto */
+#if CYTHON_METH_FASTCALL && (CYTHON_VECTORCALL || CYTHON_BACKPORT_VECTORCALL)
+static CYTHON_INLINE PyObject *__Pyx_PyVectorcall_FastCallDict(PyObject *func, __pyx_vectorcallfunc vc, PyObject *const *args, size_t nargs, PyObject *kw);
+#endif
+
+/* CythonFunctionShared.proto */
+#define __Pyx_CyFunction_USED
+#define __Pyx_CYFUNCTION_STATICMETHOD  0x01
+#define __Pyx_CYFUNCTION_CLASSMETHOD   0x02
+#define __Pyx_CYFUNCTION_CCLASS        0x04
+#define __Pyx_CYFUNCTION_COROUTINE     0x08
+#define __Pyx_CyFunction_GetClosure(f)\
+    (((__pyx_CyFunctionObject *) (f))->func_closure)
+#if PY_VERSION_HEX < 0x030900B1 || CYTHON_COMPILING_IN_LIMITED_API
+  #define __Pyx_CyFunction_GetClassObj(f)\
+      (((__pyx_CyFunctionObject *) (f))->func_classobj)
+#else
+  #define __Pyx_CyFunction_GetClassObj(f)\
+      ((PyObject*) ((PyCMethodObject *) (f))->mm_class)
+#endif
+#define __Pyx_CyFunction_SetClassObj(f, classobj)\
+    __Pyx__CyFunction_SetClassObj((__pyx_CyFunctionObject *) (f), (classobj))
+#define __Pyx_CyFunction_Defaults(type, f)\
+    ((type *)(((__pyx_CyFunctionObject *) (f))->defaults))
+#define __Pyx_CyFunction_SetDefaultsGetter(f, g)\
+    ((__pyx_CyFunctionObject *) (f))->defaults_getter = (g)
+typedef struct {
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject_HEAD
+    PyObject *func;
+#elif PY_VERSION_HEX < 0x030900B1
+    PyCFunctionObject func;
+#else
+    PyCMethodObject func;
+#endif
+#if CYTHON_BACKPORT_VECTORCALL ||\
+        (CYTHON_COMPILING_IN_LIMITED_API && CYTHON_METH_FASTCALL)
+    __pyx_vectorcallfunc func_vectorcall;
+#endif
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *func_weakreflist;
+#endif
+    PyObject *func_dict;
+    PyObject *func_name;
+    PyObject *func_qualname;
+    PyObject *func_doc;
+    PyObject *func_globals;
+    PyObject *func_code;
+    PyObject *func_closure;
+#if PY_VERSION_HEX < 0x030900B1 || CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *func_classobj;
+#endif
+    PyObject *defaults;
+    int flags;
+    PyObject *defaults_tuple;
+    PyObject *defaults_kwdict;
+    PyObject *(*defaults_getter)(PyObject *);
+    PyObject *func_annotations;
+    PyObject *func_is_coroutine;
+} __pyx_CyFunctionObject;
+#undef __Pyx_CyOrPyCFunction_Check
+#define __Pyx_CyFunction_Check(obj)  __Pyx_TypeCheck(obj, __pyx_mstate_global->__pyx_CyFunctionType)
+#define __Pyx_CyOrPyCFunction_Check(obj)  __Pyx_TypeCheck2(obj, __pyx_mstate_global->__pyx_CyFunctionType, &PyCFunction_Type)
+#define __Pyx_CyFunction_CheckExact(obj)  __Pyx_IS_TYPE(obj, __pyx_mstate_global->__pyx_CyFunctionType)
+static CYTHON_INLINE int __Pyx__IsSameCyOrCFunction(PyObject *func, void (*cfunc)(void));
+#undef __Pyx_IsSameCFunction
+#define __Pyx_IsSameCFunction(func, cfunc)   __Pyx__IsSameCyOrCFunction(func, cfunc)
+static PyObject *__Pyx_CyFunction_Init(__pyx_CyFunctionObject* op, PyMethodDef *ml,
+                                      int flags, PyObject* qualname,
+                                      PyObject *closure,
+                                      PyObject *module, PyObject *globals,
+                                      PyObject* code);
+static CYTHON_INLINE void __Pyx__CyFunction_SetClassObj(__pyx_CyFunctionObject* f, PyObject* classobj);
+static CYTHON_INLINE PyObject *__Pyx_CyFunction_InitDefaults(PyObject *func,
+                                                         PyTypeObject *defaults_type);
+static CYTHON_INLINE void __Pyx_CyFunction_SetDefaultsTuple(PyObject *m,
+                                                            PyObject *tuple);
+static CYTHON_INLINE void __Pyx_CyFunction_SetDefaultsKwDict(PyObject *m,
+                                                             PyObject *dict);
+static CYTHON_INLINE void __Pyx_CyFunction_SetAnnotationsDict(PyObject *m,
+                                                              PyObject *dict);
+static int __pyx_CyFunction_init(PyObject *module);
+#if CYTHON_METH_FASTCALL
+static PyObject * __Pyx_CyFunction_Vectorcall_NOARGS(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames);
+static PyObject * __Pyx_CyFunction_Vectorcall_O(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames);
+static PyObject * __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames);
+static PyObject * __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS_METHOD(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames);
+#if CYTHON_BACKPORT_VECTORCALL || CYTHON_COMPILING_IN_LIMITED_API
+#define __Pyx_CyFunction_func_vectorcall(f) (((__pyx_CyFunctionObject*)f)->func_vectorcall)
+#else
+#define __Pyx_CyFunction_func_vectorcall(f) (((PyCFunctionObject*)f)->vectorcall)
+#endif
+#endif
+
+/* CythonFunction.proto */
+static PyObject *__Pyx_CyFunction_New(PyMethodDef *ml,
+                                      int flags, PyObject* qualname,
+                                      PyObject *closure,
+                                      PyObject *module, PyObject *globals,
+                                      PyObject* code);
 
 /* RaiseUnexpectedTypeError.proto */
 static int __Pyx_RaiseUnexpectedTypeError(const char *expected, PyObject *obj);
@@ -2153,37 +2357,44 @@ static int __Pyx_State_RemoveModule(void*);
 #define __PYX_TYPE_MODULE_PREFIX __PYX_ABI_MODULE_NAME "."
 
 
-/* Module declarations from "app.features.physiotherapy" */
+/* Module declarations from "physiotherapy" */
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "app.features.physiotherapy"
-extern int __pyx_module_is_main_app__features__physiotherapy;
-int __pyx_module_is_main_app__features__physiotherapy = 0;
+#define __Pyx_MODULE_NAME "physiotherapy"
+extern int __pyx_module_is_main_physiotherapy;
+int __pyx_module_is_main_physiotherapy = 0;
 
-/* Implementation of "app.features.physiotherapy" */
+/* Implementation of "physiotherapy" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
-static const char __pyx_k__6[] = "%";
+static const char __pyx_k_[] = "%";
+static const char __pyx_k__2[] = ".";
+static const char __pyx_k__3[] = "";
+static const char __pyx_k__4[] = "?";
 static const char __pyx_k_db[] = "db";
+static const char __pyx_k_gc[] = "gc";
 static const char __pyx_k_gt[] = "gt";
 static const char __pyx_k_id[] = "id";
 static const char __pyx_k_1_1[] = "1=1";
 static const char __pyx_k_AND[] = " AND ";
-static const char __pyx_k__14[] = ".";
-static const char __pyx_k__15[] = "";
-static const char __pyx_k__16[] = "?";
 static const char __pyx_k_get[] = "get";
+static const char __pyx_k_int[] = "int";
 static const char __pyx_k_pop[] = "pop";
 static const char __pyx_k_put[] = "put";
+static const char __pyx_k_res[] = "res";
+static const char __pyx_k_str[] = "str";
 static const char __pyx_k_Path[] = "Path";
 static const char __pyx_k_UUID[] = "UUID";
 static const char __pyx_k_data[] = "data";
+static const char __pyx_k_dict[] = "dict";
+static const char __pyx_k_func[] = "__func__";
 static const char __pyx_k_json[] = "json";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_page[] = "page";
 static const char __pyx_k_slug[] = "slug";
 static const char __pyx_k_spec[] = "__spec__";
+static const char __pyx_k_stmt[] = "stmt";
 static const char __pyx_k_tags[] = "tags";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
@@ -2193,19 +2404,26 @@ static const char __pyx_k_WHERE[] = "WHERE ";
 static const char __pyx_k_limit[] = "limit";
 static const char __pyx_k_strip[] = "strip";
 static const char __pyx_k_title[] = "title";
+static const char __pyx_k_total[] = "total";
 static const char __pyx_k_commit[] = "commit";
 static const char __pyx_k_detail[] = "detail";
+static const char __pyx_k_enable[] = "enable";
+static const char __pyx_k_exists[] = "exists";
 static const char __pyx_k_get_db[] = "get_db";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_offset[] = "offset";
+static const char __pyx_k_params[] = "params";
+static const char __pyx_k_result[] = "result";
 static const char __pyx_k_scalar[] = "scalar";
 static const char __pyx_k_typing[] = "typing";
 static const char __pyx_k_userId[] = "userId";
 static const char __pyx_k_Depends[] = "Depends";
 static const char __pyx_k_Session[] = "Session";
+static const char __pyx_k_disable[] = "disable";
 static const char __pyx_k_execute[] = "execute";
 static const char __pyx_k_fastapi[] = "fastapi";
 static const char __pyx_k_payload[] = "payload";
+static const char __pyx_k_results[] = "results";
 static const char __pyx_k_schemas[] = "schemas";
 static const char __pyx_k_Optional[] = "Optional";
 static const char __pyx_k_add_note[] = "add_note";
@@ -2214,27 +2432,40 @@ static const char __pyx_k_fetchone[] = "fetchone";
 static const char __pyx_k_mappings[] = "mappings";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_requests[] = "requests";
+static const char __pyx_k_set_name[] = "__set_name__";
 static const char __pyx_k_APIRouter[] = "APIRouter";
+static const char __pyx_k_isenabled[] = "isenabled";
+static const char __pyx_k_base_query[] = "base_query";
+static const char __pyx_k_check_stmt[] = "check_stmt";
 static const char __pyx_k_head_title[] = "head_title";
 static const char __pyx_k_sqlalchemy[] = "sqlalchemy";
+static const char __pyx_k_count_query[] = "count_query";
+static const char __pyx_k_result_dict[] = "result_dict";
 static const char __pyx_k_status_code[] = "status_code";
 static const char __pyx_k_total_items[] = "total_items";
 static const char __pyx_k_total_pages[] = "total_pages";
+static const char __pyx_k_update_stmt[] = "update_stmt";
 static const char __pyx_k_current_user[] = "current_user";
 static const char __pyx_k_initializing[] = "_initializing";
+static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_search_query[] = "search_query";
+static const char __pyx_k_where_clause[] = "where_clause";
 static const char __pyx_k_HTTPException[] = "HTTPException";
+static const char __pyx_k_Optional_bool[] = "Optional[bool]";
 static const char __pyx_k_Physiotherapy[] = "Physiotherapy";
 static const char __pyx_k_ServiceType_3[] = "ServiceType=3";
 static const char __pyx_k_physiotherapy[] = "/physiotherapy/";
+static const char __pyx_k_where_clauses[] = "where_clauses";
 static const char __pyx_k_d_isApproved_1[] = "d.isApproved = 1";
 static const char __pyx_k_d_slug_IS_NULL[] = "d.slug IS NULL";
 static const char __pyx_k_sqlalchemy_orm[] = "sqlalchemy.orm";
+static const char __pyx_k_physiotherapy_2[] = "physiotherapy";
 static const char __pyx_k_get_current_user[] = "get_current_user";
 static const char __pyx_k_meta_description[] = "meta_description";
 static const char __pyx_k_utils_middleware[] = "utils.middleware";
 static const char __pyx_k_MetaUpdateRequest[] = "MetaUpdateRequest";
 static const char __pyx_k_SlugUpdateRequest[] = "SlugUpdateRequest";
+static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_d_slug_IS_NOT_NULL[] = "d.slug IS NOT NULL";
 static const char __pyx_k_get_physiotherapys[] = "get_physiotherapys";
@@ -2248,27 +2479,38 @@ static const char __pyx_k_d_head_title_IS_NOT_NULL[] = "d.head_title IS NOT NULL
 static const char __pyx_k_get_physiotherapy_details[] = "get_physiotherapy_details";
 static const char __pyx_k_update_physiotherapy_meta[] = "update_physiotherapy_meta";
 static const char __pyx_k_update_physiotherapy_slug[] = "update_physiotherapy_slug";
-static const char __pyx_k_app_features_physiotherapy[] = "app.features.physiotherapy";
 static const char __pyx_k_GROUP_BY_d_id_AS_CountTable[] = "\n            GROUP BY d.id\n        ) AS CountTable\n    ";
 static const char __pyx_k_physiotherapy_id_meta_update[] = "/physiotherapy/{id}/meta-update";
 static const char __pyx_k_physiotherapy_id_slug_update[] = "/physiotherapy/{id}/slug-update";
 static const char __pyx_k_physiotherapy_info_not_found[] = "physiotherapy info not found";
+static const char __pyx_k_app_features_physiotherapy_py[] = "app/features/physiotherapy.py";
 static const char __pyx_k_UPDATE_GenericService_SET_slug[] = "\n        UPDATE GenericService\n        SET slug = :slug,\n        head_title = :head_title,\n        meta_description = :meta_description\n        OUTPUT inserted.*\n        WHERE Id = :id AND isApproved = 1\n    ";
 static const char __pyx_k_GROUP_BY_d_id_d_head_title_d_me[] = "\n        GROUP BY \n            d.id,d.head_title, d.meta_description,d.ProfileImageUrl,d.contact, d.slug, d.userId, d.Name\n        ORDER BY averageRating DESC\n        OFFSET :offset ROWS \n        FETCH NEXT :limit ROWS ONLY\n    ";
+static const char __pyx_k_Qc_A_5_E_Qa_A_e2S_AQ_uCq_WAQ_uC[] = "\200\001\340\n\020\220\005\220Q\220c\230\023\230A\330\n\033\2305\240\001\240\021\330\013\034\230E\240\021\240!\330\022\030\230\005\230Q\230a\330\010\022\220'\230\021\230!\340\004\014\210A\330\004\016\210e\2202\220S\230\002\230!\360\006\000\005\025\220A\220Q\330\004\021\220\027\230\001\230\021\340\004\007\200u\210C\210q\330\010\025\220W\230A\230Q\340\004\007\200u\210C\210q\330\010\025\220W\230A\230Q\340\004\007\200v\210S\220\001\330\010\025\220W\230A\230Q\340\004\007\200v\210S\220\001\330\010\025\220W\230A\230Q\340\004\007\200|\2206\230\021\330\010\025\220W\230A\230Q\340\004\021\220\027\230\001\230\021\340\004\023\2209\230B\230g\240U\250!\2501\360\006\000\005\022\220\024\360\000\000\026H\n\360\000\000H\nI\n\3600\000\005\023\220$\360\000\000\027A\002\360\000\000A\002B\002\360\024\000\005\006\330\010\022\220!\330\010\021\220\021\330\010\030\230\002\230%\320\037/\250|\2706\300\030\310\021\360\006\000\005\017\210b\220\010\230\001\230\024\230Q\230m\2507\260)\2702\270Y\300a\330\004\014\210B\210h\220a\220t\2301\230N\250'\260\027\270\001\340\004\005\330\010\020\220\001\330\010\021\220\021\330\010\027\220q\330\010\030\230\006\230b\240\006\240b\250\003\2503\250a\330\010\020\220\004\220A\220Q";
 static const char __pyx_k_SELECT_1_FROM_GenericService_WH[] = "\n        SELECT 1 FROM GenericService\n        WHERE slug = :slug AND Id != :id  AND isApproved = 1\n    ";
 static const char __pyx_k_SELECT_COUNT_FROM_SELECT_d_id_F[] = "\n        SELECT COUNT(*) FROM (\n            SELECT d.id\n            FROM GenericService d\n            ";
 static const char __pyx_k_SELECT_LOWER_CAST_d_id_AS_VARCH[] = "\n        SELECT \n            LOWER(CAST(d.id AS VARCHAR(255))) AS id,\n            d.ProfileImageUrl  AS profileImageUrl ,\n            d.contact,\n            d.head_title,\n            d.meta_description,\n            d.slug,\n            LOWER(CAST(d.userId AS VARCHAR(255))) AS userId,\n            d.Name AS name,\n            COALESCE(COUNT(r.profileUserId), 0) AS totalRating,\n            COALESCE(CAST(ROUND(AVG(CAST(r.Star AS DECIMAL(5, 2))), 2) AS DECIMAL(10,1)), 0) AS averageRating\n        FROM GenericService d\n        LEFT JOIN ReviewInformation r \n            ON r.profileUserId = d.UserId AND r.TypeId = 3\n        ";
 static const char __pyx_k_Slug_already_exists_for_another[] = "Slug already exists for another physiotherapy";
+static const char __pyx_k_Zwaq_4q_Rxq_xvYb_wc_m1L_WA_aq_a[] = "\200\001\330$-\250Z\260w\270a\270q\340\004\013\2104\210q\330\010\t\340\004\r\210R\210x\220q\230\007\230x\240v\250Y\260b\270\t\300\021\340\004\007\200w\210c\220\021\330\010\016\210m\2301\230L\250\005\250W\260A\340\004\022\220$\220a\220q\340\004\n\210(\220$\220a\330\010\n\320\nm\320mx\320xy\320yz\360\006\000\005\010\200s\210-\220s\230!\330\010\017\210s\220%\220q\330\010\014\210A\210W\220A\220R\220q\230\n\240!\330\010\014\210A\210W\220A\220R\220q\320\030(\250\004\250A\250W\260A\260Q\330\010\014\210A\210W\220A\220R\220q\320\030.\250d\260!\2607\270!\2701\330\010\017\210q\340\004\013\2101";
+static const char __pyx_k_t1A_Q_Q_Rxq_XWG6_Ya_q_m1_WA_a_a[] = "\200\001\340\010\017\210t\2201\220A\330\004\r\210Q\330\022\031\230\027\240\001\240\021\330\010\022\220'\230\021\230!\360\006\000\005\022\220\024\220Q\330\010\t\360\n\000\005\016\210R\210x\220q\230\r\240X\250W\260G\2706\300\024\300Y\310a\340\004\007\200q\330\010\016\210m\2301\330\014\030\230\005\230W\240A\360\010\000\005\023\220$\220a\330\010\t\360\022\000\005\006\330\010\n\210(\220!\330\014\r\340\020\026\220a\330\020\030\230\007\230q\330\020\036\230g\240Q\330\020$\240G\2501\360\006\000\t\022\220\021\330\010\021\220\021\360\006\000\005\010\200w\210c\220\021\330\010\016\210m\2301\230L\250\005\250W\260A\340\004\006\200g\210Q\330\004\013\2104\210q\220\001";
+static const char __pyx_k_t1A_Q_Q_Rxq_XWG6_Ya_q_m1_WA_a_t[] = "\200\001\340\010\017\210t\2201\220A\330\004\r\210Q\330\022\031\230\027\240\001\240\021\330\010\022\220'\230\021\230!\360\006\000\005\022\220\024\220Q\330\010\t\360\n\000\005\016\210R\210x\220q\230\r\240X\250W\260G\2706\300\024\300Y\310a\340\004\007\200q\330\010\016\210m\2301\330\014\030\230\005\230W\240A\360\010\000\005\023\220$\220a\330\010\t\360\016\000\005\006\330\010\n\210(\220!\220>\240\026\240t\2508\2607\270'\300\031\310\"\310I\320UV\360\006\000\005\010\200w\210c\220\021\330\010\016\210m\2301\230L\250\005\250W\260A\340\004\006\200g\210Q\330\004\013\2104\210q\220\001";
 static const char __pyx_k_Note_that_Cython_is_deliberately[] = "Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.";
 static const char __pyx_k_SELECT_LOWER_id_AS_id_LOWER_user[] = "SELECT LOWER(id) AS id,LOWER(userId) AS userId, head_title,meta_description FROM GenericService WHERE slug = :slug AND ServiceType=3 AND isApproved = 1";
 static const char __pyx_k_UPDATE_GenericService_SET_slug_2[] = "\n        UPDATE GenericService\n        SET slug = :slug\n        OUTPUT inserted.*\n        WHERE Id = :id AND isApproved = 1\n    ";
 static const char __pyx_k_https_api_aidfastbd_com_api_Gene[] = "https://api.aidfastbd.com/api/GeneralInformation/GetAllGenericServiceList?serviceType=3&userId=";
 static const char __pyx_k_SELECT_1_FROM_GenericService_WH_2[] = "\n        SELECT 1 FROM GenericService\n        WHERE slug = :slug AND Id != :id AND isApproved = 1\n    ";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_page, PyObject *__pyx_v_slug, PyObject *__pyx_v_title, PyObject *__pyx_v_search_query, PyObject *__pyx_v_db); /* proto */
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_details(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_slug, PyObject *__pyx_v_db); /* proto */
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_meta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db); /* proto */
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_slug(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_8__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_get_physiotherapys(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_page, PyObject *__pyx_v_slug, PyObject *__pyx_v_title, PyObject *__pyx_v_search_query, PyObject *__pyx_v_db); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_10__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_2get_physiotherapy_details(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_slug, PyObject *__pyx_v_db); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_12__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_4update_physiotherapy_meta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_14__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_13physiotherapy_6update_physiotherapy_slug(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db); /* proto */
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults1(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults2(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2307,21 +2549,16 @@ typedef struct {
   #ifdef __Pyx_Coroutine_USED
   PyTypeObject *__pyx_CoroutineType;
   #endif
+  PyObject *__pyx_type_13physiotherapy___pyx_defaults;
+  PyObject *__pyx_type_13physiotherapy___pyx_defaults1;
+  PyObject *__pyx_type_13physiotherapy___pyx_defaults2;
+  PyTypeObject *__pyx_ptype_13physiotherapy___pyx_defaults;
+  PyTypeObject *__pyx_ptype_13physiotherapy___pyx_defaults1;
+  PyTypeObject *__pyx_ptype_13physiotherapy___pyx_defaults2;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyUnicode_Type__strip;
-  PyObject *__pyx_k_;
-  PyObject *__pyx_k__2;
-  PyObject *__pyx_k__3;
-  PyObject *__pyx_k__4;
-  PyObject *__pyx_k__5;
-  PyObject *__pyx_k__7;
-  PyObject *__pyx_k__8;
-  PyObject *__pyx_k__9;
-  PyObject *__pyx_k__10;
-  PyObject *__pyx_k__11;
-  PyObject *__pyx_k__12;
-  PyObject *__pyx_k__13;
-  PyObject *__pyx_string_tab[101];
+  PyObject *__pyx_codeobj_tab[4];
+  PyObject *__pyx_string_tab[128];
   PyObject *__pyx_int_0;
   PyObject *__pyx_int_1;
   PyObject *__pyx_int_15;
@@ -2329,6 +2566,14 @@ typedef struct {
   PyObject *__pyx_int_400;
   PyObject *__pyx_int_404;
 /* #### Code section: module_state_contents ### */
+/* CommonTypesMetaclass.module_state_decls */
+PyTypeObject *__pyx_CommonTypesMetaclassType;
+
+/* CachedMethodType.module_state_decls */
+#if CYTHON_COMPILING_IN_LIMITED_API
+PyObject *__Pyx_CachedMethodType;
+#endif
+
 /* CodeObjectCache.module_state_decls */
 struct __Pyx_CodeObjectCache __pyx_code_cache;
 
@@ -2357,107 +2602,134 @@ static __pyx_mstatetype __pyx_mstate_global_static =
 static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_static;
 #endif
 /* #### Code section: constant_name_defines ### */
-#define __pyx_kp_u_1_1 __pyx_string_tab[0]
-#define __pyx_kp_u_AND __pyx_string_tab[1]
-#define __pyx_n_u_APIRouter __pyx_string_tab[2]
-#define __pyx_n_u_Depends __pyx_string_tab[3]
-#define __pyx_n_u_DescriptionUpdateRequest __pyx_string_tab[4]
-#define __pyx_kp_u_GROUP_BY_d_id_AS_CountTable __pyx_string_tab[5]
-#define __pyx_kp_u_GROUP_BY_d_id_d_head_title_d_me __pyx_string_tab[6]
-#define __pyx_n_u_HTTPException __pyx_string_tab[7]
-#define __pyx_n_u_MetaUpdateRequest __pyx_string_tab[8]
-#define __pyx_kp_u_Note_that_Cython_is_deliberately __pyx_string_tab[9]
-#define __pyx_n_u_Optional __pyx_string_tab[10]
-#define __pyx_n_u_Path __pyx_string_tab[11]
-#define __pyx_n_u_Physiotherapy __pyx_string_tab[12]
-#define __pyx_n_u_Query __pyx_string_tab[13]
-#define __pyx_kp_u_SELECT_1_FROM_GenericService_WH __pyx_string_tab[14]
-#define __pyx_kp_u_SELECT_1_FROM_GenericService_WH_2 __pyx_string_tab[15]
-#define __pyx_kp_u_SELECT_COUNT_FROM_SELECT_d_id_F __pyx_string_tab[16]
-#define __pyx_kp_u_SELECT_LOWER_CAST_d_id_AS_VARCH __pyx_string_tab[17]
-#define __pyx_kp_u_SELECT_LOWER_id_AS_id_LOWER_user __pyx_string_tab[18]
-#define __pyx_kp_u_ServiceType_3 __pyx_string_tab[19]
-#define __pyx_n_u_Session __pyx_string_tab[20]
-#define __pyx_n_u_SlugUpdateRequest __pyx_string_tab[21]
-#define __pyx_kp_u_Slug_already_exists_for_another __pyx_string_tab[22]
-#define __pyx_kp_u_UPDATE_GenericService_SET_slug __pyx_string_tab[23]
-#define __pyx_kp_u_UPDATE_GenericService_SET_slug_2 __pyx_string_tab[24]
-#define __pyx_n_u_UUID __pyx_string_tab[25]
-#define __pyx_kp_u_WHERE __pyx_string_tab[26]
-#define __pyx_kp_u__14 __pyx_string_tab[27]
-#define __pyx_kp_u__15 __pyx_string_tab[28]
-#define __pyx_kp_u__16 __pyx_string_tab[29]
-#define __pyx_kp_u__6 __pyx_string_tab[30]
-#define __pyx_kp_u_add_note __pyx_string_tab[31]
-#define __pyx_n_u_app_features_physiotherapy __pyx_string_tab[32]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[33]
-#define __pyx_n_u_commit __pyx_string_tab[34]
-#define __pyx_n_u_current_user __pyx_string_tab[35]
-#define __pyx_kp_u_d_Name_LIKE_search_query __pyx_string_tab[36]
-#define __pyx_kp_u_d_head_title_IS_NOT_NULL __pyx_string_tab[37]
-#define __pyx_kp_u_d_head_title_IS_NULL __pyx_string_tab[38]
-#define __pyx_kp_u_d_isApproved_1 __pyx_string_tab[39]
-#define __pyx_kp_u_d_slug_IS_NOT_NULL __pyx_string_tab[40]
-#define __pyx_kp_u_d_slug_IS_NULL __pyx_string_tab[41]
-#define __pyx_n_u_data __pyx_string_tab[42]
-#define __pyx_n_u_db __pyx_string_tab[43]
-#define __pyx_n_u_detail __pyx_string_tab[44]
-#define __pyx_n_u_execute __pyx_string_tab[45]
-#define __pyx_n_u_fastapi __pyx_string_tab[46]
-#define __pyx_n_u_fetchall __pyx_string_tab[47]
-#define __pyx_n_u_fetchone __pyx_string_tab[48]
-#define __pyx_n_u_get __pyx_string_tab[49]
-#define __pyx_n_u_get_current_user __pyx_string_tab[50]
-#define __pyx_n_u_get_db __pyx_string_tab[51]
-#define __pyx_n_u_get_physiotherapy_details __pyx_string_tab[52]
-#define __pyx_n_u_get_physiotherapys __pyx_string_tab[53]
-#define __pyx_n_u_gt __pyx_string_tab[54]
-#define __pyx_n_u_head_title __pyx_string_tab[55]
-#define __pyx_kp_u_https_api_aidfastbd_com_api_Gene __pyx_string_tab[56]
-#define __pyx_n_u_id __pyx_string_tab[57]
-#define __pyx_n_u_initializing __pyx_string_tab[58]
-#define __pyx_n_u_json __pyx_string_tab[59]
-#define __pyx_n_u_limit __pyx_string_tab[60]
-#define __pyx_n_u_main __pyx_string_tab[61]
-#define __pyx_n_u_mappings __pyx_string_tab[62]
-#define __pyx_n_u_meta_description __pyx_string_tab[63]
-#define __pyx_n_u_module __pyx_string_tab[64]
-#define __pyx_n_u_name __pyx_string_tab[65]
-#define __pyx_n_u_offset __pyx_string_tab[66]
-#define __pyx_n_u_page __pyx_string_tab[67]
-#define __pyx_n_u_payload __pyx_string_tab[68]
-#define __pyx_kp_u_physiotherapy __pyx_string_tab[69]
-#define __pyx_kp_u_physiotherapy_id_meta_update __pyx_string_tab[70]
-#define __pyx_kp_u_physiotherapy_id_slug_update __pyx_string_tab[71]
-#define __pyx_kp_u_physiotherapy_info_not_found __pyx_string_tab[72]
-#define __pyx_kp_u_physiotherapy_not_found __pyx_string_tab[73]
-#define __pyx_n_u_physiotherapy_router __pyx_string_tab[74]
-#define __pyx_kp_u_physiotherapy_slug __pyx_string_tab[75]
-#define __pyx_n_u_pop __pyx_string_tab[76]
-#define __pyx_n_u_put __pyx_string_tab[77]
-#define __pyx_n_u_qualname __pyx_string_tab[78]
-#define __pyx_n_u_requests __pyx_string_tab[79]
-#define __pyx_n_u_scalar __pyx_string_tab[80]
-#define __pyx_n_u_schemas __pyx_string_tab[81]
-#define __pyx_n_u_search_query __pyx_string_tab[82]
-#define __pyx_n_u_slug __pyx_string_tab[83]
-#define __pyx_n_u_spec __pyx_string_tab[84]
-#define __pyx_n_u_sqlalchemy __pyx_string_tab[85]
-#define __pyx_n_u_sqlalchemy_orm __pyx_string_tab[86]
-#define __pyx_n_u_status_code __pyx_string_tab[87]
-#define __pyx_n_u_strip __pyx_string_tab[88]
-#define __pyx_n_u_tags __pyx_string_tab[89]
-#define __pyx_n_u_test __pyx_string_tab[90]
-#define __pyx_n_u_text __pyx_string_tab[91]
-#define __pyx_n_u_title __pyx_string_tab[92]
-#define __pyx_n_u_total_items __pyx_string_tab[93]
-#define __pyx_n_u_total_pages __pyx_string_tab[94]
-#define __pyx_n_u_typing __pyx_string_tab[95]
-#define __pyx_n_u_update_physiotherapy_meta __pyx_string_tab[96]
-#define __pyx_n_u_update_physiotherapy_slug __pyx_string_tab[97]
-#define __pyx_n_u_userId __pyx_string_tab[98]
-#define __pyx_n_u_utils_middleware __pyx_string_tab[99]
-#define __pyx_n_u_uuid __pyx_string_tab[100]
+#define __pyx_kp_u_ __pyx_string_tab[0]
+#define __pyx_kp_u_1_1 __pyx_string_tab[1]
+#define __pyx_kp_u_AND __pyx_string_tab[2]
+#define __pyx_n_u_APIRouter __pyx_string_tab[3]
+#define __pyx_n_u_Depends __pyx_string_tab[4]
+#define __pyx_n_u_DescriptionUpdateRequest __pyx_string_tab[5]
+#define __pyx_kp_u_GROUP_BY_d_id_AS_CountTable __pyx_string_tab[6]
+#define __pyx_kp_u_GROUP_BY_d_id_d_head_title_d_me __pyx_string_tab[7]
+#define __pyx_n_u_HTTPException __pyx_string_tab[8]
+#define __pyx_n_u_MetaUpdateRequest __pyx_string_tab[9]
+#define __pyx_kp_u_Note_that_Cython_is_deliberately __pyx_string_tab[10]
+#define __pyx_n_u_Optional __pyx_string_tab[11]
+#define __pyx_kp_u_Optional_bool __pyx_string_tab[12]
+#define __pyx_n_u_Path __pyx_string_tab[13]
+#define __pyx_n_u_Physiotherapy __pyx_string_tab[14]
+#define __pyx_n_u_Query __pyx_string_tab[15]
+#define __pyx_kp_u_SELECT_1_FROM_GenericService_WH __pyx_string_tab[16]
+#define __pyx_kp_u_SELECT_1_FROM_GenericService_WH_2 __pyx_string_tab[17]
+#define __pyx_kp_u_SELECT_COUNT_FROM_SELECT_d_id_F __pyx_string_tab[18]
+#define __pyx_kp_u_SELECT_LOWER_CAST_d_id_AS_VARCH __pyx_string_tab[19]
+#define __pyx_kp_u_SELECT_LOWER_id_AS_id_LOWER_user __pyx_string_tab[20]
+#define __pyx_kp_u_ServiceType_3 __pyx_string_tab[21]
+#define __pyx_n_u_Session __pyx_string_tab[22]
+#define __pyx_n_u_SlugUpdateRequest __pyx_string_tab[23]
+#define __pyx_kp_u_Slug_already_exists_for_another __pyx_string_tab[24]
+#define __pyx_kp_u_UPDATE_GenericService_SET_slug __pyx_string_tab[25]
+#define __pyx_kp_u_UPDATE_GenericService_SET_slug_2 __pyx_string_tab[26]
+#define __pyx_n_u_UUID __pyx_string_tab[27]
+#define __pyx_kp_u_WHERE __pyx_string_tab[28]
+#define __pyx_kp_u__2 __pyx_string_tab[29]
+#define __pyx_kp_u__3 __pyx_string_tab[30]
+#define __pyx_kp_u__4 __pyx_string_tab[31]
+#define __pyx_kp_u_add_note __pyx_string_tab[32]
+#define __pyx_kp_u_app_features_physiotherapy_py __pyx_string_tab[33]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[34]
+#define __pyx_n_u_base_query __pyx_string_tab[35]
+#define __pyx_n_u_check_stmt __pyx_string_tab[36]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[37]
+#define __pyx_n_u_commit __pyx_string_tab[38]
+#define __pyx_n_u_count_query __pyx_string_tab[39]
+#define __pyx_n_u_current_user __pyx_string_tab[40]
+#define __pyx_kp_u_d_Name_LIKE_search_query __pyx_string_tab[41]
+#define __pyx_kp_u_d_head_title_IS_NOT_NULL __pyx_string_tab[42]
+#define __pyx_kp_u_d_head_title_IS_NULL __pyx_string_tab[43]
+#define __pyx_kp_u_d_isApproved_1 __pyx_string_tab[44]
+#define __pyx_kp_u_d_slug_IS_NOT_NULL __pyx_string_tab[45]
+#define __pyx_kp_u_d_slug_IS_NULL __pyx_string_tab[46]
+#define __pyx_n_u_data __pyx_string_tab[47]
+#define __pyx_n_u_db __pyx_string_tab[48]
+#define __pyx_n_u_detail __pyx_string_tab[49]
+#define __pyx_n_u_dict __pyx_string_tab[50]
+#define __pyx_kp_u_disable __pyx_string_tab[51]
+#define __pyx_kp_u_enable __pyx_string_tab[52]
+#define __pyx_n_u_execute __pyx_string_tab[53]
+#define __pyx_n_u_exists __pyx_string_tab[54]
+#define __pyx_n_u_fastapi __pyx_string_tab[55]
+#define __pyx_n_u_fetchall __pyx_string_tab[56]
+#define __pyx_n_u_fetchone __pyx_string_tab[57]
+#define __pyx_n_u_func __pyx_string_tab[58]
+#define __pyx_kp_u_gc __pyx_string_tab[59]
+#define __pyx_n_u_get __pyx_string_tab[60]
+#define __pyx_n_u_get_current_user __pyx_string_tab[61]
+#define __pyx_n_u_get_db __pyx_string_tab[62]
+#define __pyx_n_u_get_physiotherapy_details __pyx_string_tab[63]
+#define __pyx_n_u_get_physiotherapys __pyx_string_tab[64]
+#define __pyx_n_u_gt __pyx_string_tab[65]
+#define __pyx_n_u_head_title __pyx_string_tab[66]
+#define __pyx_kp_u_https_api_aidfastbd_com_api_Gene __pyx_string_tab[67]
+#define __pyx_n_u_id __pyx_string_tab[68]
+#define __pyx_n_u_initializing __pyx_string_tab[69]
+#define __pyx_n_u_int __pyx_string_tab[70]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[71]
+#define __pyx_kp_u_isenabled __pyx_string_tab[72]
+#define __pyx_n_u_json __pyx_string_tab[73]
+#define __pyx_n_u_limit __pyx_string_tab[74]
+#define __pyx_n_u_main __pyx_string_tab[75]
+#define __pyx_n_u_mappings __pyx_string_tab[76]
+#define __pyx_n_u_meta_description __pyx_string_tab[77]
+#define __pyx_n_u_module __pyx_string_tab[78]
+#define __pyx_n_u_name __pyx_string_tab[79]
+#define __pyx_n_u_offset __pyx_string_tab[80]
+#define __pyx_n_u_page __pyx_string_tab[81]
+#define __pyx_n_u_params __pyx_string_tab[82]
+#define __pyx_n_u_payload __pyx_string_tab[83]
+#define __pyx_kp_u_physiotherapy __pyx_string_tab[84]
+#define __pyx_n_u_physiotherapy_2 __pyx_string_tab[85]
+#define __pyx_kp_u_physiotherapy_id_meta_update __pyx_string_tab[86]
+#define __pyx_kp_u_physiotherapy_id_slug_update __pyx_string_tab[87]
+#define __pyx_kp_u_physiotherapy_info_not_found __pyx_string_tab[88]
+#define __pyx_kp_u_physiotherapy_not_found __pyx_string_tab[89]
+#define __pyx_n_u_physiotherapy_router __pyx_string_tab[90]
+#define __pyx_kp_u_physiotherapy_slug __pyx_string_tab[91]
+#define __pyx_n_u_pop __pyx_string_tab[92]
+#define __pyx_n_u_put __pyx_string_tab[93]
+#define __pyx_n_u_qualname __pyx_string_tab[94]
+#define __pyx_n_u_requests __pyx_string_tab[95]
+#define __pyx_n_u_res __pyx_string_tab[96]
+#define __pyx_n_u_result __pyx_string_tab[97]
+#define __pyx_n_u_result_dict __pyx_string_tab[98]
+#define __pyx_n_u_results __pyx_string_tab[99]
+#define __pyx_n_u_scalar __pyx_string_tab[100]
+#define __pyx_n_u_schemas __pyx_string_tab[101]
+#define __pyx_n_u_search_query __pyx_string_tab[102]
+#define __pyx_n_u_set_name __pyx_string_tab[103]
+#define __pyx_n_u_slug __pyx_string_tab[104]
+#define __pyx_n_u_spec __pyx_string_tab[105]
+#define __pyx_n_u_sqlalchemy __pyx_string_tab[106]
+#define __pyx_n_u_sqlalchemy_orm __pyx_string_tab[107]
+#define __pyx_n_u_status_code __pyx_string_tab[108]
+#define __pyx_n_u_stmt __pyx_string_tab[109]
+#define __pyx_n_u_str __pyx_string_tab[110]
+#define __pyx_n_u_strip __pyx_string_tab[111]
+#define __pyx_n_u_tags __pyx_string_tab[112]
+#define __pyx_n_u_test __pyx_string_tab[113]
+#define __pyx_n_u_text __pyx_string_tab[114]
+#define __pyx_n_u_title __pyx_string_tab[115]
+#define __pyx_n_u_total __pyx_string_tab[116]
+#define __pyx_n_u_total_items __pyx_string_tab[117]
+#define __pyx_n_u_total_pages __pyx_string_tab[118]
+#define __pyx_n_u_typing __pyx_string_tab[119]
+#define __pyx_n_u_update_physiotherapy_meta __pyx_string_tab[120]
+#define __pyx_n_u_update_physiotherapy_slug __pyx_string_tab[121]
+#define __pyx_n_u_update_stmt __pyx_string_tab[122]
+#define __pyx_n_u_userId __pyx_string_tab[123]
+#define __pyx_n_u_utils_middleware __pyx_string_tab[124]
+#define __pyx_n_u_uuid __pyx_string_tab[125]
+#define __pyx_n_u_where_clause __pyx_string_tab[126]
+#define __pyx_n_u_where_clauses __pyx_string_tab[127]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -2478,19 +2750,14 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   __Pyx_State_RemoveModule(NULL);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_k_);
-  Py_CLEAR(clear_module_state->__pyx_k__2);
-  Py_CLEAR(clear_module_state->__pyx_k__3);
-  Py_CLEAR(clear_module_state->__pyx_k__4);
-  Py_CLEAR(clear_module_state->__pyx_k__5);
-  Py_CLEAR(clear_module_state->__pyx_k__7);
-  Py_CLEAR(clear_module_state->__pyx_k__8);
-  Py_CLEAR(clear_module_state->__pyx_k__9);
-  Py_CLEAR(clear_module_state->__pyx_k__10);
-  Py_CLEAR(clear_module_state->__pyx_k__11);
-  Py_CLEAR(clear_module_state->__pyx_k__12);
-  Py_CLEAR(clear_module_state->__pyx_k__13);
-  for (int i=0; i<101; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  Py_CLEAR(clear_module_state->__pyx_ptype_13physiotherapy___pyx_defaults);
+  Py_CLEAR(clear_module_state->__pyx_type_13physiotherapy___pyx_defaults);
+  Py_CLEAR(clear_module_state->__pyx_ptype_13physiotherapy___pyx_defaults1);
+  Py_CLEAR(clear_module_state->__pyx_type_13physiotherapy___pyx_defaults1);
+  Py_CLEAR(clear_module_state->__pyx_ptype_13physiotherapy___pyx_defaults2);
+  Py_CLEAR(clear_module_state->__pyx_type_13physiotherapy___pyx_defaults2);
+  for (int i=0; i<4; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<128; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   Py_CLEAR(clear_module_state->__pyx_int_0);
   Py_CLEAR(clear_module_state->__pyx_int_1);
   Py_CLEAR(clear_module_state->__pyx_int_15);
@@ -2517,19 +2784,14 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_VISIT(traverse_module_state->__pyx_k_);
-  Py_VISIT(traverse_module_state->__pyx_k__2);
-  Py_VISIT(traverse_module_state->__pyx_k__3);
-  Py_VISIT(traverse_module_state->__pyx_k__4);
-  Py_VISIT(traverse_module_state->__pyx_k__5);
-  Py_VISIT(traverse_module_state->__pyx_k__7);
-  Py_VISIT(traverse_module_state->__pyx_k__8);
-  Py_VISIT(traverse_module_state->__pyx_k__9);
-  Py_VISIT(traverse_module_state->__pyx_k__10);
-  Py_VISIT(traverse_module_state->__pyx_k__11);
-  Py_VISIT(traverse_module_state->__pyx_k__12);
-  Py_VISIT(traverse_module_state->__pyx_k__13);
-  for (int i=0; i<101; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  Py_VISIT(traverse_module_state->__pyx_ptype_13physiotherapy___pyx_defaults);
+  Py_VISIT(traverse_module_state->__pyx_type_13physiotherapy___pyx_defaults);
+  Py_VISIT(traverse_module_state->__pyx_ptype_13physiotherapy___pyx_defaults1);
+  Py_VISIT(traverse_module_state->__pyx_type_13physiotherapy___pyx_defaults1);
+  Py_VISIT(traverse_module_state->__pyx_ptype_13physiotherapy___pyx_defaults2);
+  Py_VISIT(traverse_module_state->__pyx_type_13physiotherapy___pyx_defaults2);
+  for (int i=0; i<4; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<128; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_0);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_1);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_15);
@@ -2541,7 +2803,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "app/features/physiotherapy.py":18
+/* "physiotherapy.py":18
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/")             # <<<<<<<<<<<<<<
@@ -2549,17 +2811,67 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
  *     page: int = Query(1, gt=0),
 */
 
+static PyObject *__pyx_pf_13physiotherapy_8__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__defaults__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg0);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg0);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg0) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg1);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg1) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg2);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg2);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg2) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg3);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg3);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg3) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg4);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg4);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 4, __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self)->arg4) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None) != (0)) __PYX_ERR(0, 18, __pyx_L1_error);
+  __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("physiotherapy.__defaults__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* Python wrapper */
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_1get_physiotherapys(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_13physiotherapy_1get_physiotherapys(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_3app_8features_13physiotherapy_get_physiotherapys, "get_physiotherapys(int page: int = Query(1, gt=0), slug: Optional[bool] = Query(None), title: Optional[bool] = Query(None), str search_query: str = Query(''), db: Session = Depends(get_db))");
-static PyMethodDef __pyx_mdef_3app_8features_13physiotherapy_1get_physiotherapys = {"get_physiotherapys", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3app_8features_13physiotherapy_1get_physiotherapys, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_3app_8features_13physiotherapy_get_physiotherapys};
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_1get_physiotherapys(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_13physiotherapy_1get_physiotherapys = {"get_physiotherapys", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_13physiotherapy_1get_physiotherapys, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13physiotherapy_1get_physiotherapys(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2592,6 +2904,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_page,&__pyx_mstate_global->__pyx_n_u_slug,&__pyx_mstate_global->__pyx_n_u_title,&__pyx_mstate_global->__pyx_n_u_search_query,&__pyx_mstate_global->__pyx_n_u_db,0};
+    struct __pyx_defaults *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_self);
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
     if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 18, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
@@ -2621,11 +2934,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
       if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "get_physiotherapys", 0) < (0)) __PYX_ERR(0, 18, __pyx_L3_error)
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k_);
-      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__2);
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__3);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__4);
-      if (!values[4]) values[4] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__5);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg3);
+      if (!values[4]) values[4] = __Pyx_NewRef(__pyx_dynamic_args->arg4);
     } else {
       switch (__pyx_nargs) {
         case  5:
@@ -2651,11 +2964,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k_);
-      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__2);
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__3);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__4);
-      if (!values[4]) values[4] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__5);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg3);
+      if (!values[4]) values[4] = __Pyx_NewRef(__pyx_dynamic_args->arg4);
     }
     __pyx_v_page = ((PyObject*)values[0]);
     __pyx_v_slug = values[1];
@@ -2672,13 +2985,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("app.features.physiotherapy.get_physiotherapys", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.get_physiotherapys", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_page), (&PyLong_Type), 0, "page", 2))) __PYX_ERR(0, 20, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_search_query), (&PyUnicode_Type), 0, "search_query", 2))) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_r = __pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(__pyx_self, __pyx_v_page, __pyx_v_slug, __pyx_v_title, __pyx_v_search_query, __pyx_v_db);
+  __pyx_r = __pyx_pf_13physiotherapy_get_physiotherapys(__pyx_self, __pyx_v_page, __pyx_v_slug, __pyx_v_title, __pyx_v_search_query, __pyx_v_db);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2697,7 +3010,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_page, PyObject *__pyx_v_slug, PyObject *__pyx_v_title, PyObject *__pyx_v_search_query, PyObject *__pyx_v_db) {
+static PyObject *__pyx_pf_13physiotherapy_get_physiotherapys(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_page, PyObject *__pyx_v_slug, PyObject *__pyx_v_title, PyObject *__pyx_v_search_query, PyObject *__pyx_v_db) {
   PyObject *__pyx_v_limit = NULL;
   PyObject *__pyx_v_offset = NULL;
   PyObject *__pyx_v_where_clauses = NULL;
@@ -2727,7 +3040,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_physiotherapys", 0);
 
-  /* "app/features/physiotherapy.py":26
+  /* "physiotherapy.py":26
  *     db: Session = Depends(get_db),
  * ):
  *     limit = 15             # <<<<<<<<<<<<<<
@@ -2737,7 +3050,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_INCREF(__pyx_mstate_global->__pyx_int_15);
   __pyx_v_limit = __pyx_mstate_global->__pyx_int_15;
 
-  /* "app/features/physiotherapy.py":27
+  /* "physiotherapy.py":27
  * ):
  *     limit = 15
  *     offset = (page - 1) * limit             # <<<<<<<<<<<<<<
@@ -2752,7 +3065,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_offset = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":30
+  /* "physiotherapy.py":30
  * 
  *     # WHERE clause conditions
  *     where_clauses = ["1=1"]             # <<<<<<<<<<<<<<
@@ -2767,7 +3080,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_where_clauses = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":31
+  /* "physiotherapy.py":31
  *     # WHERE clause conditions
  *     where_clauses = ["1=1"]
  *     where_clauses.append("d.isApproved = 1")             # <<<<<<<<<<<<<<
@@ -2776,7 +3089,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_isApproved_1); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 31, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":33
+  /* "physiotherapy.py":33
  *     where_clauses.append("d.isApproved = 1")
  * 
  *     if slug == True:             # <<<<<<<<<<<<<<
@@ -2788,7 +3101,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "app/features/physiotherapy.py":34
+    /* "physiotherapy.py":34
  * 
  *     if slug == True:
  *         where_clauses.append("d.slug IS NOT NULL")             # <<<<<<<<<<<<<<
@@ -2797,7 +3110,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
     __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_slug_IS_NOT_NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 34, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":33
+    /* "physiotherapy.py":33
  *     where_clauses.append("d.isApproved = 1")
  * 
  *     if slug == True:             # <<<<<<<<<<<<<<
@@ -2806,7 +3119,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   }
 
-  /* "app/features/physiotherapy.py":36
+  /* "physiotherapy.py":36
  *         where_clauses.append("d.slug IS NOT NULL")
  * 
  *     if slug == False:             # <<<<<<<<<<<<<<
@@ -2818,7 +3131,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "app/features/physiotherapy.py":37
+    /* "physiotherapy.py":37
  * 
  *     if slug == False:
  *         where_clauses.append("d.slug IS NULL")             # <<<<<<<<<<<<<<
@@ -2827,7 +3140,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
     __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_slug_IS_NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 37, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":36
+    /* "physiotherapy.py":36
  *         where_clauses.append("d.slug IS NOT NULL")
  * 
  *     if slug == False:             # <<<<<<<<<<<<<<
@@ -2836,7 +3149,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   }
 
-  /* "app/features/physiotherapy.py":39
+  /* "physiotherapy.py":39
  *         where_clauses.append("d.slug IS NULL")
  * 
  *     if title == True:             # <<<<<<<<<<<<<<
@@ -2848,7 +3161,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "app/features/physiotherapy.py":40
+    /* "physiotherapy.py":40
  * 
  *     if title == True:
  *         where_clauses.append("d.head_title IS NOT NULL")             # <<<<<<<<<<<<<<
@@ -2857,7 +3170,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
     __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_head_title_IS_NOT_NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 40, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":39
+    /* "physiotherapy.py":39
  *         where_clauses.append("d.slug IS NULL")
  * 
  *     if title == True:             # <<<<<<<<<<<<<<
@@ -2866,7 +3179,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   }
 
-  /* "app/features/physiotherapy.py":42
+  /* "physiotherapy.py":42
  *         where_clauses.append("d.head_title IS NOT NULL")
  * 
  *     if title == False:             # <<<<<<<<<<<<<<
@@ -2878,7 +3191,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "app/features/physiotherapy.py":43
+    /* "physiotherapy.py":43
  * 
  *     if title == False:
  *         where_clauses.append("d.head_title IS NULL")             # <<<<<<<<<<<<<<
@@ -2887,7 +3200,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
     __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_head_title_IS_NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 43, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":42
+    /* "physiotherapy.py":42
  *         where_clauses.append("d.head_title IS NOT NULL")
  * 
  *     if title == False:             # <<<<<<<<<<<<<<
@@ -2896,7 +3209,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   }
 
-  /* "app/features/physiotherapy.py":45
+  /* "physiotherapy.py":45
  *         where_clauses.append("d.head_title IS NULL")
  * 
  *     if search_query.strip():             # <<<<<<<<<<<<<<
@@ -2914,7 +3227,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "app/features/physiotherapy.py":46
+    /* "physiotherapy.py":46
  * 
  *     if search_query.strip():
  *         where_clauses.append("d.Name LIKE :search_query")             # <<<<<<<<<<<<<<
@@ -2923,7 +3236,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
     __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_d_Name_LIKE_search_query); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 46, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":45
+    /* "physiotherapy.py":45
  *         where_clauses.append("d.head_title IS NULL")
  * 
  *     if search_query.strip():             # <<<<<<<<<<<<<<
@@ -2932,7 +3245,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   }
 
-  /* "app/features/physiotherapy.py":48
+  /* "physiotherapy.py":48
  *         where_clauses.append("d.Name LIKE :search_query")
  * 
  *     where_clauses.append("ServiceType=3")             # <<<<<<<<<<<<<<
@@ -2941,7 +3254,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   __pyx_t_3 = __Pyx_PyList_Append(__pyx_v_where_clauses, __pyx_mstate_global->__pyx_kp_u_ServiceType_3); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":50
+  /* "physiotherapy.py":50
  *     where_clauses.append("ServiceType=3")
  * 
  *     where_clause = "WHERE " + " AND ".join(where_clauses)             # <<<<<<<<<<<<<<
@@ -2956,7 +3269,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_where_clause = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":53
+  /* "physiotherapy.py":53
  * 
  *     # Main query
  *     base_query = f"""             # <<<<<<<<<<<<<<
@@ -2972,7 +3285,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_base_query = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":77
+  /* "physiotherapy.py":77
  * 
  *     # Count query
  *     count_query = f"""             # <<<<<<<<<<<<<<
@@ -2988,7 +3301,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_count_query = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":88
+  /* "physiotherapy.py":88
  *     # Parameters
  *     params = {
  *         "offset": offset,             # <<<<<<<<<<<<<<
@@ -2999,7 +3312,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_offset, __pyx_v_offset) < (0)) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":89
+  /* "physiotherapy.py":89
  *     params = {
  *         "offset": offset,
  *         "limit": limit,             # <<<<<<<<<<<<<<
@@ -3008,7 +3321,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_limit, __pyx_v_limit) < (0)) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":90
+  /* "physiotherapy.py":90
  *         "offset": offset,
  *         "limit": limit,
  *         "search_query": f"%{search_query}%" if search_query.strip() else None,             # <<<<<<<<<<<<<<
@@ -3025,9 +3338,9 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (__pyx_t_4) {
-    __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u__6;
+    __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_;
     __pyx_t_5[1] = __pyx_v_search_query;
-    __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u__6;
+    __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u_;
     __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 1 * 2 + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_search_query), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_search_query));
     if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 90, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -3042,7 +3355,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_params = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":93
+  /* "physiotherapy.py":93
  *     }
  * 
  *     results = db.execute(text(base_query), params).mappings().fetchall()             # <<<<<<<<<<<<<<
@@ -3108,7 +3421,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_results = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":94
+  /* "physiotherapy.py":94
  * 
  *     results = db.execute(text(base_query), params).mappings().fetchall()
  *     total = db.execute(text(count_query), params).scalar()             # <<<<<<<<<<<<<<
@@ -3163,7 +3476,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_v_total = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":96
+  /* "physiotherapy.py":96
  *     total = db.execute(text(count_query), params).scalar()
  * 
  *     return {             # <<<<<<<<<<<<<<
@@ -3172,7 +3485,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "app/features/physiotherapy.py":97
+  /* "physiotherapy.py":97
  * 
  *     return {
  *         "page": page,             # <<<<<<<<<<<<<<
@@ -3183,7 +3496,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_page, __pyx_v_page) < (0)) __PYX_ERR(0, 97, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":98
+  /* "physiotherapy.py":98
  *     return {
  *         "page": page,
  *         "limit": limit,             # <<<<<<<<<<<<<<
@@ -3192,7 +3505,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_limit, __pyx_v_limit) < (0)) __PYX_ERR(0, 97, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":99
+  /* "physiotherapy.py":99
  *         "page": page,
  *         "limit": limit,
  *         "total_items": total,             # <<<<<<<<<<<<<<
@@ -3201,7 +3514,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
 */
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_total_items, __pyx_v_total) < (0)) __PYX_ERR(0, 97, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":100
+  /* "physiotherapy.py":100
  *         "limit": limit,
  *         "total_items": total,
  *         "total_pages": (total + limit - 1) // limit,             # <<<<<<<<<<<<<<
@@ -3219,7 +3532,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_total_pages, __pyx_t_2) < (0)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":101
+  /* "physiotherapy.py":101
  *         "total_items": total,
  *         "total_pages": (total + limit - 1) // limit,
  *         "data": list(results),             # <<<<<<<<<<<<<<
@@ -3234,7 +3547,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "app/features/physiotherapy.py":18
+  /* "physiotherapy.py":18
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/")             # <<<<<<<<<<<<<<
@@ -3253,7 +3566,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   __Pyx_XDECREF(__pyx_t_10);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("app.features.physiotherapy.get_physiotherapys", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.get_physiotherapys", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_limit);
@@ -3270,7 +3583,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
   return __pyx_r;
 }
 
-/* "app/features/physiotherapy.py":105
+/* "physiotherapy.py":105
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/{slug}")             # <<<<<<<<<<<<<<
@@ -3278,17 +3591,55 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_get_physiotherapys(CYTH
  *     # Safe raw SQL query using bind parameter
 */
 
+static PyObject *__pyx_pf_13physiotherapy_10__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__defaults__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults1, __pyx_self)->arg0);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults1, __pyx_self)->arg0);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(struct __pyx_defaults1, __pyx_self)->arg0) != (0)) __PYX_ERR(0, 105, __pyx_L1_error);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 105, __pyx_L1_error);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None) != (0)) __PYX_ERR(0, 105, __pyx_L1_error);
+  __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("physiotherapy.__defaults__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* Python wrapper */
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_3get_physiotherapy_details(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_13physiotherapy_3get_physiotherapy_details(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_3app_8features_13physiotherapy_2get_physiotherapy_details, "get_physiotherapy_details(str slug: str, db: Session = Depends(get_db))");
-static PyMethodDef __pyx_mdef_3app_8features_13physiotherapy_3get_physiotherapy_details = {"get_physiotherapy_details", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3app_8features_13physiotherapy_3get_physiotherapy_details, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_3app_8features_13physiotherapy_2get_physiotherapy_details};
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_3get_physiotherapy_details(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_13physiotherapy_3get_physiotherapy_details = {"get_physiotherapy_details", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_13physiotherapy_3get_physiotherapy_details, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13physiotherapy_3get_physiotherapy_details(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3318,6 +3669,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_slug,&__pyx_mstate_global->__pyx_n_u_db,0};
+    struct __pyx_defaults1 *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(struct __pyx_defaults1, __pyx_self);
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
     if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 105, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
@@ -3335,7 +3687,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
       if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "get_physiotherapy_details", 0) < (0)) __PYX_ERR(0, 105, __pyx_L3_error)
-      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__7);
+      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
         if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("get_physiotherapy_details", 0, 1, 2, i); __PYX_ERR(0, 105, __pyx_L3_error) }
       }
@@ -3351,7 +3703,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         break;
         default: goto __pyx_L5_argtuple_error;
       }
-      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__7);
+      if (!values[1]) values[1] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
     }
     __pyx_v_slug = ((PyObject*)values[0]);
     __pyx_v_db = values[1];
@@ -3365,12 +3717,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("app.features.physiotherapy.get_physiotherapy_details", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.get_physiotherapy_details", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_slug), (&PyUnicode_Type), 0, "slug", 2))) __PYX_ERR(0, 106, __pyx_L1_error)
-  __pyx_r = __pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_details(__pyx_self, __pyx_v_slug, __pyx_v_db);
+  __pyx_r = __pyx_pf_13physiotherapy_2get_physiotherapy_details(__pyx_self, __pyx_v_slug, __pyx_v_db);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3389,7 +3741,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_details(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_slug, PyObject *__pyx_v_db) {
+static PyObject *__pyx_pf_13physiotherapy_2get_physiotherapy_details(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_slug, PyObject *__pyx_v_db) {
   PyObject *__pyx_v_stmt = NULL;
   PyObject *__pyx_v_result = NULL;
   PyObject *__pyx_v_result_dict = NULL;
@@ -3411,7 +3763,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_physiotherapy_details", 0);
 
-  /* "app/features/physiotherapy.py":108
+  /* "physiotherapy.py":108
  * def get_physiotherapy_details(slug: str, db: Session = Depends(get_db)):
  *     # Safe raw SQL query using bind parameter
  *     stmt = text(             # <<<<<<<<<<<<<<
@@ -3444,7 +3796,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_v_stmt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":111
+  /* "physiotherapy.py":111
  *         "SELECT LOWER(id) AS id,LOWER(userId) AS userId, head_title,meta_description FROM GenericService WHERE slug = :slug AND ServiceType=3 AND isApproved = 1"
  *     )
  *     result = db.execute(stmt, {"slug": slug}).mappings().fetchone()             # <<<<<<<<<<<<<<
@@ -3490,7 +3842,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_v_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":113
+  /* "physiotherapy.py":113
  *     result = db.execute(stmt, {"slug": slug}).mappings().fetchone()
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -3500,7 +3852,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_t_9 = (__pyx_v_result == Py_None);
   if (unlikely(__pyx_t_9)) {
 
-    /* "app/features/physiotherapy.py":114
+    /* "physiotherapy.py":114
  * 
  *     if result is None:
  *         raise HTTPException(status_code=404, detail="physiotherapy not found")             # <<<<<<<<<<<<<<
@@ -3539,7 +3891,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 114, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":113
+    /* "physiotherapy.py":113
  *     result = db.execute(stmt, {"slug": slug}).mappings().fetchone()
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -3548,7 +3900,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
 */
   }
 
-  /* "app/features/physiotherapy.py":116
+  /* "physiotherapy.py":116
  *         raise HTTPException(status_code=404, detail="physiotherapy not found")
  *     # Convert result to a dictionary before returning it
  *     result_dict = dict(result)             # <<<<<<<<<<<<<<
@@ -3570,7 +3922,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_v_result_dict = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":118
+  /* "physiotherapy.py":118
  *     result_dict = dict(result)
  * 
  *     res = requests.get(             # <<<<<<<<<<<<<<
@@ -3584,7 +3936,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":119
+  /* "physiotherapy.py":119
  * 
  *     res = requests.get(
  *         f"https://api.aidfastbd.com/api/GeneralInformation/GetAllGenericServiceList?serviceType=3&userId={result_dict['userId']}"             # <<<<<<<<<<<<<<
@@ -3623,7 +3975,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_v_res = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":122
+  /* "physiotherapy.py":122
  *     )
  * 
  *     if res.status_code == 200:             # <<<<<<<<<<<<<<
@@ -3636,7 +3988,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_9) {
 
-    /* "app/features/physiotherapy.py":123
+    /* "physiotherapy.py":123
  * 
  *     if res.status_code == 200:
  *         json = res.json()             # <<<<<<<<<<<<<<
@@ -3656,7 +4008,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
     __pyx_v_json = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "app/features/physiotherapy.py":124
+    /* "physiotherapy.py":124
  *     if res.status_code == 200:
  *         json = res.json()
  *         json["data"][0]["slug"] = slug             # <<<<<<<<<<<<<<
@@ -3665,13 +4017,13 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
 */
     __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_json, __pyx_mstate_global->__pyx_n_u_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely((PyObject_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_slug, __pyx_v_slug) < 0))) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "app/features/physiotherapy.py":125
+    /* "physiotherapy.py":125
  *         json = res.json()
  *         json["data"][0]["slug"] = slug
  *         json["data"][0]["head_title"] = dict(result)["head_title"]             # <<<<<<<<<<<<<<
@@ -3695,14 +4047,14 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_json, __pyx_mstate_global->__pyx_n_u_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (unlikely((PyObject_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_head_title, __pyx_t_3) < 0))) __PYX_ERR(0, 125, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "app/features/physiotherapy.py":126
+    /* "physiotherapy.py":126
  *         json["data"][0]["slug"] = slug
  *         json["data"][0]["head_title"] = dict(result)["head_title"]
  *         json["data"][0]["meta_description"] = dict(result)["meta_description"]             # <<<<<<<<<<<<<<
@@ -3726,14 +4078,14 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_v_json, __pyx_mstate_global->__pyx_n_u_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely((PyObject_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_meta_description, __pyx_t_2) < 0))) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "app/features/physiotherapy.py":127
+    /* "physiotherapy.py":127
  *         json["data"][0]["head_title"] = dict(result)["head_title"]
  *         json["data"][0]["meta_description"] = dict(result)["meta_description"]
  *         return json             # <<<<<<<<<<<<<<
@@ -3745,7 +4097,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
     __pyx_r = __pyx_v_json;
     goto __pyx_L0;
 
-    /* "app/features/physiotherapy.py":122
+    /* "physiotherapy.py":122
  *     )
  * 
  *     if res.status_code == 200:             # <<<<<<<<<<<<<<
@@ -3754,7 +4106,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
 */
   }
 
-  /* "app/features/physiotherapy.py":129
+  /* "physiotherapy.py":129
  *         return json
  * 
  *     return []             # <<<<<<<<<<<<<<
@@ -3768,7 +4120,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "app/features/physiotherapy.py":105
+  /* "physiotherapy.py":105
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/{slug}")             # <<<<<<<<<<<<<<
@@ -3785,7 +4137,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("app.features.physiotherapy.get_physiotherapy_details", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.get_physiotherapy_details", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_stmt);
@@ -3798,7 +4150,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
   return __pyx_r;
 }
 
-/* "app/features/physiotherapy.py":132
+/* "physiotherapy.py":132
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
@@ -3806,17 +4158,80 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_2get_physiotherapy_deta
  *     id: UUID = Path(...),
 */
 
+static PyObject *__pyx_pf_13physiotherapy_12__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__defaults__", 0);
+  __Pyx_XDECREF(__pyx_r);
+
+  /* "physiotherapy.py":135
+ * def update_physiotherapy_meta(
+ *     id: UUID = Path(...),
+ *     payload: MetaUpdateRequest = ...,             # <<<<<<<<<<<<<<
+ *     current_user: dict = Depends(get_current_user),
+ *     db: Session = Depends(get_db),
+*/
+  __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+  __Pyx_INCREF(((PyObject *)Py_Ellipsis));
+  __Pyx_GIVEREF(((PyObject *)Py_Ellipsis));
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, ((PyObject *)Py_Ellipsis)) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+
+  /* "physiotherapy.py":132
+ * 
+ * 
+ * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
+ * def update_physiotherapy_meta(
+ *     id: UUID = Path(...),
+*/
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None) != (0)) __PYX_ERR(0, 132, __pyx_L1_error);
+  __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("physiotherapy.__defaults__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* Python wrapper */
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_5update_physiotherapy_meta(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_13physiotherapy_5update_physiotherapy_meta(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_3app_8features_13physiotherapy_4update_physiotherapy_meta, "update_physiotherapy_meta(id: UUID = Path(...), payload: MetaUpdateRequest = ..., dict current_user: dict = Depends(get_current_user), db: Session = Depends(get_db))");
-static PyMethodDef __pyx_mdef_3app_8features_13physiotherapy_5update_physiotherapy_meta = {"update_physiotherapy_meta", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3app_8features_13physiotherapy_5update_physiotherapy_meta, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_3app_8features_13physiotherapy_4update_physiotherapy_meta};
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_5update_physiotherapy_meta(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_13physiotherapy_5update_physiotherapy_meta = {"update_physiotherapy_meta", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_13physiotherapy_5update_physiotherapy_meta, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13physiotherapy_5update_physiotherapy_meta(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3848,6 +4263,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_id,&__pyx_mstate_global->__pyx_n_u_payload,&__pyx_mstate_global->__pyx_n_u_current_user,&__pyx_mstate_global->__pyx_n_u_db,0};
+    struct __pyx_defaults2 *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self);
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
     if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 132, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
@@ -3873,18 +4289,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
       if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_physiotherapy_meta", 0) < (0)) __PYX_ERR(0, 132, __pyx_L3_error)
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__8);
-
-      /* "app/features/physiotherapy.py":135
- * def update_physiotherapy_meta(
- *     id: UUID = Path(...),
- *     payload: MetaUpdateRequest = ...,             # <<<<<<<<<<<<<<
- *     current_user: dict = Depends(get_current_user),
- *     db: Session = Depends(get_db),
-*/
-      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)Py_Ellipsis));
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__9);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__10);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject *)Py_Ellipsis)));
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
     } else {
       switch (__pyx_nargs) {
         case  4:
@@ -3906,10 +4314,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__8);
-      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)Py_Ellipsis));
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__9);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__10);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject *)Py_Ellipsis)));
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
     }
     __pyx_v_id = values[0];
     __pyx_v_payload = values[1];
@@ -3925,20 +4333,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("app.features.physiotherapy.update_physiotherapy_meta", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.update_physiotherapy_meta", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_current_user), (&PyDict_Type), 0, "current_user", 2))) __PYX_ERR(0, 136, __pyx_L1_error)
-  __pyx_r = __pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_meta(__pyx_self, __pyx_v_id, __pyx_v_payload, __pyx_v_current_user, __pyx_v_db);
-
-  /* "app/features/physiotherapy.py":132
- * 
- * 
- * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
- * def update_physiotherapy_meta(
- *     id: UUID = Path(...),
-*/
+  __pyx_r = __pyx_pf_13physiotherapy_4update_physiotherapy_meta(__pyx_self, __pyx_v_id, __pyx_v_payload, __pyx_v_current_user, __pyx_v_db);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3957,7 +4357,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_meta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db) {
+static PyObject *__pyx_pf_13physiotherapy_4update_physiotherapy_meta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db) {
   PyObject *__pyx_v_check_stmt = NULL;
   PyObject *__pyx_v_exists = NULL;
   PyObject *__pyx_v_update_stmt = NULL;
@@ -3979,7 +4379,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("update_physiotherapy_meta", 0);
 
-  /* "app/features/physiotherapy.py":140
+  /* "physiotherapy.py":140
  * ):
  *     # Check if slug already exists for another record
  *     check_stmt = text(             # <<<<<<<<<<<<<<
@@ -4012,7 +4412,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_v_check_stmt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":146
+  /* "physiotherapy.py":146
  *     """
  *     )
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()             # <<<<<<<<<<<<<<
@@ -4051,7 +4451,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_v_exists = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":148
+  /* "physiotherapy.py":148
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()
  * 
  *     if exists:             # <<<<<<<<<<<<<<
@@ -4061,7 +4461,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_exists); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 148, __pyx_L1_error)
   if (unlikely(__pyx_t_8)) {
 
-    /* "app/features/physiotherapy.py":149
+    /* "physiotherapy.py":149
  * 
  *     if exists:
  *         raise HTTPException(             # <<<<<<<<<<<<<<
@@ -4100,7 +4500,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 149, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":148
+    /* "physiotherapy.py":148
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()
  * 
  *     if exists:             # <<<<<<<<<<<<<<
@@ -4109,7 +4509,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
 */
   }
 
-  /* "app/features/physiotherapy.py":154
+  /* "physiotherapy.py":154
  * 
  *     # Safe update with OUTPUT for SQL Server
  *     update_stmt = text(             # <<<<<<<<<<<<<<
@@ -4142,7 +4542,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_v_update_stmt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":165
+  /* "physiotherapy.py":165
  *     )
  *     result = (
  *         db.execute(             # <<<<<<<<<<<<<<
@@ -4152,7 +4552,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_t_7 = __pyx_v_db;
   __Pyx_INCREF(__pyx_t_7);
 
-  /* "app/features/physiotherapy.py":168
+  /* "physiotherapy.py":168
  *             update_stmt,
  *             {
  *                 "id": id,             # <<<<<<<<<<<<<<
@@ -4163,7 +4563,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __Pyx_GOTREF(__pyx_t_9);
   if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_id, __pyx_v_id) < (0)) __PYX_ERR(0, 168, __pyx_L1_error)
 
-  /* "app/features/physiotherapy.py":169
+  /* "physiotherapy.py":169
  *             {
  *                 "id": id,
  *                 "slug": payload.slug,             # <<<<<<<<<<<<<<
@@ -4175,7 +4575,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_slug, __pyx_t_10) < (0)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "app/features/physiotherapy.py":170
+  /* "physiotherapy.py":170
  *                 "id": id,
  *                 "slug": payload.slug,
  *                 "head_title": payload.head_title,             # <<<<<<<<<<<<<<
@@ -4187,7 +4587,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_head_title, __pyx_t_10) < (0)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "app/features/physiotherapy.py":171
+  /* "physiotherapy.py":171
  *                 "slug": payload.slug,
  *                 "head_title": payload.head_title,
  *                 "meta_description": payload.meta_description,             # <<<<<<<<<<<<<<
@@ -4232,7 +4632,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_v_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":178
+  /* "physiotherapy.py":178
  *     )
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -4242,7 +4642,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_t_8 = (__pyx_v_result == Py_None);
   if (unlikely(__pyx_t_8)) {
 
-    /* "app/features/physiotherapy.py":179
+    /* "physiotherapy.py":179
  * 
  *     if result is None:
  *         raise HTTPException(status_code=404, detail="physiotherapy info not found")             # <<<<<<<<<<<<<<
@@ -4281,7 +4681,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 179, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":178
+    /* "physiotherapy.py":178
  *     )
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -4290,7 +4690,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
 */
   }
 
-  /* "app/features/physiotherapy.py":181
+  /* "physiotherapy.py":181
  *         raise HTTPException(status_code=404, detail="physiotherapy info not found")
  * 
  *     db.commit()  # Commit the transaction             # <<<<<<<<<<<<<<
@@ -4309,7 +4709,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":182
+  /* "physiotherapy.py":182
  * 
  *     db.commit()  # Commit the transaction
  *     return dict(result)             # <<<<<<<<<<<<<<
@@ -4333,7 +4733,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "app/features/physiotherapy.py":132
+  /* "physiotherapy.py":132
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
@@ -4351,7 +4751,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("app.features.physiotherapy.update_physiotherapy_meta", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.update_physiotherapy_meta", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_check_stmt);
@@ -4363,7 +4763,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
   return __pyx_r;
 }
 
-/* "app/features/physiotherapy.py":185
+/* "physiotherapy.py":185
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")             # <<<<<<<<<<<<<<
@@ -4371,17 +4771,80 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_4update_physiotherapy_m
  *     id: UUID = Path(...),
 */
 
+static PyObject *__pyx_pf_13physiotherapy_14__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__defaults__", 0);
+  __Pyx_XDECREF(__pyx_r);
+
+  /* "physiotherapy.py":188
+ * def update_physiotherapy_slug(
+ *     id: UUID = Path(...),
+ *     payload: SlugUpdateRequest = ...,             # <<<<<<<<<<<<<<
+ *     current_user: dict = Depends(get_current_user),
+ *     db: Session = Depends(get_db),
+*/
+  __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg0) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+  __Pyx_INCREF(((PyObject *)Py_Ellipsis));
+  __Pyx_GIVEREF(((PyObject *)Py_Ellipsis));
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, ((PyObject *)Py_Ellipsis)) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg1) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self)->arg2) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+
+  /* "physiotherapy.py":185
+ * 
+ * 
+ * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")             # <<<<<<<<<<<<<<
+ * def update_physiotherapy_slug(
+ *     id: UUID = Path(...),
+*/
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+  __Pyx_INCREF(Py_None);
+  __Pyx_GIVEREF(Py_None);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
+  __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("physiotherapy.__defaults__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* Python wrapper */
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_7update_physiotherapy_slug(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_13physiotherapy_7update_physiotherapy_slug(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_3app_8features_13physiotherapy_6update_physiotherapy_slug, "update_physiotherapy_slug(id: UUID = Path(...), payload: SlugUpdateRequest = ..., dict current_user: dict = Depends(get_current_user), db: Session = Depends(get_db))");
-static PyMethodDef __pyx_mdef_3app_8features_13physiotherapy_7update_physiotherapy_slug = {"update_physiotherapy_slug", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3app_8features_13physiotherapy_7update_physiotherapy_slug, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_3app_8features_13physiotherapy_6update_physiotherapy_slug};
-static PyObject *__pyx_pw_3app_8features_13physiotherapy_7update_physiotherapy_slug(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_13physiotherapy_7update_physiotherapy_slug = {"update_physiotherapy_slug", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_13physiotherapy_7update_physiotherapy_slug, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_13physiotherapy_7update_physiotherapy_slug(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4413,6 +4876,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_id,&__pyx_mstate_global->__pyx_n_u_payload,&__pyx_mstate_global->__pyx_n_u_current_user,&__pyx_mstate_global->__pyx_n_u_db,0};
+    struct __pyx_defaults2 *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_self);
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
     if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 185, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
@@ -4438,18 +4902,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
       if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_physiotherapy_slug", 0) < (0)) __PYX_ERR(0, 185, __pyx_L3_error)
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__11);
-
-      /* "app/features/physiotherapy.py":188
- * def update_physiotherapy_slug(
- *     id: UUID = Path(...),
- *     payload: SlugUpdateRequest = ...,             # <<<<<<<<<<<<<<
- *     current_user: dict = Depends(get_current_user),
- *     db: Session = Depends(get_db),
-*/
-      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)Py_Ellipsis));
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__12);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__13);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject *)Py_Ellipsis)));
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
     } else {
       switch (__pyx_nargs) {
         case  4:
@@ -4471,10 +4927,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
-      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__11);
-      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)Py_Ellipsis));
-      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__12);
-      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_mstate_global->__pyx_k__13);
+      if (!values[0]) values[0] = __Pyx_NewRef(__pyx_dynamic_args->arg0);
+      if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject *)Py_Ellipsis)));
+      if (!values[2]) values[2] = __Pyx_NewRef(__pyx_dynamic_args->arg1);
+      if (!values[3]) values[3] = __Pyx_NewRef(__pyx_dynamic_args->arg2);
     }
     __pyx_v_id = values[0];
     __pyx_v_payload = values[1];
@@ -4490,20 +4946,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("app.features.physiotherapy.update_physiotherapy_slug", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.update_physiotherapy_slug", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_current_user), (&PyDict_Type), 0, "current_user", 2))) __PYX_ERR(0, 189, __pyx_L1_error)
-  __pyx_r = __pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_slug(__pyx_self, __pyx_v_id, __pyx_v_payload, __pyx_v_current_user, __pyx_v_db);
-
-  /* "app/features/physiotherapy.py":185
- * 
- * 
- * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")             # <<<<<<<<<<<<<<
- * def update_physiotherapy_slug(
- *     id: UUID = Path(...),
-*/
+  __pyx_r = __pyx_pf_13physiotherapy_6update_physiotherapy_slug(__pyx_self, __pyx_v_id, __pyx_v_payload, __pyx_v_current_user, __pyx_v_db);
 
   /* function exit code */
   goto __pyx_L0;
@@ -4522,7 +4970,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_slug(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db) {
+static PyObject *__pyx_pf_13physiotherapy_6update_physiotherapy_slug(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_id, PyObject *__pyx_v_payload, CYTHON_UNUSED PyObject *__pyx_v_current_user, PyObject *__pyx_v_db) {
   PyObject *__pyx_v_check_stmt = NULL;
   PyObject *__pyx_v_exists = NULL;
   PyObject *__pyx_v_update_stmt = NULL;
@@ -4544,7 +4992,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("update_physiotherapy_slug", 0);
 
-  /* "app/features/physiotherapy.py":193
+  /* "physiotherapy.py":193
  * ):
  *     # Check if slug already exists for another record
  *     check_stmt = text(             # <<<<<<<<<<<<<<
@@ -4577,7 +5025,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_v_check_stmt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":199
+  /* "physiotherapy.py":199
  *     """
  *     )
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()             # <<<<<<<<<<<<<<
@@ -4616,7 +5064,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_v_exists = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":201
+  /* "physiotherapy.py":201
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()
  * 
  *     if exists:             # <<<<<<<<<<<<<<
@@ -4626,7 +5074,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_exists); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 201, __pyx_L1_error)
   if (unlikely(__pyx_t_8)) {
 
-    /* "app/features/physiotherapy.py":202
+    /* "physiotherapy.py":202
  * 
  *     if exists:
  *         raise HTTPException(             # <<<<<<<<<<<<<<
@@ -4665,7 +5113,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 202, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":201
+    /* "physiotherapy.py":201
  *     exists = db.execute(check_stmt, {"slug": payload.slug, "id": id}).fetchone()
  * 
  *     if exists:             # <<<<<<<<<<<<<<
@@ -4674,7 +5122,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
 */
   }
 
-  /* "app/features/physiotherapy.py":207
+  /* "physiotherapy.py":207
  * 
  *     # Safe update with OUTPUT for SQL Server
  *     update_stmt = text(             # <<<<<<<<<<<<<<
@@ -4707,7 +5155,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_v_update_stmt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":216
+  /* "physiotherapy.py":216
  *     )
  *     result = (
  *         db.execute(update_stmt, {"id": id, "slug": payload.slug}).mappings().fetchone()             # <<<<<<<<<<<<<<
@@ -4757,7 +5205,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_v_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":219
+  /* "physiotherapy.py":219
  *     )
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -4767,7 +5215,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_t_8 = (__pyx_v_result == Py_None);
   if (unlikely(__pyx_t_8)) {
 
-    /* "app/features/physiotherapy.py":220
+    /* "physiotherapy.py":220
  * 
  *     if result is None:
  *         raise HTTPException(status_code=404, detail="physiotherapy info not found")             # <<<<<<<<<<<<<<
@@ -4806,7 +5254,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 220, __pyx_L1_error)
 
-    /* "app/features/physiotherapy.py":219
+    /* "physiotherapy.py":219
  *     )
  * 
  *     if result is None:             # <<<<<<<<<<<<<<
@@ -4815,7 +5263,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
 */
   }
 
-  /* "app/features/physiotherapy.py":222
+  /* "physiotherapy.py":222
  *         raise HTTPException(status_code=404, detail="physiotherapy info not found")
  * 
  *     db.commit()  # Commit the transaction             # <<<<<<<<<<<<<<
@@ -4834,7 +5282,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "app/features/physiotherapy.py":223
+  /* "physiotherapy.py":223
  * 
  *     db.commit()  # Commit the transaction
  *     return dict(result)             # <<<<<<<<<<<<<<
@@ -4858,7 +5306,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "app/features/physiotherapy.py":185
+  /* "physiotherapy.py":185
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")             # <<<<<<<<<<<<<<
@@ -4876,7 +5324,7 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("app.features.physiotherapy.update_physiotherapy_slug", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("physiotherapy.update_physiotherapy_slug", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_check_stmt);
@@ -4888,6 +5336,483 @@ static PyObject *__pyx_pf_3app_8features_13physiotherapy_6update_physiotherapy_s
   return __pyx_r;
 }
 /* #### Code section: module_exttypes ### */
+
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  o = (*t->tp_alloc)(t, 0);
+  if (unlikely(!o)) return 0;
+  #endif
+  return o;
+}
+
+static void __pyx_tp_dealloc_13physiotherapy___pyx_defaults(PyObject *o) {
+  struct __pyx_defaults *p = (struct __pyx_defaults *)o;
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_13physiotherapy___pyx_defaults) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  PyObject_GC_UnTrack(o);
+  Py_CLEAR(p->arg0);
+  Py_CLEAR(p->arg1);
+  Py_CLEAR(p->arg2);
+  Py_CLEAR(p->arg3);
+  Py_CLEAR(p->arg4);
+  #if CYTHON_USE_TYPE_SLOTS
+  (*Py_TYPE(o)->tp_free)(o);
+  #else
+  {
+    freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+    if (tp_free) tp_free(o);
+  }
+  #endif
+}
+
+static int __pyx_tp_traverse_13physiotherapy___pyx_defaults(PyObject *o, visitproc v, void *a) {
+  int e;
+  struct __pyx_defaults *p = (struct __pyx_defaults *)o;
+  {
+    e = __Pyx_call_type_traverse(o, 1, v, a);
+    if (e) return e;
+  }
+  if (p->arg1) {
+    e = (*v)(p->arg1, a); if (e) return e;
+  }
+  if (p->arg2) {
+    e = (*v)(p->arg2, a); if (e) return e;
+  }
+  if (p->arg4) {
+    e = (*v)(p->arg4, a); if (e) return e;
+  }
+  return 0;
+}
+
+static int __pyx_tp_clear_13physiotherapy___pyx_defaults(PyObject *o) {
+  PyObject* tmp;
+  struct __pyx_defaults *p = (struct __pyx_defaults *)o;
+  tmp = ((PyObject*)p->arg1);
+  p->arg1 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->arg2);
+  p->arg2 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->arg4);
+  p->arg4 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  return 0;
+}
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_13physiotherapy___pyx_defaults_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_13physiotherapy___pyx_defaults},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_13physiotherapy___pyx_defaults},
+  {Py_tp_clear, (void *)__pyx_tp_clear_13physiotherapy___pyx_defaults},
+  {Py_tp_new, (void *)__pyx_tp_new_13physiotherapy___pyx_defaults},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_13physiotherapy___pyx_defaults_spec = {
+  "physiotherapy.__pyx_defaults",
+  sizeof(struct __pyx_defaults),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE,
+  __pyx_type_13physiotherapy___pyx_defaults_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_13physiotherapy___pyx_defaults = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "physiotherapy.""__pyx_defaults", /*tp_name*/
+  sizeof(struct __pyx_defaults), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_13physiotherapy___pyx_defaults, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  0, /*tp_as_async*/
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_13physiotherapy___pyx_defaults, /*tp_traverse*/
+  __pyx_tp_clear_13physiotherapy___pyx_defaults, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_13physiotherapy___pyx_defaults, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
+
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults1(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  o = (*t->tp_alloc)(t, 0);
+  if (unlikely(!o)) return 0;
+  #endif
+  return o;
+}
+
+static void __pyx_tp_dealloc_13physiotherapy___pyx_defaults1(PyObject *o) {
+  struct __pyx_defaults1 *p = (struct __pyx_defaults1 *)o;
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_13physiotherapy___pyx_defaults1) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  PyObject_GC_UnTrack(o);
+  Py_CLEAR(p->arg0);
+  #if CYTHON_USE_TYPE_SLOTS
+  (*Py_TYPE(o)->tp_free)(o);
+  #else
+  {
+    freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+    if (tp_free) tp_free(o);
+  }
+  #endif
+}
+
+static int __pyx_tp_traverse_13physiotherapy___pyx_defaults1(PyObject *o, visitproc v, void *a) {
+  int e;
+  struct __pyx_defaults1 *p = (struct __pyx_defaults1 *)o;
+  {
+    e = __Pyx_call_type_traverse(o, 1, v, a);
+    if (e) return e;
+  }
+  if (p->arg0) {
+    e = (*v)(p->arg0, a); if (e) return e;
+  }
+  return 0;
+}
+
+static int __pyx_tp_clear_13physiotherapy___pyx_defaults1(PyObject *o) {
+  PyObject* tmp;
+  struct __pyx_defaults1 *p = (struct __pyx_defaults1 *)o;
+  tmp = ((PyObject*)p->arg0);
+  p->arg0 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  return 0;
+}
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_13physiotherapy___pyx_defaults1_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_13physiotherapy___pyx_defaults1},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_13physiotherapy___pyx_defaults1},
+  {Py_tp_clear, (void *)__pyx_tp_clear_13physiotherapy___pyx_defaults1},
+  {Py_tp_new, (void *)__pyx_tp_new_13physiotherapy___pyx_defaults1},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_13physiotherapy___pyx_defaults1_spec = {
+  "physiotherapy.__pyx_defaults1",
+  sizeof(struct __pyx_defaults1),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE,
+  __pyx_type_13physiotherapy___pyx_defaults1_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_13physiotherapy___pyx_defaults1 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "physiotherapy.""__pyx_defaults1", /*tp_name*/
+  sizeof(struct __pyx_defaults1), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_13physiotherapy___pyx_defaults1, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  0, /*tp_as_async*/
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_13physiotherapy___pyx_defaults1, /*tp_traverse*/
+  __pyx_tp_clear_13physiotherapy___pyx_defaults1, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_13physiotherapy___pyx_defaults1, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
+
+static PyObject *__pyx_tp_new_13physiotherapy___pyx_defaults2(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  o = (*t->tp_alloc)(t, 0);
+  if (unlikely(!o)) return 0;
+  #endif
+  return o;
+}
+
+static void __pyx_tp_dealloc_13physiotherapy___pyx_defaults2(PyObject *o) {
+  struct __pyx_defaults2 *p = (struct __pyx_defaults2 *)o;
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_13physiotherapy___pyx_defaults2) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  PyObject_GC_UnTrack(o);
+  Py_CLEAR(p->arg0);
+  Py_CLEAR(p->arg1);
+  Py_CLEAR(p->arg2);
+  #if CYTHON_USE_TYPE_SLOTS
+  (*Py_TYPE(o)->tp_free)(o);
+  #else
+  {
+    freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+    if (tp_free) tp_free(o);
+  }
+  #endif
+}
+
+static int __pyx_tp_traverse_13physiotherapy___pyx_defaults2(PyObject *o, visitproc v, void *a) {
+  int e;
+  struct __pyx_defaults2 *p = (struct __pyx_defaults2 *)o;
+  {
+    e = __Pyx_call_type_traverse(o, 1, v, a);
+    if (e) return e;
+  }
+  if (p->arg0) {
+    e = (*v)(p->arg0, a); if (e) return e;
+  }
+  if (p->arg1) {
+    e = (*v)(p->arg1, a); if (e) return e;
+  }
+  if (p->arg2) {
+    e = (*v)(p->arg2, a); if (e) return e;
+  }
+  return 0;
+}
+
+static int __pyx_tp_clear_13physiotherapy___pyx_defaults2(PyObject *o) {
+  PyObject* tmp;
+  struct __pyx_defaults2 *p = (struct __pyx_defaults2 *)o;
+  tmp = ((PyObject*)p->arg0);
+  p->arg0 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->arg1);
+  p->arg1 = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->arg2);
+  p->arg2 = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  return 0;
+}
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_13physiotherapy___pyx_defaults2_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_13physiotherapy___pyx_defaults2},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_13physiotherapy___pyx_defaults2},
+  {Py_tp_clear, (void *)__pyx_tp_clear_13physiotherapy___pyx_defaults2},
+  {Py_tp_new, (void *)__pyx_tp_new_13physiotherapy___pyx_defaults2},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_13physiotherapy___pyx_defaults2_spec = {
+  "physiotherapy.__pyx_defaults2",
+  sizeof(struct __pyx_defaults2),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE,
+  __pyx_type_13physiotherapy___pyx_defaults2_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_13physiotherapy___pyx_defaults2 = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "physiotherapy.""__pyx_defaults2", /*tp_name*/
+  sizeof(struct __pyx_defaults2), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_13physiotherapy___pyx_defaults2, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  0, /*tp_as_async*/
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_13physiotherapy___pyx_defaults2, /*tp_traverse*/
+  __pyx_tp_clear_13physiotherapy___pyx_defaults2, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_13physiotherapy___pyx_defaults2, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
 
 static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
@@ -4937,10 +5862,64 @@ static int __Pyx_modinit_function_export_code(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannyDeclarations
   CYTHON_UNUSED_VAR(__pyx_mstate);
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_13physiotherapy___pyx_defaults_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_13physiotherapy___pyx_defaults_spec, __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  #else
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults = &__pyx_type_13physiotherapy___pyx_defaults;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults->tp_dictoffset && __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults->tp_getattro = PyObject_GenericGetAttr;
+  }
+  #endif
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1 = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_13physiotherapy___pyx_defaults1_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_13physiotherapy___pyx_defaults1_spec, __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
+  #else
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1 = &__pyx_type_13physiotherapy___pyx_defaults1;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1->tp_dictoffset && __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults1->tp_getattro = PyObject_GenericGetAttr;
+  }
+  #endif
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2 = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_13physiotherapy___pyx_defaults2_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2)) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_13physiotherapy___pyx_defaults2_spec, __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  #else
+  __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2 = &__pyx_type_13physiotherapy___pyx_defaults2;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2->tp_dictoffset && __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_mstate->__pyx_ptype_13physiotherapy___pyx_defaults2->tp_getattro = PyObject_GenericGetAttr;
+  }
+  #endif
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_modinit_type_import_code(__pyx_mstatetype *__pyx_mstate) {
@@ -5152,6 +6131,9 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_physiotherapy(PyObject *__pyx_pyin
   size_t __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5234,13 +6216,13 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   if (__pyx_AsyncGen_init(__pyx_m) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   /*--- Library function declarations ---*/
-  if (__pyx_module_is_main_app__features__physiotherapy) {
+  if (__pyx_module_is_main_physiotherapy) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "app.features.physiotherapy")) {
-      if (unlikely((PyDict_SetItemString(modules, "app.features.physiotherapy", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "physiotherapy")) {
+      if (unlikely((PyDict_SetItemString(modules, "physiotherapy", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -5252,13 +6234,13 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   (void)__Pyx_modinit_global_init_code(__pyx_mstate);
   (void)__Pyx_modinit_variable_export_code(__pyx_mstate);
   (void)__Pyx_modinit_function_export_code(__pyx_mstate);
-  (void)__Pyx_modinit_type_init_code(__pyx_mstate);
+  if (unlikely((__Pyx_modinit_type_init_code(__pyx_mstate) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
   (void)__Pyx_modinit_type_import_code(__pyx_mstate);
   (void)__Pyx_modinit_variable_import_code(__pyx_mstate);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "app/features/physiotherapy.py":1
+  /* "physiotherapy.py":1
  * from fastapi import APIRouter, Depends, HTTPException             # <<<<<<<<<<<<<<
  * from sqlalchemy.orm import Session
  * from db import get_db
@@ -5282,7 +6264,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":2
+  /* "physiotherapy.py":2
  * from fastapi import APIRouter, Depends, HTTPException
  * from sqlalchemy.orm import Session             # <<<<<<<<<<<<<<
  * from db import get_db
@@ -5299,7 +6281,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":3
+  /* "physiotherapy.py":3
  * from fastapi import APIRouter, Depends, HTTPException
  * from sqlalchemy.orm import Session
  * from db import get_db             # <<<<<<<<<<<<<<
@@ -5317,7 +6299,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":4
+  /* "physiotherapy.py":4
  * from sqlalchemy.orm import Session
  * from db import get_db
  * from uuid import UUID             # <<<<<<<<<<<<<<
@@ -5335,7 +6317,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":5
+  /* "physiotherapy.py":5
  * from db import get_db
  * from uuid import UUID
  * from schemas import SlugUpdateRequest, MetaUpdateRequest             # <<<<<<<<<<<<<<
@@ -5357,7 +6339,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":6
+  /* "physiotherapy.py":6
  * from uuid import UUID
  * from schemas import SlugUpdateRequest, MetaUpdateRequest
  * from fastapi import Depends, HTTPException, Query, Path             # <<<<<<<<<<<<<<
@@ -5387,7 +6369,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":7
+  /* "physiotherapy.py":7
  * from schemas import SlugUpdateRequest, MetaUpdateRequest
  * from fastapi import Depends, HTTPException, Query, Path
  * from sqlalchemy.orm import Session             # <<<<<<<<<<<<<<
@@ -5405,7 +6387,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":8
+  /* "physiotherapy.py":8
  * from fastapi import Depends, HTTPException, Query, Path
  * from sqlalchemy.orm import Session
  * from sqlalchemy import text             # <<<<<<<<<<<<<<
@@ -5423,7 +6405,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":9
+  /* "physiotherapy.py":9
  * from sqlalchemy.orm import Session
  * from sqlalchemy import text
  * from schemas import DescriptionUpdateRequest             # <<<<<<<<<<<<<<
@@ -5441,7 +6423,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":10
+  /* "physiotherapy.py":10
  * from sqlalchemy import text
  * from schemas import DescriptionUpdateRequest
  * from utils.middleware import get_current_user             # <<<<<<<<<<<<<<
@@ -5459,7 +6441,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":11
+  /* "physiotherapy.py":11
  * from schemas import DescriptionUpdateRequest
  * from utils.middleware import get_current_user
  * import requests             # <<<<<<<<<<<<<<
@@ -5471,7 +6453,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_requests, __pyx_t_2) < (0)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "app/features/physiotherapy.py":12
+  /* "physiotherapy.py":12
  * from utils.middleware import get_current_user
  * import requests
  * from typing import Optional             # <<<<<<<<<<<<<<
@@ -5489,7 +6471,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":15
+  /* "physiotherapy.py":15
  * 
  * 
  * physiotherapy_router = APIRouter(tags=["Physiotherapy"])             # <<<<<<<<<<<<<<
@@ -5518,138 +6500,14 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_physiotherapy_router, __pyx_t_3) < (0)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":20
- * @physiotherapy_router.get("/physiotherapy/")
- * def get_physiotherapys(
- *     page: int = Query(1, gt=0),             # <<<<<<<<<<<<<<
- *     slug: Optional[bool] = Query(None),
- *     title: Optional[bool] = Query(None),
-*/
-  __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_4, __pyx_mstate_global->__pyx_int_1};
-    __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 20, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_gt, __pyx_mstate_global->__pyx_int_0, __pyx_t_5, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 20, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  if (!(likely(PyLong_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_3))) __PYX_ERR(0, 20, __pyx_L1_error)
-  __pyx_mstate_global->__pyx_k_ = ((PyObject*)__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":21
- * def get_physiotherapys(
- *     page: int = Query(1, gt=0),
- *     slug: Optional[bool] = Query(None),             # <<<<<<<<<<<<<<
- *     title: Optional[bool] = Query(None),
- *     search_query: str = Query(""),
-*/
-  __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 21, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, Py_None};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__2 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":22
- *     page: int = Query(1, gt=0),
- *     slug: Optional[bool] = Query(None),
- *     title: Optional[bool] = Query(None),             # <<<<<<<<<<<<<<
- *     search_query: str = Query(""),
- *     db: Session = Depends(get_db),
-*/
-  __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, Py_None};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__3 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":23
- *     slug: Optional[bool] = Query(None),
- *     title: Optional[bool] = Query(None),
- *     search_query: str = Query(""),             # <<<<<<<<<<<<<<
- *     db: Session = Depends(get_db),
- * ):
-*/
-  __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_mstate_global->__pyx_kp_u__15};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_3))) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_mstate_global->__pyx_k__4 = ((PyObject*)__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":24
- *     title: Optional[bool] = Query(None),
- *     search_query: str = Query(""),
- *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
- * ):
- *     limit = 15
-*/
-  __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 24, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 24, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_4};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__5 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":18
+  /* "physiotherapy.py":18
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/")             # <<<<<<<<<<<<<<
  * def get_physiotherapys(
  *     page: int = Query(1, gt=0),
 */
-  __pyx_t_7 = NULL;
+  __pyx_t_4 = NULL;
   __pyx_t_5 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5659,320 +6517,483 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __pyx_t_6 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_physiotherapy};
-    __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 18, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
   }
-  __pyx_t_8 = PyCFunction_NewEx(&__pyx_mdef_3app_8features_13physiotherapy_1get_physiotherapys, NULL, __pyx_mstate_global->__pyx_n_u_app_features_physiotherapy); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_page, __pyx_mstate_global->__pyx_n_u_int) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_slug, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_title, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_search_query, __pyx_mstate_global->__pyx_n_u_str) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_db, __pyx_mstate_global->__pyx_n_u_Session) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_13physiotherapy_1get_physiotherapys, 0, __pyx_mstate_global->__pyx_n_u_get_physiotherapys, NULL, __pyx_mstate_global->__pyx_n_u_physiotherapy_2, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, __pyx_mstate_global->__pyx_ptype_13physiotherapy___pyx_defaults)) __PYX_ERR(0, 18, __pyx_L1_error)
+
+  /* "physiotherapy.py":20
+ * @physiotherapy_router.get("/physiotherapy/")
+ * def get_physiotherapys(
+ *     page: int = Query(1, gt=0),             # <<<<<<<<<<<<<<
+ *     slug: Optional[bool] = Query(None),
+ *     title: Optional[bool] = Query(None),
+*/
+  __pyx_t_9 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
   __pyx_t_6 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_8};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_9, __pyx_mstate_global->__pyx_int_1};
+    __pyx_t_11 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 20, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_11);
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_gt, __pyx_mstate_global->__pyx_int_0, __pyx_t_11, __pyx_callargs+2, 0) < (0)) __PYX_ERR(0, 20, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_10, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_11);
+    __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  if (!(likely(PyLong_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("int", __pyx_t_2))) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_t_5)->arg0 = ((PyObject*)__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":21
+ * def get_physiotherapys(
+ *     page: int = Query(1, gt=0),
+ *     slug: Optional[bool] = Query(None),             # <<<<<<<<<<<<<<
+ *     title: Optional[bool] = Query(None),
+ *     search_query: str = Query(""),
+*/
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_10, Py_None};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_t_5)->arg1 = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":22
+ *     page: int = Query(1, gt=0),
+ *     slug: Optional[bool] = Query(None),
+ *     title: Optional[bool] = Query(None),             # <<<<<<<<<<<<<<
+ *     search_query: str = Query(""),
+ *     db: Session = Depends(get_db),
+*/
+  __pyx_t_11 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_11, Py_None};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_t_5)->arg2 = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":23
+ *     slug: Optional[bool] = Query(None),
+ *     title: Optional[bool] = Query(None),
+ *     search_query: str = Query(""),             # <<<<<<<<<<<<<<
+ *     db: Session = Depends(get_db),
+ * ):
+*/
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_Query); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_mstate_global->__pyx_kp_u__3};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_t_5)->arg3 = ((PyObject*)__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":24
+ *     title: Optional[bool] = Query(None),
+ *     search_query: str = Query(""),
+ *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
+ * ):
+ *     limit = 15
+*/
+  __pyx_t_11 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_t_9};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults, __pyx_t_5)->arg4 = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_5, __pyx_pf_13physiotherapy_8__defaults__);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_8);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_5};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_get_physiotherapys, __pyx_t_3) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":106
- * 
- * @physiotherapy_router.get("/physiotherapy/{slug}")
- * def get_physiotherapy_details(slug: str, db: Session = Depends(get_db)):             # <<<<<<<<<<<<<<
- *     # Safe raw SQL query using bind parameter
- *     stmt = text(
-*/
-  __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_7};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__7 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":105
+  /* "physiotherapy.py":105
  * 
  * 
  * @physiotherapy_router.get("/physiotherapy/{slug}")             # <<<<<<<<<<<<<<
  * def get_physiotherapy_details(slug: str, db: Session = Depends(get_db)):
  *     # Safe raw SQL query using bind parameter
 */
-  __pyx_t_8 = NULL;
+  __pyx_t_7 = NULL;
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_6 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_physiotherapy_slug};
-    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 105, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
   }
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_3app_8features_13physiotherapy_3get_physiotherapy_details, NULL, __pyx_mstate_global->__pyx_n_u_app_features_physiotherapy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_slug, __pyx_mstate_global->__pyx_n_u_str) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_db, __pyx_mstate_global->__pyx_n_u_Session) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_13physiotherapy_3get_physiotherapy_details, 0, __pyx_mstate_global->__pyx_n_u_get_physiotherapy_details, NULL, __pyx_mstate_global->__pyx_n_u_physiotherapy_2, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_4, __pyx_mstate_global->__pyx_ptype_13physiotherapy___pyx_defaults1)) __PYX_ERR(0, 105, __pyx_L1_error)
+
+  /* "physiotherapy.py":106
+ * 
+ * @physiotherapy_router.get("/physiotherapy/{slug}")
+ * def get_physiotherapy_details(slug: str, db: Session = Depends(get_db)):             # <<<<<<<<<<<<<<
+ *     # Safe raw SQL query using bind parameter
+ *     stmt = text(
+*/
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
   __pyx_t_6 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_t_2};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_11};
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 106, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults1, __pyx_t_4)->arg0 = __pyx_t_8;
+  __Pyx_GIVEREF(__pyx_t_8);
+  __pyx_t_8 = 0;
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_4, __pyx_pf_13physiotherapy_10__defaults__);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_2);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_4};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_get_physiotherapy_details, __pyx_t_3) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":134
- * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")
- * def update_physiotherapy_meta(
- *     id: UUID = Path(...),             # <<<<<<<<<<<<<<
- *     payload: MetaUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),
-*/
-  __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, Py_Ellipsis};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__8 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":136
- *     id: UUID = Path(...),
- *     payload: MetaUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),             # <<<<<<<<<<<<<<
- *     db: Session = Depends(get_db),
- * ):
-*/
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_get_current_user); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_8};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  if (!(likely(PyDict_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_3))) __PYX_ERR(0, 136, __pyx_L1_error)
-  __pyx_mstate_global->__pyx_k__9 = ((PyObject*)__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":137
- *     payload: MetaUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),
- *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
- * ):
- *     # Check if slug already exists for another record
-*/
-  __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 137, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_2};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__10 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":132
+  /* "physiotherapy.py":132
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")             # <<<<<<<<<<<<<<
  * def update_physiotherapy_meta(
  *     id: UUID = Path(...),
 */
-  __pyx_t_8 = NULL;
+  __pyx_t_5 = NULL;
   __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_put); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_put); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_mstate_global->__pyx_kp_u_physiotherapy_id_meta_update};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
   }
-  __pyx_t_5 = PyCFunction_NewEx(&__pyx_mdef_3app_8features_13physiotherapy_5update_physiotherapy_meta, NULL, __pyx_mstate_global->__pyx_n_u_app_features_physiotherapy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 132, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_n_u_UUID) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_payload, __pyx_mstate_global->__pyx_n_u_MetaUpdateRequest) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_current_user, __pyx_mstate_global->__pyx_n_u_dict) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_db, __pyx_mstate_global->__pyx_n_u_Session) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_13physiotherapy_5update_physiotherapy_meta, 0, __pyx_mstate_global->__pyx_n_u_update_physiotherapy_meta, NULL, __pyx_mstate_global->__pyx_n_u_physiotherapy_2, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_7, __pyx_mstate_global->__pyx_ptype_13physiotherapy___pyx_defaults2)) __PYX_ERR(0, 132, __pyx_L1_error)
+
+  /* "physiotherapy.py":134
+ * @physiotherapy_router.put("/physiotherapy/{id}/meta-update")
+ * def update_physiotherapy_meta(
+ *     id: UUID = Path(...),             # <<<<<<<<<<<<<<
+ *     payload: MetaUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),
+*/
+  __pyx_t_9 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
   __pyx_t_6 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_t_5};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    PyObject *__pyx_callargs[2] = {__pyx_t_9, Py_Ellipsis};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_7)->arg0 = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":136
+ *     id: UUID = Path(...),
+ *     payload: MetaUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),             # <<<<<<<<<<<<<<
+ *     db: Session = Depends(get_db),
+ * ):
+*/
+  __pyx_t_11 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_get_current_user); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_t_10};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 136, __pyx_L1_error)
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_7)->arg1 = ((PyObject*)__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "physiotherapy.py":137
+ *     payload: MetaUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),
+ *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
+ * ):
+ *     # Check if slug already exists for another record
+*/
+  __pyx_t_9 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_t_11};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_7)->arg2 = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_7, __pyx_pf_13physiotherapy_12__defaults__);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_7, __pyx_t_8);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_7};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_update_physiotherapy_meta, __pyx_t_3) < (0)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":187
- * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")
- * def update_physiotherapy_slug(
- *     id: UUID = Path(...),             # <<<<<<<<<<<<<<
- *     payload: SlugUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),
-*/
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 187, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, Py_Ellipsis};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__11 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":189
- *     id: UUID = Path(...),
- *     payload: SlugUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),             # <<<<<<<<<<<<<<
- *     db: Session = Depends(get_db),
- * ):
-*/
-  __pyx_t_5 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 189, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_get_current_user); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 189, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_8};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  if (!(likely(PyDict_CheckExact(__pyx_t_3))||((__pyx_t_3) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_3))) __PYX_ERR(0, 189, __pyx_L1_error)
-  __pyx_mstate_global->__pyx_k__12 = ((PyObject*)__pyx_t_3);
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":190
- *     payload: SlugUpdateRequest = ...,
- *     current_user: dict = Depends(get_current_user),
- *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
- * ):
- *     # Check if slug already exists for another record
-*/
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 190, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 190, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_5};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 190, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __pyx_mstate_global->__pyx_k__13 = __pyx_t_3;
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "app/features/physiotherapy.py":185
+  /* "physiotherapy.py":185
  * 
  * 
  * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")             # <<<<<<<<<<<<<<
  * def update_physiotherapy_slug(
  *     id: UUID = Path(...),
 */
-  __pyx_t_8 = NULL;
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 185, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_put); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_physiotherapy_router); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_put); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_6 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_physiotherapy_id_slug_update};
-    __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_physiotherapy_id_slug_update};
+    __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
   }
-  __pyx_t_4 = PyCFunction_NewEx(&__pyx_mdef_3app_8features_13physiotherapy_7update_physiotherapy_slug, NULL, __pyx_mstate_global->__pyx_n_u_app_features_physiotherapy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 185, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_n_u_UUID) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_payload, __pyx_mstate_global->__pyx_n_u_SlugUpdateRequest) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_current_user, __pyx_mstate_global->__pyx_n_u_dict) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_db, __pyx_mstate_global->__pyx_n_u_Session) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_13physiotherapy_7update_physiotherapy_slug, 0, __pyx_mstate_global->__pyx_n_u_update_physiotherapy_slug, NULL, __pyx_mstate_global->__pyx_n_u_physiotherapy_2, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, __pyx_mstate_global->__pyx_ptype_13physiotherapy___pyx_defaults2)) __PYX_ERR(0, 185, __pyx_L1_error)
+
+  /* "physiotherapy.py":187
+ * @physiotherapy_router.put("/physiotherapy/{id}/slug-update")
+ * def update_physiotherapy_slug(
+ *     id: UUID = Path(...),             # <<<<<<<<<<<<<<
+ *     payload: SlugUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),
+*/
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
   __pyx_t_6 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_t_4};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    PyObject *__pyx_callargs[2] = {__pyx_t_10, Py_Ellipsis};
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_5)->arg0 = __pyx_t_8;
+  __Pyx_GIVEREF(__pyx_t_8);
+  __pyx_t_8 = 0;
+
+  /* "physiotherapy.py":189
+ *     id: UUID = Path(...),
+ *     payload: SlugUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),             # <<<<<<<<<<<<<<
+ *     db: Session = Depends(get_db),
+ * ):
+*/
+  __pyx_t_11 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_get_current_user); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_t_9};
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 189, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+  }
+  if (!(likely(PyDict_CheckExact(__pyx_t_8))||((__pyx_t_8) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_8))) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_5)->arg1 = ((PyObject*)__pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_8);
+  __pyx_t_8 = 0;
+
+  /* "physiotherapy.py":190
+ *     payload: SlugUpdateRequest = ...,
+ *     current_user: dict = Depends(get_current_user),
+ *     db: Session = Depends(get_db),             # <<<<<<<<<<<<<<
+ * ):
+ *     # Check if slug already exists for another record
+*/
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_Depends); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_get_db); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_11};
+    __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+  }
+  __Pyx_CyFunction_Defaults(struct __pyx_defaults2, __pyx_t_5)->arg2 = __pyx_t_8;
+  __Pyx_GIVEREF(__pyx_t_8);
+  __pyx_t_8 = 0;
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_5, __pyx_pf_13physiotherapy_14__defaults__);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_5, __pyx_t_2);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_5};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_update_physiotherapy_slug, __pyx_t_3) < (0)) __PYX_ERR(0, 185, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "app/features/physiotherapy.py":1
+  /* "physiotherapy.py":1
  * from fastapi import APIRouter, Depends, HTTPException             # <<<<<<<<<<<<<<
  * from sqlalchemy.orm import Session
  * from db import get_db
@@ -5992,9 +7013,12 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init app.features.physiotherapy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init physiotherapy", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -6008,7 +7032,7 @@ __Pyx_RefNannySetupContext("PyInit_physiotherapy", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init app.features.physiotherapy");
+    PyErr_SetString(PyExc_ImportError, "init physiotherapy");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -6045,6 +7069,7 @@ typedef struct {
 } __Pyx_StringTabEntry;
 static const char * const __pyx_string_tab_encodings[] = { 0 };
 static const __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {__pyx_k_, sizeof(__pyx_k_), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_ */
   {__pyx_k_1_1, sizeof(__pyx_k_1_1), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_1_1 */
   {__pyx_k_AND, sizeof(__pyx_k_AND), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_AND */
   {__pyx_k_APIRouter, sizeof(__pyx_k_APIRouter), 0, 1, 1}, /* PyObject cname: __pyx_n_u_APIRouter */
@@ -6056,6 +7081,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_MetaUpdateRequest, sizeof(__pyx_k_MetaUpdateRequest), 0, 1, 1}, /* PyObject cname: __pyx_n_u_MetaUpdateRequest */
   {__pyx_k_Note_that_Cython_is_deliberately, sizeof(__pyx_k_Note_that_Cython_is_deliberately), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Note_that_Cython_is_deliberately */
   {__pyx_k_Optional, sizeof(__pyx_k_Optional), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Optional */
+  {__pyx_k_Optional_bool, sizeof(__pyx_k_Optional_bool), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Optional_bool */
   {__pyx_k_Path, sizeof(__pyx_k_Path), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Path */
   {__pyx_k_Physiotherapy, sizeof(__pyx_k_Physiotherapy), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Physiotherapy */
   {__pyx_k_Query, sizeof(__pyx_k_Query), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Query */
@@ -6072,14 +7098,17 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_UPDATE_GenericService_SET_slug_2, sizeof(__pyx_k_UPDATE_GenericService_SET_slug_2), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_UPDATE_GenericService_SET_slug_2 */
   {__pyx_k_UUID, sizeof(__pyx_k_UUID), 0, 1, 1}, /* PyObject cname: __pyx_n_u_UUID */
   {__pyx_k_WHERE, sizeof(__pyx_k_WHERE), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_WHERE */
-  {__pyx_k__14, sizeof(__pyx_k__14), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__14 */
-  {__pyx_k__15, sizeof(__pyx_k__15), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__15 */
-  {__pyx_k__16, sizeof(__pyx_k__16), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__16 */
-  {__pyx_k__6, sizeof(__pyx_k__6), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__6 */
+  {__pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__2 */
+  {__pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__3 */
+  {__pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__4 */
   {__pyx_k_add_note, sizeof(__pyx_k_add_note), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_add_note */
-  {__pyx_k_app_features_physiotherapy, sizeof(__pyx_k_app_features_physiotherapy), 0, 1, 1}, /* PyObject cname: __pyx_n_u_app_features_physiotherapy */
+  {__pyx_k_app_features_physiotherapy_py, sizeof(__pyx_k_app_features_physiotherapy_py), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_app_features_physiotherapy_py */
+  {__pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 1, 1}, /* PyObject cname: __pyx_n_u_asyncio_coroutines */
+  {__pyx_k_base_query, sizeof(__pyx_k_base_query), 0, 1, 1}, /* PyObject cname: __pyx_n_u_base_query */
+  {__pyx_k_check_stmt, sizeof(__pyx_k_check_stmt), 0, 1, 1}, /* PyObject cname: __pyx_n_u_check_stmt */
   {__pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 1, 1}, /* PyObject cname: __pyx_n_u_cline_in_traceback */
   {__pyx_k_commit, sizeof(__pyx_k_commit), 0, 1, 1}, /* PyObject cname: __pyx_n_u_commit */
+  {__pyx_k_count_query, sizeof(__pyx_k_count_query), 0, 1, 1}, /* PyObject cname: __pyx_n_u_count_query */
   {__pyx_k_current_user, sizeof(__pyx_k_current_user), 0, 1, 1}, /* PyObject cname: __pyx_n_u_current_user */
   {__pyx_k_d_Name_LIKE_search_query, sizeof(__pyx_k_d_Name_LIKE_search_query), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_d_Name_LIKE_search_query */
   {__pyx_k_d_head_title_IS_NOT_NULL, sizeof(__pyx_k_d_head_title_IS_NOT_NULL), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_d_head_title_IS_NOT_NULL */
@@ -6090,10 +7119,16 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_data, sizeof(__pyx_k_data), 0, 1, 1}, /* PyObject cname: __pyx_n_u_data */
   {__pyx_k_db, sizeof(__pyx_k_db), 0, 1, 1}, /* PyObject cname: __pyx_n_u_db */
   {__pyx_k_detail, sizeof(__pyx_k_detail), 0, 1, 1}, /* PyObject cname: __pyx_n_u_detail */
+  {__pyx_k_dict, sizeof(__pyx_k_dict), 0, 1, 1}, /* PyObject cname: __pyx_n_u_dict */
+  {__pyx_k_disable, sizeof(__pyx_k_disable), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_disable */
+  {__pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_enable */
   {__pyx_k_execute, sizeof(__pyx_k_execute), 0, 1, 1}, /* PyObject cname: __pyx_n_u_execute */
+  {__pyx_k_exists, sizeof(__pyx_k_exists), 0, 1, 1}, /* PyObject cname: __pyx_n_u_exists */
   {__pyx_k_fastapi, sizeof(__pyx_k_fastapi), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fastapi */
   {__pyx_k_fetchall, sizeof(__pyx_k_fetchall), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fetchall */
   {__pyx_k_fetchone, sizeof(__pyx_k_fetchone), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fetchone */
+  {__pyx_k_func, sizeof(__pyx_k_func), 0, 1, 1}, /* PyObject cname: __pyx_n_u_func */
+  {__pyx_k_gc, sizeof(__pyx_k_gc), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_gc */
   {__pyx_k_get, sizeof(__pyx_k_get), 0, 1, 1}, /* PyObject cname: __pyx_n_u_get */
   {__pyx_k_get_current_user, sizeof(__pyx_k_get_current_user), 0, 1, 1}, /* PyObject cname: __pyx_n_u_get_current_user */
   {__pyx_k_get_db, sizeof(__pyx_k_get_db), 0, 1, 1}, /* PyObject cname: __pyx_n_u_get_db */
@@ -6104,6 +7139,9 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_https_api_aidfastbd_com_api_Gene, sizeof(__pyx_k_https_api_aidfastbd_com_api_Gene), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_https_api_aidfastbd_com_api_Gene */
   {__pyx_k_id, sizeof(__pyx_k_id), 0, 1, 1}, /* PyObject cname: __pyx_n_u_id */
   {__pyx_k_initializing, sizeof(__pyx_k_initializing), 0, 1, 1}, /* PyObject cname: __pyx_n_u_initializing */
+  {__pyx_k_int, sizeof(__pyx_k_int), 0, 1, 1}, /* PyObject cname: __pyx_n_u_int */
+  {__pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 1, 1}, /* PyObject cname: __pyx_n_u_is_coroutine */
+  {__pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_isenabled */
   {__pyx_k_json, sizeof(__pyx_k_json), 0, 1, 1}, /* PyObject cname: __pyx_n_u_json */
   {__pyx_k_limit, sizeof(__pyx_k_limit), 0, 1, 1}, /* PyObject cname: __pyx_n_u_limit */
   {__pyx_k_main, sizeof(__pyx_k_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main */
@@ -6113,8 +7151,10 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_name, sizeof(__pyx_k_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_name */
   {__pyx_k_offset, sizeof(__pyx_k_offset), 0, 1, 1}, /* PyObject cname: __pyx_n_u_offset */
   {__pyx_k_page, sizeof(__pyx_k_page), 0, 1, 1}, /* PyObject cname: __pyx_n_u_page */
+  {__pyx_k_params, sizeof(__pyx_k_params), 0, 1, 1}, /* PyObject cname: __pyx_n_u_params */
   {__pyx_k_payload, sizeof(__pyx_k_payload), 0, 1, 1}, /* PyObject cname: __pyx_n_u_payload */
   {__pyx_k_physiotherapy, sizeof(__pyx_k_physiotherapy), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_physiotherapy */
+  {__pyx_k_physiotherapy_2, sizeof(__pyx_k_physiotherapy_2), 0, 1, 1}, /* PyObject cname: __pyx_n_u_physiotherapy_2 */
   {__pyx_k_physiotherapy_id_meta_update, sizeof(__pyx_k_physiotherapy_id_meta_update), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_physiotherapy_id_meta_update */
   {__pyx_k_physiotherapy_id_slug_update, sizeof(__pyx_k_physiotherapy_id_slug_update), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_physiotherapy_id_slug_update */
   {__pyx_k_physiotherapy_info_not_found, sizeof(__pyx_k_physiotherapy_info_not_found), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_physiotherapy_info_not_found */
@@ -6125,27 +7165,38 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_put, sizeof(__pyx_k_put), 0, 1, 1}, /* PyObject cname: __pyx_n_u_put */
   {__pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 1, 1}, /* PyObject cname: __pyx_n_u_qualname */
   {__pyx_k_requests, sizeof(__pyx_k_requests), 0, 1, 1}, /* PyObject cname: __pyx_n_u_requests */
+  {__pyx_k_res, sizeof(__pyx_k_res), 0, 1, 1}, /* PyObject cname: __pyx_n_u_res */
+  {__pyx_k_result, sizeof(__pyx_k_result), 0, 1, 1}, /* PyObject cname: __pyx_n_u_result */
+  {__pyx_k_result_dict, sizeof(__pyx_k_result_dict), 0, 1, 1}, /* PyObject cname: __pyx_n_u_result_dict */
+  {__pyx_k_results, sizeof(__pyx_k_results), 0, 1, 1}, /* PyObject cname: __pyx_n_u_results */
   {__pyx_k_scalar, sizeof(__pyx_k_scalar), 0, 1, 1}, /* PyObject cname: __pyx_n_u_scalar */
   {__pyx_k_schemas, sizeof(__pyx_k_schemas), 0, 1, 1}, /* PyObject cname: __pyx_n_u_schemas */
   {__pyx_k_search_query, sizeof(__pyx_k_search_query), 0, 1, 1}, /* PyObject cname: __pyx_n_u_search_query */
+  {__pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_set_name */
   {__pyx_k_slug, sizeof(__pyx_k_slug), 0, 1, 1}, /* PyObject cname: __pyx_n_u_slug */
   {__pyx_k_spec, sizeof(__pyx_k_spec), 0, 1, 1}, /* PyObject cname: __pyx_n_u_spec */
   {__pyx_k_sqlalchemy, sizeof(__pyx_k_sqlalchemy), 0, 1, 1}, /* PyObject cname: __pyx_n_u_sqlalchemy */
   {__pyx_k_sqlalchemy_orm, sizeof(__pyx_k_sqlalchemy_orm), 0, 1, 1}, /* PyObject cname: __pyx_n_u_sqlalchemy_orm */
   {__pyx_k_status_code, sizeof(__pyx_k_status_code), 0, 1, 1}, /* PyObject cname: __pyx_n_u_status_code */
+  {__pyx_k_stmt, sizeof(__pyx_k_stmt), 0, 1, 1}, /* PyObject cname: __pyx_n_u_stmt */
+  {__pyx_k_str, sizeof(__pyx_k_str), 0, 1, 1}, /* PyObject cname: __pyx_n_u_str */
   {__pyx_k_strip, sizeof(__pyx_k_strip), 0, 1, 1}, /* PyObject cname: __pyx_n_u_strip */
   {__pyx_k_tags, sizeof(__pyx_k_tags), 0, 1, 1}, /* PyObject cname: __pyx_n_u_tags */
   {__pyx_k_test, sizeof(__pyx_k_test), 0, 1, 1}, /* PyObject cname: __pyx_n_u_test */
   {__pyx_k_text, sizeof(__pyx_k_text), 0, 1, 1}, /* PyObject cname: __pyx_n_u_text */
   {__pyx_k_title, sizeof(__pyx_k_title), 0, 1, 1}, /* PyObject cname: __pyx_n_u_title */
+  {__pyx_k_total, sizeof(__pyx_k_total), 0, 1, 1}, /* PyObject cname: __pyx_n_u_total */
   {__pyx_k_total_items, sizeof(__pyx_k_total_items), 0, 1, 1}, /* PyObject cname: __pyx_n_u_total_items */
   {__pyx_k_total_pages, sizeof(__pyx_k_total_pages), 0, 1, 1}, /* PyObject cname: __pyx_n_u_total_pages */
   {__pyx_k_typing, sizeof(__pyx_k_typing), 0, 1, 1}, /* PyObject cname: __pyx_n_u_typing */
   {__pyx_k_update_physiotherapy_meta, sizeof(__pyx_k_update_physiotherapy_meta), 0, 1, 1}, /* PyObject cname: __pyx_n_u_update_physiotherapy_meta */
   {__pyx_k_update_physiotherapy_slug, sizeof(__pyx_k_update_physiotherapy_slug), 0, 1, 1}, /* PyObject cname: __pyx_n_u_update_physiotherapy_slug */
+  {__pyx_k_update_stmt, sizeof(__pyx_k_update_stmt), 0, 1, 1}, /* PyObject cname: __pyx_n_u_update_stmt */
   {__pyx_k_userId, sizeof(__pyx_k_userId), 0, 1, 1}, /* PyObject cname: __pyx_n_u_userId */
   {__pyx_k_utils_middleware, sizeof(__pyx_k_utils_middleware), 0, 1, 1}, /* PyObject cname: __pyx_n_u_utils_middleware */
   {__pyx_k_uuid, sizeof(__pyx_k_uuid), 0, 1, 1}, /* PyObject cname: __pyx_n_u_uuid */
+  {__pyx_k_where_clause, sizeof(__pyx_k_where_clause), 0, 1, 1}, /* PyObject cname: __pyx_n_u_where_clause */
+  {__pyx_k_where_clauses, sizeof(__pyx_k_where_clauses), 0, 1, 1}, /* PyObject cname: __pyx_n_u_where_clauses */
   {0, 0, 0, 0, 0}
 };
 /* InitStrings.proto */
@@ -6186,16 +7237,75 @@ static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   return -1;
 }
 /* #### Code section: init_codeobjects ### */
+\
+        typedef struct {
+            unsigned int argcount : 3;
+            unsigned int num_posonly_args : 1;
+            unsigned int num_kwonly_args : 1;
+            unsigned int nlocals : 4;
+            unsigned int flags : 10;
+            unsigned int first_line : 8;
+            unsigned int line_table_length : 13;
+        } __Pyx_PyCode_New_function_description;
+/* NewCodeObj.proto */
+static PyObject* __Pyx_PyCode_New(
+        const __Pyx_PyCode_New_function_description descr,
+        PyObject * const *varnames,
+        PyObject *filename,
+        PyObject *funcname,
+        const char *line_table,
+        PyObject *tuple_dedup_map
+);
+
 
 static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
-  CYTHON_UNUSED_VAR(__pyx_mstate);
+  PyObject* tuple_dedup_map = PyDict_New();
+  if (unlikely(!tuple_dedup_map)) return -1;
+  {
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 14, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 18, 366};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_page, __pyx_mstate->__pyx_n_u_slug, __pyx_mstate->__pyx_n_u_title, __pyx_mstate->__pyx_n_u_search_query, __pyx_mstate->__pyx_n_u_db, __pyx_mstate->__pyx_n_u_limit, __pyx_mstate->__pyx_n_u_offset, __pyx_mstate->__pyx_n_u_where_clauses, __pyx_mstate->__pyx_n_u_where_clause, __pyx_mstate->__pyx_n_u_base_query, __pyx_mstate->__pyx_n_u_count_query, __pyx_mstate->__pyx_n_u_params, __pyx_mstate->__pyx_n_u_results, __pyx_mstate->__pyx_n_u_total};
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_app_features_physiotherapy_py, __pyx_mstate->__pyx_n_u_get_physiotherapys, __pyx_k_Qc_A_5_E_Qa_A_e2S_AQ_uCq_WAQ_uC, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 7, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 105, 204};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_slug, __pyx_mstate->__pyx_n_u_db, __pyx_mstate->__pyx_n_u_stmt, __pyx_mstate->__pyx_n_u_result, __pyx_mstate->__pyx_n_u_result_dict, __pyx_mstate->__pyx_n_u_res, __pyx_mstate->__pyx_n_u_json};
+    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_app_features_physiotherapy_py, __pyx_mstate->__pyx_n_u_get_physiotherapy_details, __pyx_k_Zwaq_4q_Rxq_xvYb_wc_m1L_WA_aq_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 8, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 132, 201};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_id, __pyx_mstate->__pyx_n_u_payload, __pyx_mstate->__pyx_n_u_current_user, __pyx_mstate->__pyx_n_u_db, __pyx_mstate->__pyx_n_u_check_stmt, __pyx_mstate->__pyx_n_u_exists, __pyx_mstate->__pyx_n_u_update_stmt, __pyx_mstate->__pyx_n_u_result};
+    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_app_features_physiotherapy_py, __pyx_mstate->__pyx_n_u_update_physiotherapy_meta, __pyx_k_t1A_Q_Q_Rxq_XWG6_Ya_q_m1_WA_a_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 8, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 185, 181};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_id, __pyx_mstate->__pyx_n_u_payload, __pyx_mstate->__pyx_n_u_current_user, __pyx_mstate->__pyx_n_u_db, __pyx_mstate->__pyx_n_u_check_stmt, __pyx_mstate->__pyx_n_u_exists, __pyx_mstate->__pyx_n_u_update_stmt, __pyx_mstate->__pyx_n_u_result};
+    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_app_features_physiotherapy_py, __pyx_mstate->__pyx_n_u_update_physiotherapy_slug, __pyx_k_t1A_Q_Q_Rxq_XWG6_Ya_q_m1_WA_a_t, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
+  }
+  Py_DECREF(tuple_dedup_map);
   return 0;
+  bad:
+  Py_DECREF(tuple_dedup_map);
+  return -1;
 }
 /* #### Code section: init_globals ### */
 
 static int __Pyx_InitGlobals(void) {
   /* PythonCompatibility.init */
   if (likely(__Pyx_init_co_variables() == 0)); else
+
+if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L1_error)
+
+  /* CachedMethodType.init */
+  #if CYTHON_COMPILING_IN_LIMITED_API
+{
+    PyObject *typesModule=NULL;
+    typesModule = PyImport_ImportModule("types");
+    if (typesModule) {
+        __pyx_mstate_global->__Pyx_CachedMethodType = PyObject_GetAttrString(typesModule, "MethodType");
+        Py_DECREF(typesModule);
+    }
+} // error handling follows
+#endif
 
 if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L1_error)
 
@@ -8106,6 +9216,476 @@ static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, 
     return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
 }
 
+/* CallTypeTraverse */
+#if !CYTHON_USE_TYPE_SPECS || (!CYTHON_COMPILING_IN_LIMITED_API && PY_VERSION_HEX < 0x03090000)
+#else
+static int __Pyx_call_type_traverse(PyObject *o, int always_call, visitproc visit, void *arg) {
+    #if CYTHON_COMPILING_IN_LIMITED_API && __PYX_LIMITED_VERSION_HEX < 0x03090000
+    if (__Pyx_get_runtime_version() < 0x03090000) return 0;
+    #endif
+    if (!always_call) {
+        PyTypeObject *base = __Pyx_PyObject_GetSlot(o, tp_base, PyTypeObject*);
+        unsigned long flags = PyType_GetFlags(base);
+        if (flags & Py_TPFLAGS_HEAPTYPE) {
+            return 0;
+        }
+    }
+    Py_VISIT((PyObject*)Py_TYPE(o));
+    return 0;
+}
+#endif
+
+/* LimitedApiGetTypeDict */
+#if CYTHON_COMPILING_IN_LIMITED_API
+static Py_ssize_t __Pyx_GetTypeDictOffset(void) {
+    PyObject *tp_dictoffset_o;
+    Py_ssize_t tp_dictoffset;
+    tp_dictoffset_o = PyObject_GetAttrString((PyObject*)(&PyType_Type), "__dictoffset__");
+    if (unlikely(!tp_dictoffset_o)) return -1;
+    tp_dictoffset = PyLong_AsSsize_t(tp_dictoffset_o);
+    Py_DECREF(tp_dictoffset_o);
+    if (unlikely(tp_dictoffset == 0)) {
+        PyErr_SetString(
+            PyExc_TypeError,
+            "'type' doesn't have a dictoffset");
+        return -1;
+    } else if (unlikely(tp_dictoffset < 0)) {
+        PyErr_SetString(
+            PyExc_TypeError,
+            "'type' has an unexpected negative dictoffset. "
+            "Please report this as Cython bug");
+        return -1;
+    }
+    return tp_dictoffset;
+}
+static PyObject *__Pyx_GetTypeDict(PyTypeObject *tp) {
+    static Py_ssize_t tp_dictoffset = 0;
+    if (unlikely(tp_dictoffset == 0)) {
+        tp_dictoffset = __Pyx_GetTypeDictOffset();
+        if (unlikely(tp_dictoffset == -1 && PyErr_Occurred())) {
+            tp_dictoffset = 0; // try again next time?
+            return NULL;
+        }
+    }
+    return *(PyObject**)((char*)tp + tp_dictoffset);
+}
+#endif
+
+/* SetItemOnTypeDict */
+static int __Pyx__SetItemOnTypeDict(PyTypeObject *tp, PyObject *k, PyObject *v) {
+    int result;
+    PyObject *tp_dict;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    tp_dict = __Pyx_GetTypeDict(tp);
+    if (unlikely(!tp_dict)) return -1;
+#else
+    tp_dict = tp->tp_dict;
+#endif
+    result = PyDict_SetItem(tp_dict, k, v);
+    if (likely(!result)) {
+        PyType_Modified(tp);
+        if (unlikely(PyObject_HasAttr(v, __pyx_mstate_global->__pyx_n_u_set_name))) {
+            PyObject *setNameResult = PyObject_CallMethodObjArgs(v, __pyx_mstate_global->__pyx_n_u_set_name,  (PyObject *) tp, k, NULL);
+            if (!setNameResult) return -1;
+            Py_DECREF(setNameResult);
+        }
+    }
+    return result;
+}
+
+/* FixUpExtensionType */
+static int __Pyx_fix_up_extension_type_from_spec(PyType_Spec *spec, PyTypeObject *type) {
+#if __PYX_LIMITED_VERSION_HEX > 0x030900B1
+    CYTHON_UNUSED_VAR(spec);
+    CYTHON_UNUSED_VAR(type);
+    CYTHON_UNUSED_VAR(__Pyx__SetItemOnTypeDict);
+#else
+    const PyType_Slot *slot = spec->slots;
+    int changed = 0;
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    while (slot && slot->slot && slot->slot != Py_tp_members)
+        slot++;
+    if (slot && slot->slot == Py_tp_members) {
+#if !CYTHON_COMPILING_IN_CPYTHON
+        const
+#endif  // !CYTHON_COMPILING_IN_CPYTHON)
+            PyMemberDef *memb = (PyMemberDef*) slot->pfunc;
+        while (memb && memb->name) {
+            if (memb->name[0] == '_' && memb->name[1] == '_') {
+                if (strcmp(memb->name, "__weaklistoffset__") == 0) {
+                    assert(memb->type == T_PYSSIZET);
+                    assert(memb->flags == READONLY);
+                    type->tp_weaklistoffset = memb->offset;
+                    changed = 1;
+                }
+                else if (strcmp(memb->name, "__dictoffset__") == 0) {
+                    assert(memb->type == T_PYSSIZET);
+                    assert(memb->flags == READONLY);
+                    type->tp_dictoffset = memb->offset;
+                    changed = 1;
+                }
+#if CYTHON_METH_FASTCALL
+                else if (strcmp(memb->name, "__vectorcalloffset__") == 0) {
+                    assert(memb->type == T_PYSSIZET);
+                    assert(memb->flags == READONLY);
+#if PY_VERSION_HEX >= 0x030800b4
+                    type->tp_vectorcall_offset = memb->offset;
+#else
+                    type->tp_print = (printfunc) memb->offset;
+#endif
+                    changed = 1;
+                }
+#endif  // CYTHON_METH_FASTCALL
+#if !CYTHON_COMPILING_IN_PYPY
+                else if (strcmp(memb->name, "__module__") == 0) {
+                    PyObject *descr;
+                    assert(memb->type == T_OBJECT);
+                    assert(memb->flags == 0 || memb->flags == READONLY);
+                    descr = PyDescr_NewMember(type, memb);
+                    if (unlikely(!descr))
+                        return -1;
+                    int set_item_result = PyDict_SetItem(type->tp_dict, PyDescr_NAME(descr), descr);
+                    Py_DECREF(descr);
+                    if (unlikely(set_item_result < 0)) {
+                        return -1;
+                    }
+                    changed = 1;
+                }
+#endif  // !CYTHON_COMPILING_IN_PYPY
+            }
+            memb++;
+        }
+    }
+#endif  // !CYTHON_COMPILING_IN_LIMITED_API
+#if !CYTHON_COMPILING_IN_PYPY
+    slot = spec->slots;
+    while (slot && slot->slot && slot->slot != Py_tp_getset)
+        slot++;
+    if (slot && slot->slot == Py_tp_getset) {
+        PyGetSetDef *getset = (PyGetSetDef*) slot->pfunc;
+        while (getset && getset->name) {
+            if (getset->name[0] == '_' && getset->name[1] == '_' && strcmp(getset->name, "__module__") == 0) {
+                PyObject *descr = PyDescr_NewGetSet(type, getset);
+                if (unlikely(!descr))
+                    return -1;
+                #if CYTHON_COMPILING_IN_LIMITED_API
+                PyObject *pyname = PyUnicode_FromString(getset->name);
+                if (unlikely(!pyname)) {
+                    Py_DECREF(descr);
+                    return -1;
+                }
+                int set_item_result = __Pyx_SetItemOnTypeDict(type, pyname, descr);
+                Py_DECREF(pyname);
+                #else
+                CYTHON_UNUSED_VAR(__Pyx__SetItemOnTypeDict);
+                int set_item_result = PyDict_SetItem(type->tp_dict, PyDescr_NAME(descr), descr);
+                #endif
+                Py_DECREF(descr);
+                if (unlikely(set_item_result < 0)) {
+                    return -1;
+                }
+                changed = 1;
+            }
+            ++getset;
+        }
+    }
+#endif  // !CYTHON_COMPILING_IN_PYPY
+    if (changed)
+        PyType_Modified(type);
+#endif  // PY_VERSION_HEX > 0x030900B1
+    return 0;
+}
+
+/* PyObjectCallNoArg */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+    PyObject *arg[2] = {NULL, NULL};
+    return __Pyx_PyObject_FastCall(func, arg + 1, 0 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
+}
+
+/* PyObjectGetMethod */
+static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method) {
+    PyObject *attr;
+#if CYTHON_UNPACK_METHODS && CYTHON_COMPILING_IN_CPYTHON && CYTHON_USE_PYTYPE_LOOKUP
+    __Pyx_TypeName type_name;
+    PyTypeObject *tp = Py_TYPE(obj);
+    PyObject *descr;
+    descrgetfunc f = NULL;
+    PyObject **dictptr, *dict;
+    int meth_found = 0;
+    assert (*method == NULL);
+    if (unlikely(tp->tp_getattro != PyObject_GenericGetAttr)) {
+        attr = __Pyx_PyObject_GetAttrStr(obj, name);
+        goto try_unpack;
+    }
+    if (unlikely(tp->tp_dict == NULL) && unlikely(PyType_Ready(tp) < 0)) {
+        return 0;
+    }
+    descr = _PyType_Lookup(tp, name);
+    if (likely(descr != NULL)) {
+        Py_INCREF(descr);
+#if defined(Py_TPFLAGS_METHOD_DESCRIPTOR) && Py_TPFLAGS_METHOD_DESCRIPTOR
+        if (__Pyx_PyType_HasFeature(Py_TYPE(descr), Py_TPFLAGS_METHOD_DESCRIPTOR))
+#else
+        #ifdef __Pyx_CyFunction_USED
+        if (likely(PyFunction_Check(descr) || __Pyx_IS_TYPE(descr, &PyMethodDescr_Type) || __Pyx_CyFunction_Check(descr)))
+        #else
+        if (likely(PyFunction_Check(descr) || __Pyx_IS_TYPE(descr, &PyMethodDescr_Type)))
+        #endif
+#endif
+        {
+            meth_found = 1;
+        } else {
+            f = Py_TYPE(descr)->tp_descr_get;
+            if (f != NULL && PyDescr_IsData(descr)) {
+                attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
+                Py_DECREF(descr);
+                goto try_unpack;
+            }
+        }
+    }
+    dictptr = _PyObject_GetDictPtr(obj);
+    if (dictptr != NULL && (dict = *dictptr) != NULL) {
+        Py_INCREF(dict);
+        attr = __Pyx_PyDict_GetItemStr(dict, name);
+        if (attr != NULL) {
+            Py_INCREF(attr);
+            Py_DECREF(dict);
+            Py_XDECREF(descr);
+            goto try_unpack;
+        }
+        Py_DECREF(dict);
+    }
+    if (meth_found) {
+        *method = descr;
+        return 1;
+    }
+    if (f != NULL) {
+        attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
+        Py_DECREF(descr);
+        goto try_unpack;
+    }
+    if (likely(descr != NULL)) {
+        *method = descr;
+        return 0;
+    }
+    type_name = __Pyx_PyType_GetFullyQualifiedName(tp);
+    PyErr_Format(PyExc_AttributeError,
+                 "'" __Pyx_FMT_TYPENAME "' object has no attribute '%U'",
+                 type_name, name);
+    __Pyx_DECREF_TypeName(type_name);
+    return 0;
+#else
+    attr = __Pyx_PyObject_GetAttrStr(obj, name);
+    goto try_unpack;
+#endif
+try_unpack:
+#if CYTHON_UNPACK_METHODS
+    if (likely(attr) && PyMethod_Check(attr) && likely(PyMethod_GET_SELF(attr) == obj)) {
+        PyObject *function = PyMethod_GET_FUNCTION(attr);
+        Py_INCREF(function);
+        Py_DECREF(attr);
+        *method = function;
+        return 1;
+    }
+#endif
+    *method = attr;
+    return 0;
+}
+
+/* PyObjectCallMethod0 */
+static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name) {
+#if CYTHON_VECTORCALL && (__PYX_LIMITED_VERSION_HEX >= 0x030C0000 || (!CYTHON_COMPILING_IN_LIMITED_API && PY_VERSION_HEX >= 0x03090000))
+    PyObject *args[1] = {obj};
+    (void) __Pyx_PyObject_GetMethod;
+    (void) __Pyx_PyObject_CallOneArg;
+    (void) __Pyx_PyObject_CallNoArg;
+    return PyObject_VectorcallMethod(method_name, args, 1 | PY_VECTORCALL_ARGUMENTS_OFFSET, NULL);
+#else
+    PyObject *method = NULL, *result = NULL;
+    int is_method = __Pyx_PyObject_GetMethod(obj, method_name, &method);
+    if (likely(is_method)) {
+        result = __Pyx_PyObject_CallOneArg(method, obj);
+        Py_DECREF(method);
+        return result;
+    }
+    if (unlikely(!method)) goto bad;
+    result = __Pyx_PyObject_CallNoArg(method);
+    Py_DECREF(method);
+bad:
+    return result;
+#endif
+}
+
+/* ValidateBasesTuple */
+#if CYTHON_COMPILING_IN_CPYTHON || CYTHON_COMPILING_IN_LIMITED_API || CYTHON_USE_TYPE_SPECS
+static int __Pyx_validate_bases_tuple(const char *type_name, Py_ssize_t dictoffset, PyObject *bases) {
+    Py_ssize_t i, n;
+#if CYTHON_ASSUME_SAFE_SIZE
+    n = PyTuple_GET_SIZE(bases);
+#else
+    n = PyTuple_Size(bases);
+    if (unlikely(n < 0)) return -1;
+#endif
+    for (i = 1; i < n; i++)
+    {
+        PyTypeObject *b;
+#if CYTHON_AVOID_BORROWED_REFS
+        PyObject *b0 = PySequence_GetItem(bases, i);
+        if (!b0) return -1;
+#elif CYTHON_ASSUME_SAFE_MACROS
+        PyObject *b0 = PyTuple_GET_ITEM(bases, i);
+#else
+        PyObject *b0 = PyTuple_GetItem(bases, i);
+        if (!b0) return -1;
+#endif
+        b = (PyTypeObject*) b0;
+        if (!__Pyx_PyType_HasFeature(b, Py_TPFLAGS_HEAPTYPE))
+        {
+            __Pyx_TypeName b_name = __Pyx_PyType_GetFullyQualifiedName(b);
+            PyErr_Format(PyExc_TypeError,
+                "base class '" __Pyx_FMT_TYPENAME "' is not a heap type", b_name);
+            __Pyx_DECREF_TypeName(b_name);
+#if CYTHON_AVOID_BORROWED_REFS
+            Py_DECREF(b0);
+#endif
+            return -1;
+        }
+        if (dictoffset == 0)
+        {
+            Py_ssize_t b_dictoffset = 0;
+#if CYTHON_USE_TYPE_SLOTS
+            b_dictoffset = b->tp_dictoffset;
+#else
+            PyObject *py_b_dictoffset = PyObject_GetAttrString((PyObject*)b, "__dictoffset__");
+            if (!py_b_dictoffset) goto dictoffset_return;
+            b_dictoffset = PyLong_AsSsize_t(py_b_dictoffset);
+            Py_DECREF(py_b_dictoffset);
+            if (b_dictoffset == -1 && PyErr_Occurred()) goto dictoffset_return;
+#endif
+            if (b_dictoffset) {
+                {
+                    __Pyx_TypeName b_name = __Pyx_PyType_GetFullyQualifiedName(b);
+                    PyErr_Format(PyExc_TypeError,
+                        "extension type '%.200s' has no __dict__ slot, "
+                        "but base type '" __Pyx_FMT_TYPENAME "' has: "
+                        "either add 'cdef dict __dict__' to the extension type "
+                        "or add '__slots__ = [...]' to the base type",
+                        type_name, b_name);
+                    __Pyx_DECREF_TypeName(b_name);
+                }
+#if !CYTHON_USE_TYPE_SLOTS
+              dictoffset_return:
+#endif
+#if CYTHON_AVOID_BORROWED_REFS
+                Py_DECREF(b0);
+#endif
+                return -1;
+            }
+        }
+#if CYTHON_AVOID_BORROWED_REFS
+        Py_DECREF(b0);
+#endif
+    }
+    return 0;
+}
+#endif
+
+/* PyType_Ready */
+CYTHON_UNUSED static int __Pyx_PyType_HasMultipleInheritance(PyTypeObject *t) {
+    while (t) {
+        PyObject *bases = __Pyx_PyType_GetSlot(t, tp_bases, PyObject*);
+        if (bases) {
+            return 1;
+        }
+        t = __Pyx_PyType_GetSlot(t, tp_base, PyTypeObject*);
+    }
+    return 0;
+}
+static int __Pyx_PyType_Ready(PyTypeObject *t) {
+#if CYTHON_USE_TYPE_SPECS || !CYTHON_COMPILING_IN_CPYTHON || defined(PYSTON_MAJOR_VERSION)
+    (void)__Pyx_PyObject_CallMethod0;
+#if CYTHON_USE_TYPE_SPECS
+    (void)__Pyx_validate_bases_tuple;
+#endif
+    return PyType_Ready(t);
+#else
+    int r;
+    if (!__Pyx_PyType_HasMultipleInheritance(t)) {
+        return PyType_Ready(t);
+    }
+    PyObject *bases = __Pyx_PyType_GetSlot(t, tp_bases, PyObject*);
+    if (bases && unlikely(__Pyx_validate_bases_tuple(t->tp_name, t->tp_dictoffset, bases) == -1))
+        return -1;
+#if !defined(PYSTON_MAJOR_VERSION)
+    {
+        int gc_was_enabled;
+    #if PY_VERSION_HEX >= 0x030A00b1
+        gc_was_enabled = PyGC_Disable();
+        (void)__Pyx_PyObject_CallMethod0;
+    #else
+        PyObject *ret, *py_status;
+        PyObject *gc = NULL;
+        #if (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM+0 >= 0x07030400) &&\
+                !CYTHON_COMPILING_IN_GRAAL
+        gc = PyImport_GetModule(__pyx_mstate_global->__pyx_kp_u_gc);
+        #endif
+        if (unlikely(!gc)) gc = PyImport_Import(__pyx_mstate_global->__pyx_kp_u_gc);
+        if (unlikely(!gc)) return -1;
+        py_status = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_isenabled);
+        if (unlikely(!py_status)) {
+            Py_DECREF(gc);
+            return -1;
+        }
+        gc_was_enabled = __Pyx_PyObject_IsTrue(py_status);
+        Py_DECREF(py_status);
+        if (gc_was_enabled > 0) {
+            ret = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_disable);
+            if (unlikely(!ret)) {
+                Py_DECREF(gc);
+                return -1;
+            }
+            Py_DECREF(ret);
+        } else if (unlikely(gc_was_enabled == -1)) {
+            Py_DECREF(gc);
+            return -1;
+        }
+    #endif
+        t->tp_flags |= Py_TPFLAGS_HEAPTYPE;
+#if PY_VERSION_HEX >= 0x030A0000
+        t->tp_flags |= Py_TPFLAGS_IMMUTABLETYPE;
+#endif
+#else
+        (void)__Pyx_PyObject_CallMethod0;
+#endif
+    r = PyType_Ready(t);
+#if !defined(PYSTON_MAJOR_VERSION)
+        t->tp_flags &= ~Py_TPFLAGS_HEAPTYPE;
+    #if PY_VERSION_HEX >= 0x030A00b1
+        if (gc_was_enabled)
+            PyGC_Enable();
+    #else
+        if (gc_was_enabled) {
+            PyObject *tp, *v, *tb;
+            PyErr_Fetch(&tp, &v, &tb);
+            ret = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_enable);
+            if (likely(ret || r == -1)) {
+                Py_XDECREF(ret);
+                PyErr_Restore(tp, v, tb);
+            } else {
+                Py_XDECREF(tp);
+                Py_XDECREF(v);
+                Py_XDECREF(tb);
+                r = -1;
+            }
+        }
+        Py_DECREF(gc);
+    #endif
+    }
+#endif
+    return r;
+#endif
+}
+
 /* ListPack */
 static PyObject *__Pyx_PyList_Pack(Py_ssize_t n, ...) {
     va_list va;
@@ -8169,7 +9749,7 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
         if (unlikely(!module_name_str)) { goto modbad; }
         module_name = PyUnicode_FromString(module_name_str);
         if (unlikely(!module_name)) { goto modbad; }
-        module_dot = PyUnicode_Concat(module_name, __pyx_mstate_global->__pyx_kp_u__14);
+        module_dot = PyUnicode_Concat(module_name, __pyx_mstate_global->__pyx_kp_u__2);
         if (unlikely(!module_dot)) { goto modbad; }
         full_name = PyUnicode_Concat(module_dot, name);
         if (unlikely(!full_name)) { goto modbad; }
@@ -8307,6 +9887,1308 @@ static PyObject *__Pyx_ImportDottedModule(PyObject *name, PyObject *parts_tuple)
     }
 #endif
     return __Pyx__ImportDottedModule(name, parts_tuple);
+}
+
+/* FetchSharedCythonModule */
+static PyObject *__Pyx_FetchSharedCythonABIModule(void) {
+    return __Pyx_PyImport_AddModuleRef(__PYX_ABI_MODULE_NAME);
+}
+
+/* dict_setdefault */
+static CYTHON_INLINE PyObject *__Pyx_PyDict_SetDefault(PyObject *d, PyObject *key, PyObject *default_value,
+                                                       int is_safe_type) {
+    PyObject* value;
+    CYTHON_MAYBE_UNUSED_VAR(is_safe_type);
+#if CYTHON_COMPILING_IN_LIMITED_API
+    value = PyObject_CallMethod(d, "setdefault", "OO", key, default_value);
+#elif PY_VERSION_HEX >= 0x030d0000
+    PyDict_SetDefaultRef(d, key, default_value, &value);
+#else
+    value = PyDict_SetDefault(d, key, default_value);
+    if (unlikely(!value)) return NULL;
+    Py_INCREF(value);
+#endif
+    return value;
+}
+
+/* FetchCommonType */
+#if __PYX_LIMITED_VERSION_HEX < 0x030C0000
+static PyObject* __Pyx_PyType_FromMetaclass(PyTypeObject *metaclass, PyObject *module, PyType_Spec *spec, PyObject *bases) {
+    PyObject *result = __Pyx_PyType_FromModuleAndSpec(module, spec, bases);
+    if (result && metaclass) {
+        PyObject *old_tp = (PyObject*)Py_TYPE(result);
+    Py_INCREF((PyObject*)metaclass);
+#if __PYX_LIMITED_VERSION_HEX >= 0x03090000
+        Py_SET_TYPE(result, metaclass);
+#else
+        result->ob_type = metaclass;
+#endif
+        Py_DECREF(old_tp);
+    }
+    return result;
+}
+#else
+#define __Pyx_PyType_FromMetaclass(me, mo, s, b) PyType_FromMetaclass(me, mo, s, b)
+#endif
+static int __Pyx_VerifyCachedType(PyObject *cached_type,
+                               const char *name,
+                               Py_ssize_t expected_basicsize) {
+    Py_ssize_t basicsize;
+    if (!PyType_Check(cached_type)) {
+        PyErr_Format(PyExc_TypeError,
+            "Shared Cython type %.200s is not a type object", name);
+        return -1;
+    }
+    if (expected_basicsize == 0) {
+        return 0; // size is inherited, nothing useful to check
+    }
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *py_basicsize;
+    py_basicsize = PyObject_GetAttrString(cached_type, "__basicsize__");
+    if (unlikely(!py_basicsize)) return -1;
+    basicsize = PyLong_AsSsize_t(py_basicsize);
+    Py_DECREF(py_basicsize);
+    py_basicsize = NULL;
+    if (unlikely(basicsize == (Py_ssize_t)-1) && PyErr_Occurred()) return -1;
+#else
+    basicsize = ((PyTypeObject*) cached_type)->tp_basicsize;
+#endif
+    if (basicsize != expected_basicsize) {
+        PyErr_Format(PyExc_TypeError,
+            "Shared Cython type %.200s has the wrong size, try recompiling",
+            name);
+        return -1;
+    }
+    return 0;
+}
+static PyTypeObject *__Pyx_FetchCommonTypeFromSpec(PyTypeObject *metaclass, PyObject *module, PyType_Spec *spec, PyObject *bases) {
+    PyObject *abi_module = NULL, *cached_type = NULL, *abi_module_dict, *new_cached_type, *py_object_name;
+    int get_item_ref_result;
+    const char* object_name = strrchr(spec->name, '.');
+    object_name = object_name ? object_name+1 : spec->name;
+    py_object_name = PyUnicode_FromString(object_name);
+    if (!py_object_name) return NULL;
+    abi_module = __Pyx_FetchSharedCythonABIModule();
+    if (!abi_module) goto done;
+    abi_module_dict = PyModule_GetDict(abi_module);
+    if (!abi_module_dict) goto done;
+    get_item_ref_result = __Pyx_PyDict_GetItemRef(abi_module_dict, py_object_name, &cached_type);
+    if (get_item_ref_result == 1) {
+        if (__Pyx_VerifyCachedType(
+              cached_type,
+              object_name,
+              spec->basicsize) < 0) {
+            goto bad;
+        }
+        goto done;
+    } else if (unlikely(get_item_ref_result == -1)) {
+        goto bad;
+    }
+    CYTHON_UNUSED_VAR(module);
+    cached_type = __Pyx_PyType_FromMetaclass(metaclass, abi_module, spec, bases);
+    if (unlikely(!cached_type)) goto bad;
+    if (unlikely(__Pyx_fix_up_extension_type_from_spec(spec, (PyTypeObject *) cached_type) < 0)) goto bad;
+    new_cached_type = __Pyx_PyDict_SetDefault(abi_module_dict, py_object_name, cached_type, 1);
+    if (unlikely(new_cached_type != cached_type)) {
+        if (unlikely(!new_cached_type)) goto bad;
+        Py_DECREF(cached_type);
+        cached_type = new_cached_type;
+        if (__Pyx_VerifyCachedType(
+                cached_type,
+                object_name,
+                spec->basicsize) < 0) {
+            goto bad;
+        }
+        goto done;
+    } else {
+        Py_DECREF(new_cached_type);
+    }
+done:
+    Py_XDECREF(abi_module);
+    Py_DECREF(py_object_name);
+    assert(cached_type == NULL || PyType_Check(cached_type));
+    return (PyTypeObject *) cached_type;
+bad:
+    Py_XDECREF(cached_type);
+    cached_type = NULL;
+    goto done;
+}
+
+/* CommonTypesMetaclass */
+static PyObject* __pyx_CommonTypesMetaclass_get_module(CYTHON_UNUSED PyObject *self, CYTHON_UNUSED void* context) {
+    return PyUnicode_FromString(__PYX_ABI_MODULE_NAME);
+}
+static PyGetSetDef __pyx_CommonTypesMetaclass_getset[] = {
+    {"__module__", __pyx_CommonTypesMetaclass_get_module, NULL, NULL, NULL},
+    {0, 0, 0, 0, 0}
+};
+static PyType_Slot __pyx_CommonTypesMetaclass_slots[] = {
+    {Py_tp_getset, (void *)__pyx_CommonTypesMetaclass_getset},
+    {0, 0}
+};
+static PyType_Spec __pyx_CommonTypesMetaclass_spec = {
+    __PYX_TYPE_MODULE_PREFIX "_common_types_metatype",
+    0,
+    0,
+#if PY_VERSION_HEX >= 0x030A0000
+    Py_TPFLAGS_IMMUTABLETYPE |
+    Py_TPFLAGS_DISALLOW_INSTANTIATION |
+#endif
+    Py_TPFLAGS_DEFAULT,
+    __pyx_CommonTypesMetaclass_slots
+};
+static int __pyx_CommonTypesMetaclass_init(PyObject *module) {
+    __pyx_mstatetype *mstate = __Pyx_PyModule_GetState(module);
+    PyObject *bases = PyTuple_Pack(1, &PyType_Type);
+    if (unlikely(!bases)) {
+        return -1;
+    }
+    mstate->__pyx_CommonTypesMetaclassType = __Pyx_FetchCommonTypeFromSpec(NULL, module, &__pyx_CommonTypesMetaclass_spec, bases);
+    Py_DECREF(bases);
+    if (unlikely(mstate->__pyx_CommonTypesMetaclassType == NULL)) {
+        return -1;
+    }
+    return 0;
+}
+
+/* PyMethodNew */
+#if CYTHON_COMPILING_IN_LIMITED_API
+static PyObject *__Pyx_PyMethod_New(PyObject *func, PyObject *self, PyObject *typ) {
+    PyObject *result;
+    CYTHON_UNUSED_VAR(typ);
+    if (!self)
+        return __Pyx_NewRef(func);
+    #if __PYX_LIMITED_VERSION_HEX >= 0x030C0000
+    {
+        PyObject *args[] = {func, self};
+        result = PyObject_Vectorcall(__pyx_mstate_global->__Pyx_CachedMethodType, args, 2, NULL);
+    }
+    #else
+    result = PyObject_CallFunctionObjArgs(__pyx_mstate_global->__Pyx_CachedMethodType, func, self, NULL);
+    #endif
+    return result;
+}
+#else
+static PyObject *__Pyx_PyMethod_New(PyObject *func, PyObject *self, PyObject *typ) {
+    CYTHON_UNUSED_VAR(typ);
+    if (!self)
+        return __Pyx_NewRef(func);
+    return PyMethod_New(func, self);
+}
+#endif
+
+/* PyVectorcallFastCallDict */
+#if CYTHON_METH_FASTCALL && (CYTHON_VECTORCALL || CYTHON_BACKPORT_VECTORCALL)
+static PyObject *__Pyx_PyVectorcall_FastCallDict_kw(PyObject *func, __pyx_vectorcallfunc vc, PyObject *const *args, size_t nargs, PyObject *kw)
+{
+    PyObject *res = NULL;
+    PyObject *kwnames;
+    PyObject **newargs;
+    PyObject **kwvalues;
+    Py_ssize_t i, pos;
+    size_t j;
+    PyObject *key, *value;
+    unsigned long keys_are_strings;
+    #if !CYTHON_ASSUME_SAFE_SIZE
+    Py_ssize_t nkw = PyDict_Size(kw);
+    if (unlikely(nkw == -1)) return NULL;
+    #else
+    Py_ssize_t nkw = PyDict_GET_SIZE(kw);
+    #endif
+    newargs = (PyObject **)PyMem_Malloc((nargs + (size_t)nkw) * sizeof(args[0]));
+    if (unlikely(newargs == NULL)) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    for (j = 0; j < nargs; j++) newargs[j] = args[j];
+    kwnames = PyTuple_New(nkw);
+    if (unlikely(kwnames == NULL)) {
+        PyMem_Free(newargs);
+        return NULL;
+    }
+    kwvalues = newargs + nargs;
+    pos = i = 0;
+    keys_are_strings = Py_TPFLAGS_UNICODE_SUBCLASS;
+    while (PyDict_Next(kw, &pos, &key, &value)) {
+        keys_are_strings &=
+        #if CYTHON_COMPILING_IN_LIMITED_API
+            PyType_GetFlags(Py_TYPE(key));
+        #else
+            Py_TYPE(key)->tp_flags;
+        #endif
+        Py_INCREF(key);
+        Py_INCREF(value);
+        #if !CYTHON_ASSUME_SAFE_MACROS
+        if (unlikely(PyTuple_SetItem(kwnames, i, key) < 0)) goto cleanup;
+        #else
+        PyTuple_SET_ITEM(kwnames, i, key);
+        #endif
+        kwvalues[i] = value;
+        i++;
+    }
+    if (unlikely(!keys_are_strings)) {
+        PyErr_SetString(PyExc_TypeError, "keywords must be strings");
+        goto cleanup;
+    }
+    res = vc(func, newargs, nargs, kwnames);
+cleanup:
+    Py_DECREF(kwnames);
+    for (i = 0; i < nkw; i++)
+        Py_DECREF(kwvalues[i]);
+    PyMem_Free(newargs);
+    return res;
+}
+static CYTHON_INLINE PyObject *__Pyx_PyVectorcall_FastCallDict(PyObject *func, __pyx_vectorcallfunc vc, PyObject *const *args, size_t nargs, PyObject *kw)
+{
+    Py_ssize_t kw_size =
+        likely(kw == NULL) ?
+        0 :
+#if !CYTHON_ASSUME_SAFE_SIZE
+        PyDict_Size(kw);
+#else
+        PyDict_GET_SIZE(kw);
+#endif
+    if (kw_size == 0) {
+        return vc(func, args, nargs, NULL);
+    }
+#if !CYTHON_ASSUME_SAFE_SIZE
+    else if (unlikely(kw_size == -1)) {
+        return NULL;
+    }
+#endif
+    return __Pyx_PyVectorcall_FastCallDict_kw(func, vc, args, nargs, kw);
+}
+#endif
+
+/* CythonFunctionShared */
+#if CYTHON_COMPILING_IN_LIMITED_API
+static CYTHON_INLINE int __Pyx__IsSameCyOrCFunctionNoMethod(PyObject *func, void (*cfunc)(void)) {
+    if (__Pyx_CyFunction_Check(func)) {
+        return PyCFunction_GetFunction(((__pyx_CyFunctionObject*)func)->func) == (PyCFunction) cfunc;
+    } else if (PyCFunction_Check(func)) {
+        return PyCFunction_GetFunction(func) == (PyCFunction) cfunc;
+    }
+    return 0;
+}
+static CYTHON_INLINE int __Pyx__IsSameCyOrCFunction(PyObject *func, void (*cfunc)(void)) {
+    if ((PyObject*)Py_TYPE(func) == __pyx_mstate_global->__Pyx_CachedMethodType) {
+        int result;
+        PyObject *newFunc = PyObject_GetAttr(func, __pyx_mstate_global->__pyx_n_u_func);
+        if (unlikely(!newFunc)) {
+            PyErr_Clear(); // It's only an optimization, so don't throw an error
+            return 0;
+        }
+        result = __Pyx__IsSameCyOrCFunctionNoMethod(newFunc, cfunc);
+        Py_DECREF(newFunc);
+        return result;
+    }
+    return __Pyx__IsSameCyOrCFunctionNoMethod(func, cfunc);
+}
+#else
+static CYTHON_INLINE int __Pyx__IsSameCyOrCFunction(PyObject *func, void (*cfunc)(void)) {
+    if (PyMethod_Check(func)) {
+        func = PyMethod_GET_FUNCTION(func);
+    }
+    return __Pyx_CyOrPyCFunction_Check(func) && __Pyx_CyOrPyCFunction_GET_FUNCTION(func) == (PyCFunction) cfunc;
+}
+#endif
+static CYTHON_INLINE void __Pyx__CyFunction_SetClassObj(__pyx_CyFunctionObject* f, PyObject* classobj) {
+#if PY_VERSION_HEX < 0x030900B1 || CYTHON_COMPILING_IN_LIMITED_API
+    __Pyx_Py_XDECREF_SET(
+        __Pyx_CyFunction_GetClassObj(f),
+            ((classobj) ? __Pyx_NewRef(classobj) : NULL));
+#else
+    __Pyx_Py_XDECREF_SET(
+        ((PyCMethodObject *) (f))->mm_class,
+        (PyTypeObject*)((classobj) ? __Pyx_NewRef(classobj) : NULL));
+#endif
+}
+static PyObject *
+__Pyx_CyFunction_get_doc_locked(__pyx_CyFunctionObject *op)
+{
+    if (unlikely(op->func_doc == NULL)) {
+#if CYTHON_COMPILING_IN_LIMITED_API
+        op->func_doc = PyObject_GetAttrString(op->func, "__doc__");
+        if (unlikely(!op->func_doc)) return NULL;
+#else
+        if (((PyCFunctionObject*)op)->m_ml->ml_doc) {
+            op->func_doc = PyUnicode_FromString(((PyCFunctionObject*)op)->m_ml->ml_doc);
+            if (unlikely(op->func_doc == NULL))
+                return NULL;
+        } else {
+            Py_INCREF(Py_None);
+            return Py_None;
+        }
+#endif
+    }
+    Py_INCREF(op->func_doc);
+    return op->func_doc;
+}
+static PyObject *
+__Pyx_CyFunction_get_doc(__pyx_CyFunctionObject *op, void *closure) {
+    PyObject *result;
+    CYTHON_UNUSED_VAR(closure);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_doc_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_doc(__pyx_CyFunctionObject *op, PyObject *value, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    if (value == NULL) {
+        value = Py_None;
+    }
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->func_doc, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_name_locked(__pyx_CyFunctionObject *op)
+{
+    if (unlikely(op->func_name == NULL)) {
+#if CYTHON_COMPILING_IN_LIMITED_API
+        op->func_name = PyObject_GetAttrString(op->func, "__name__");
+#else
+        op->func_name = PyUnicode_InternFromString(((PyCFunctionObject*)op)->m_ml->ml_name);
+#endif
+        if (unlikely(op->func_name == NULL))
+            return NULL;
+    }
+    Py_INCREF(op->func_name);
+    return op->func_name;
+}
+static PyObject *
+__Pyx_CyFunction_get_name(__pyx_CyFunctionObject *op, void *context)
+{
+    PyObject *result = NULL;
+    CYTHON_UNUSED_VAR(context);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_name_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_name(__pyx_CyFunctionObject *op, PyObject *value, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    if (unlikely(value == NULL || !PyUnicode_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+                        "__name__ must be set to a string object");
+        return -1;
+    }
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->func_name, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_qualname(__pyx_CyFunctionObject *op, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    PyObject *result;
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    Py_INCREF(op->func_qualname);
+    result = op->func_qualname;
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_qualname(__pyx_CyFunctionObject *op, PyObject *value, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    if (unlikely(value == NULL || !PyUnicode_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+                        "__qualname__ must be set to a string object");
+        return -1;
+    }
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->func_qualname, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_dict_locked(__pyx_CyFunctionObject *op)
+{
+    if (unlikely(op->func_dict == NULL)) {
+        op->func_dict = PyDict_New();
+        if (unlikely(op->func_dict == NULL))
+            return NULL;
+    }
+    Py_INCREF(op->func_dict);
+    return op->func_dict;
+}
+static PyObject *
+__Pyx_CyFunction_get_dict(__pyx_CyFunctionObject *op, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    PyObject *result;
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_dict_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_dict(__pyx_CyFunctionObject *op, PyObject *value, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    if (unlikely(value == NULL)) {
+        PyErr_SetString(PyExc_TypeError,
+               "function's dictionary may not be deleted");
+        return -1;
+    }
+    if (unlikely(!PyDict_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+               "setting function's dictionary to a non-dict");
+        return -1;
+    }
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->func_dict, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_globals(__pyx_CyFunctionObject *op, void *context)
+{
+    CYTHON_UNUSED_VAR(context);
+    Py_INCREF(op->func_globals);
+    return op->func_globals;
+}
+static PyObject *
+__Pyx_CyFunction_get_closure(__pyx_CyFunctionObject *op, void *context)
+{
+    CYTHON_UNUSED_VAR(op);
+    CYTHON_UNUSED_VAR(context);
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+static PyObject *
+__Pyx_CyFunction_get_code(__pyx_CyFunctionObject *op, void *context)
+{
+    PyObject* result = (op->func_code) ? op->func_code : Py_None;
+    CYTHON_UNUSED_VAR(context);
+    Py_INCREF(result);
+    return result;
+}
+static int
+__Pyx_CyFunction_init_defaults(__pyx_CyFunctionObject *op) {
+    int result = 0;
+    PyObject *res = op->defaults_getter((PyObject *) op);
+    if (unlikely(!res))
+        return -1;
+    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    op->defaults_tuple = PyTuple_GET_ITEM(res, 0);
+    Py_INCREF(op->defaults_tuple);
+    op->defaults_kwdict = PyTuple_GET_ITEM(res, 1);
+    Py_INCREF(op->defaults_kwdict);
+    #else
+    op->defaults_tuple = __Pyx_PySequence_ITEM(res, 0);
+    if (unlikely(!op->defaults_tuple)) result = -1;
+    else {
+        op->defaults_kwdict = __Pyx_PySequence_ITEM(res, 1);
+        if (unlikely(!op->defaults_kwdict)) result = -1;
+    }
+    #endif
+    Py_DECREF(res);
+    return result;
+}
+static int
+__Pyx_CyFunction_set_defaults(__pyx_CyFunctionObject *op, PyObject* value, void *context) {
+    CYTHON_UNUSED_VAR(context);
+    if (!value) {
+        value = Py_None;
+    } else if (unlikely(value != Py_None && !PyTuple_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+                        "__defaults__ must be set to a tuple object");
+        return -1;
+    }
+    PyErr_WarnEx(PyExc_RuntimeWarning, "changes to cyfunction.__defaults__ will not "
+                 "currently affect the values used in function calls", 1);
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->defaults_tuple, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_defaults_locked(__pyx_CyFunctionObject *op) {
+    PyObject* result = op->defaults_tuple;
+    if (unlikely(!result)) {
+        if (op->defaults_getter) {
+            if (unlikely(__Pyx_CyFunction_init_defaults(op) < 0)) return NULL;
+            result = op->defaults_tuple;
+        } else {
+            result = Py_None;
+        }
+    }
+    Py_INCREF(result);
+    return result;
+}
+static PyObject *
+__Pyx_CyFunction_get_defaults(__pyx_CyFunctionObject *op, void *context) {
+    PyObject* result = NULL;
+    CYTHON_UNUSED_VAR(context);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_defaults_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_kwdefaults(__pyx_CyFunctionObject *op, PyObject* value, void *context) {
+    CYTHON_UNUSED_VAR(context);
+    if (!value) {
+        value = Py_None;
+    } else if (unlikely(value != Py_None && !PyDict_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+                        "__kwdefaults__ must be set to a dict object");
+        return -1;
+    }
+    PyErr_WarnEx(PyExc_RuntimeWarning, "changes to cyfunction.__kwdefaults__ will not "
+                 "currently affect the values used in function calls", 1);
+    Py_INCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->defaults_kwdict, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_kwdefaults_locked(__pyx_CyFunctionObject *op) {
+    PyObject* result = op->defaults_kwdict;
+    if (unlikely(!result)) {
+        if (op->defaults_getter) {
+            if (unlikely(__Pyx_CyFunction_init_defaults(op) < 0)) return NULL;
+            result = op->defaults_kwdict;
+        } else {
+            result = Py_None;
+        }
+    }
+    Py_INCREF(result);
+    return result;
+}
+static PyObject *
+__Pyx_CyFunction_get_kwdefaults(__pyx_CyFunctionObject *op, void *context) {
+    PyObject* result;
+    CYTHON_UNUSED_VAR(context);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_kwdefaults_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static int
+__Pyx_CyFunction_set_annotations(__pyx_CyFunctionObject *op, PyObject* value, void *context) {
+    CYTHON_UNUSED_VAR(context);
+    if (!value || value == Py_None) {
+        value = NULL;
+    } else if (unlikely(!PyDict_Check(value))) {
+        PyErr_SetString(PyExc_TypeError,
+                        "__annotations__ must be set to a dict object");
+        return -1;
+    }
+    Py_XINCREF(value);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    __Pyx_Py_XDECREF_SET(op->func_annotations, value);
+    __Pyx_END_CRITICAL_SECTION();
+    return 0;
+}
+static PyObject *
+__Pyx_CyFunction_get_annotations_locked(__pyx_CyFunctionObject *op) {
+    PyObject* result = op->func_annotations;
+    if (unlikely(!result)) {
+        result = PyDict_New();
+        if (unlikely(!result)) return NULL;
+        op->func_annotations = result;
+    }
+    Py_INCREF(result);
+    return result;
+}
+static PyObject *
+__Pyx_CyFunction_get_annotations(__pyx_CyFunctionObject *op, void *context) {
+    PyObject *result;
+    CYTHON_UNUSED_VAR(context);
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    result = __Pyx_CyFunction_get_annotations_locked(op);
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static PyObject *
+__Pyx_CyFunction_get_is_coroutine_value(__pyx_CyFunctionObject *op) {
+    int is_coroutine = op->flags & __Pyx_CYFUNCTION_COROUTINE;
+    if (is_coroutine) {
+        PyObject *is_coroutine_value, *module, *fromlist, *marker = __pyx_mstate_global->__pyx_n_u_is_coroutine;
+        fromlist = PyList_New(1);
+        if (unlikely(!fromlist)) return NULL;
+        Py_INCREF(marker);
+#if CYTHON_ASSUME_SAFE_MACROS
+        PyList_SET_ITEM(fromlist, 0, marker);
+#else
+        if (unlikely(PyList_SetItem(fromlist, 0, marker) < 0)) {
+            Py_DECREF(marker);
+            Py_DECREF(fromlist);
+            return NULL;
+        }
+#endif
+        module = PyImport_ImportModuleLevelObject(__pyx_mstate_global->__pyx_n_u_asyncio_coroutines, NULL, NULL, fromlist, 0);
+        Py_DECREF(fromlist);
+        if (unlikely(!module)) goto ignore;
+        is_coroutine_value = __Pyx_PyObject_GetAttrStr(module, marker);
+        Py_DECREF(module);
+        if (likely(is_coroutine_value)) {
+            return is_coroutine_value;
+        }
+ignore:
+        PyErr_Clear();
+    }
+    return __Pyx_PyBool_FromLong(is_coroutine);
+}
+static PyObject *
+__Pyx_CyFunction_get_is_coroutine(__pyx_CyFunctionObject *op, void *context) {
+    PyObject *result;
+    CYTHON_UNUSED_VAR(context);
+    if (op->func_is_coroutine) {
+        return __Pyx_NewRef(op->func_is_coroutine);
+    }
+    result = __Pyx_CyFunction_get_is_coroutine_value(op);
+    if (unlikely(!result))
+        return NULL;
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    if (op->func_is_coroutine) {
+        Py_DECREF(result);
+        result = __Pyx_NewRef(op->func_is_coroutine);
+    } else {
+        op->func_is_coroutine = __Pyx_NewRef(result);
+    }
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static void __Pyx_CyFunction_raise_argument_count_error(__pyx_CyFunctionObject *func, const char* message, Py_ssize_t size) {
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *py_name = __Pyx_CyFunction_get_name(func, NULL);
+    if (!py_name) return;
+    PyErr_Format(PyExc_TypeError,
+        "%.200S() %s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+        py_name, message, size);
+    Py_DECREF(py_name);
+#else
+    const char* name = ((PyCFunctionObject*)func)->m_ml->ml_name;
+    PyErr_Format(PyExc_TypeError,
+        "%.200s() %s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+        name, message, size);
+#endif
+}
+static void __Pyx_CyFunction_raise_type_error(__pyx_CyFunctionObject *func, const char* message) {
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *py_name = __Pyx_CyFunction_get_name(func, NULL);
+    if (!py_name) return;
+    PyErr_Format(PyExc_TypeError,
+        "%.200S() %s",
+        py_name, message);
+    Py_DECREF(py_name);
+#else
+    const char* name = ((PyCFunctionObject*)func)->m_ml->ml_name;
+    PyErr_Format(PyExc_TypeError,
+        "%.200s() %s",
+        name, message);
+#endif
+}
+#if CYTHON_COMPILING_IN_LIMITED_API
+static PyObject *
+__Pyx_CyFunction_get_module(__pyx_CyFunctionObject *op, void *context) {
+    CYTHON_UNUSED_VAR(context);
+    return PyObject_GetAttrString(op->func, "__module__");
+}
+static int
+__Pyx_CyFunction_set_module(__pyx_CyFunctionObject *op, PyObject* value, void *context) {
+    CYTHON_UNUSED_VAR(context);
+    return PyObject_SetAttrString(op->func, "__module__", value);
+}
+#endif
+static PyGetSetDef __pyx_CyFunction_getsets[] = {
+    {"func_doc", (getter)__Pyx_CyFunction_get_doc, (setter)__Pyx_CyFunction_set_doc, 0, 0},
+    {"__doc__",  (getter)__Pyx_CyFunction_get_doc, (setter)__Pyx_CyFunction_set_doc, 0, 0},
+    {"func_name", (getter)__Pyx_CyFunction_get_name, (setter)__Pyx_CyFunction_set_name, 0, 0},
+    {"__name__", (getter)__Pyx_CyFunction_get_name, (setter)__Pyx_CyFunction_set_name, 0, 0},
+    {"__qualname__", (getter)__Pyx_CyFunction_get_qualname, (setter)__Pyx_CyFunction_set_qualname, 0, 0},
+    {"func_dict", (getter)__Pyx_CyFunction_get_dict, (setter)__Pyx_CyFunction_set_dict, 0, 0},
+    {"__dict__", (getter)__Pyx_CyFunction_get_dict, (setter)__Pyx_CyFunction_set_dict, 0, 0},
+    {"func_globals", (getter)__Pyx_CyFunction_get_globals, 0, 0, 0},
+    {"__globals__", (getter)__Pyx_CyFunction_get_globals, 0, 0, 0},
+    {"func_closure", (getter)__Pyx_CyFunction_get_closure, 0, 0, 0},
+    {"__closure__", (getter)__Pyx_CyFunction_get_closure, 0, 0, 0},
+    {"func_code", (getter)__Pyx_CyFunction_get_code, 0, 0, 0},
+    {"__code__", (getter)__Pyx_CyFunction_get_code, 0, 0, 0},
+    {"func_defaults", (getter)__Pyx_CyFunction_get_defaults, (setter)__Pyx_CyFunction_set_defaults, 0, 0},
+    {"__defaults__", (getter)__Pyx_CyFunction_get_defaults, (setter)__Pyx_CyFunction_set_defaults, 0, 0},
+    {"__kwdefaults__", (getter)__Pyx_CyFunction_get_kwdefaults, (setter)__Pyx_CyFunction_set_kwdefaults, 0, 0},
+    {"__annotations__", (getter)__Pyx_CyFunction_get_annotations, (setter)__Pyx_CyFunction_set_annotations, 0, 0},
+    {"_is_coroutine", (getter)__Pyx_CyFunction_get_is_coroutine, 0, 0, 0},
+#if CYTHON_COMPILING_IN_LIMITED_API
+    {"__module__", (getter)__Pyx_CyFunction_get_module, (setter)__Pyx_CyFunction_set_module, 0, 0},
+#endif
+    {0, 0, 0, 0, 0}
+};
+static PyMemberDef __pyx_CyFunction_members[] = {
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    {"__module__", T_OBJECT, offsetof(PyCFunctionObject, m_module), 0, 0},
+#endif
+    {"__dictoffset__", T_PYSSIZET, offsetof(__pyx_CyFunctionObject, func_dict), READONLY, 0},
+#if CYTHON_METH_FASTCALL
+#if CYTHON_BACKPORT_VECTORCALL || CYTHON_COMPILING_IN_LIMITED_API
+    {"__vectorcalloffset__", T_PYSSIZET, offsetof(__pyx_CyFunctionObject, func_vectorcall), READONLY, 0},
+#else
+    {"__vectorcalloffset__", T_PYSSIZET, offsetof(PyCFunctionObject, vectorcall), READONLY, 0},
+#endif
+#if CYTHON_COMPILING_IN_LIMITED_API
+    {"__weaklistoffset__", T_PYSSIZET, offsetof(__pyx_CyFunctionObject, func_weakreflist), READONLY, 0},
+#else
+    {"__weaklistoffset__", T_PYSSIZET, offsetof(PyCFunctionObject, m_weakreflist), READONLY, 0},
+#endif
+#endif
+    {0, 0, 0,  0, 0}
+};
+static PyObject *
+__Pyx_CyFunction_reduce(__pyx_CyFunctionObject *m, PyObject *args)
+{
+    PyObject *result = NULL;
+    CYTHON_UNUSED_VAR(args);
+    __Pyx_BEGIN_CRITICAL_SECTION(m);
+    Py_INCREF(m->func_qualname);
+    result = m->func_qualname;
+    __Pyx_END_CRITICAL_SECTION();
+    return result;
+}
+static PyMethodDef __pyx_CyFunction_methods[] = {
+    {"__reduce__", (PyCFunction)__Pyx_CyFunction_reduce, METH_VARARGS, 0},
+    {0, 0, 0, 0}
+};
+#if CYTHON_COMPILING_IN_LIMITED_API
+#define __Pyx_CyFunction_weakreflist(cyfunc) ((cyfunc)->func_weakreflist)
+#else
+#define __Pyx_CyFunction_weakreflist(cyfunc) (((PyCFunctionObject*)cyfunc)->m_weakreflist)
+#endif
+static PyObject *__Pyx_CyFunction_Init(__pyx_CyFunctionObject *op, PyMethodDef *ml, int flags, PyObject* qualname,
+                                       PyObject *closure, PyObject *module, PyObject* globals, PyObject* code) {
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    PyCFunctionObject *cf = (PyCFunctionObject*) op;
+#endif
+    if (unlikely(op == NULL))
+        return NULL;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    op->func = PyCFunction_NewEx(ml, (PyObject*)op, module);
+    if (unlikely(!op->func)) return NULL;
+#endif
+    op->flags = flags;
+    __Pyx_CyFunction_weakreflist(op) = NULL;
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    cf->m_ml = ml;
+    cf->m_self = (PyObject *) op;
+#endif
+    Py_XINCREF(closure);
+    op->func_closure = closure;
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    Py_XINCREF(module);
+    cf->m_module = module;
+#endif
+    op->func_dict = NULL;
+    op->func_name = NULL;
+    Py_INCREF(qualname);
+    op->func_qualname = qualname;
+    op->func_doc = NULL;
+#if PY_VERSION_HEX < 0x030900B1 || CYTHON_COMPILING_IN_LIMITED_API
+    op->func_classobj = NULL;
+#else
+    ((PyCMethodObject*)op)->mm_class = NULL;
+#endif
+    op->func_globals = globals;
+    Py_INCREF(op->func_globals);
+    Py_XINCREF(code);
+    op->func_code = code;
+    op->defaults = NULL;
+    op->defaults_tuple = NULL;
+    op->defaults_kwdict = NULL;
+    op->defaults_getter = NULL;
+    op->func_annotations = NULL;
+    op->func_is_coroutine = NULL;
+#if CYTHON_METH_FASTCALL
+    switch (ml->ml_flags & (METH_VARARGS | METH_FASTCALL | METH_NOARGS | METH_O | METH_KEYWORDS | METH_METHOD)) {
+    case METH_NOARGS:
+        __Pyx_CyFunction_func_vectorcall(op) = __Pyx_CyFunction_Vectorcall_NOARGS;
+        break;
+    case METH_O:
+        __Pyx_CyFunction_func_vectorcall(op) = __Pyx_CyFunction_Vectorcall_O;
+        break;
+    case METH_METHOD | METH_FASTCALL | METH_KEYWORDS:
+        __Pyx_CyFunction_func_vectorcall(op) = __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS_METHOD;
+        break;
+    case METH_FASTCALL | METH_KEYWORDS:
+        __Pyx_CyFunction_func_vectorcall(op) = __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS;
+        break;
+    case METH_VARARGS | METH_KEYWORDS:
+        __Pyx_CyFunction_func_vectorcall(op) = NULL;
+        break;
+    default:
+        PyErr_SetString(PyExc_SystemError, "Bad call flags for CyFunction");
+        Py_DECREF(op);
+        return NULL;
+    }
+#endif
+    return (PyObject *) op;
+}
+static int
+__Pyx_CyFunction_clear(__pyx_CyFunctionObject *m)
+{
+    Py_CLEAR(m->func_closure);
+#if CYTHON_COMPILING_IN_LIMITED_API
+    Py_CLEAR(m->func);
+#else
+    Py_CLEAR(((PyCFunctionObject*)m)->m_module);
+#endif
+    Py_CLEAR(m->func_dict);
+    Py_CLEAR(m->func_name);
+    Py_CLEAR(m->func_qualname);
+    Py_CLEAR(m->func_doc);
+    Py_CLEAR(m->func_globals);
+    Py_CLEAR(m->func_code);
+#if !CYTHON_COMPILING_IN_LIMITED_API
+#if PY_VERSION_HEX < 0x030900B1
+    Py_CLEAR(__Pyx_CyFunction_GetClassObj(m));
+#else
+    {
+        PyObject *cls = (PyObject*) ((PyCMethodObject *) (m))->mm_class;
+        ((PyCMethodObject *) (m))->mm_class = NULL;
+        Py_XDECREF(cls);
+    }
+#endif
+#endif
+    Py_CLEAR(m->defaults_tuple);
+    Py_CLEAR(m->defaults_kwdict);
+    Py_CLEAR(m->func_annotations);
+    Py_CLEAR(m->func_is_coroutine);
+    Py_CLEAR(m->defaults);
+    return 0;
+}
+static void __Pyx__CyFunction_dealloc(__pyx_CyFunctionObject *m)
+{
+    if (__Pyx_CyFunction_weakreflist(m) != NULL)
+        PyObject_ClearWeakRefs((PyObject *) m);
+    __Pyx_CyFunction_clear(m);
+    __Pyx_PyHeapTypeObject_GC_Del(m);
+}
+static void __Pyx_CyFunction_dealloc(__pyx_CyFunctionObject *m)
+{
+    PyObject_GC_UnTrack(m);
+    __Pyx__CyFunction_dealloc(m);
+}
+static int __Pyx_CyFunction_traverse(__pyx_CyFunctionObject *m, visitproc visit, void *arg)
+{
+    {
+        int e = __Pyx_call_type_traverse((PyObject*)m, 1, visit, arg);
+        if (e) return e;
+    }
+    Py_VISIT(m->func_closure);
+#if CYTHON_COMPILING_IN_LIMITED_API
+    Py_VISIT(m->func);
+#else
+    Py_VISIT(((PyCFunctionObject*)m)->m_module);
+#endif
+    Py_VISIT(m->func_dict);
+    __Pyx_VISIT_CONST(m->func_name);
+    __Pyx_VISIT_CONST(m->func_qualname);
+    Py_VISIT(m->func_doc);
+    Py_VISIT(m->func_globals);
+    __Pyx_VISIT_CONST(m->func_code);
+#if !CYTHON_COMPILING_IN_LIMITED_API
+    Py_VISIT(__Pyx_CyFunction_GetClassObj(m));
+#endif
+    Py_VISIT(m->defaults_tuple);
+    Py_VISIT(m->defaults_kwdict);
+    Py_VISIT(m->func_is_coroutine);
+    Py_VISIT(m->defaults);
+    return 0;
+}
+static PyObject*
+__Pyx_CyFunction_repr(__pyx_CyFunctionObject *op)
+{
+    PyObject *repr;
+    __Pyx_BEGIN_CRITICAL_SECTION(op);
+    repr = PyUnicode_FromFormat("<cyfunction %U at %p>",
+                                op->func_qualname, (void *)op);
+    __Pyx_END_CRITICAL_SECTION();
+    return repr;
+}
+static PyObject * __Pyx_CyFunction_CallMethod(PyObject *func, PyObject *self, PyObject *arg, PyObject *kw) {
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *f = ((__pyx_CyFunctionObject*)func)->func;
+    PyCFunction meth;
+    int flags;
+    meth = PyCFunction_GetFunction(f);
+    if (unlikely(!meth)) return NULL;
+    flags = PyCFunction_GetFlags(f);
+    if (unlikely(flags < 0)) return NULL;
+#else
+    PyCFunctionObject* f = (PyCFunctionObject*)func;
+    PyCFunction meth = f->m_ml->ml_meth;
+    int flags = f->m_ml->ml_flags;
+#endif
+    Py_ssize_t size;
+    switch (flags & (METH_VARARGS | METH_KEYWORDS | METH_NOARGS | METH_O)) {
+    case METH_VARARGS:
+        if (likely(kw == NULL || PyDict_Size(kw) == 0))
+            return (*meth)(self, arg);
+        break;
+    case METH_VARARGS | METH_KEYWORDS:
+        return (*(PyCFunctionWithKeywords)(void(*)(void))meth)(self, arg, kw);
+    case METH_NOARGS:
+        if (likely(kw == NULL || PyDict_Size(kw) == 0)) {
+#if CYTHON_ASSUME_SAFE_SIZE
+            size = PyTuple_GET_SIZE(arg);
+#else
+            size = PyTuple_Size(arg);
+            if (unlikely(size < 0)) return NULL;
+#endif
+            if (likely(size == 0))
+                return (*meth)(self, NULL);
+            __Pyx_CyFunction_raise_argument_count_error(
+                (__pyx_CyFunctionObject*)func,
+                "takes no arguments", size);
+            return NULL;
+        }
+        break;
+    case METH_O:
+        if (likely(kw == NULL || PyDict_Size(kw) == 0)) {
+#if CYTHON_ASSUME_SAFE_SIZE
+            size = PyTuple_GET_SIZE(arg);
+#else
+            size = PyTuple_Size(arg);
+            if (unlikely(size < 0)) return NULL;
+#endif
+            if (likely(size == 1)) {
+                PyObject *result, *arg0;
+                #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                arg0 = PyTuple_GET_ITEM(arg, 0);
+                #else
+                arg0 = __Pyx_PySequence_ITEM(arg, 0); if (unlikely(!arg0)) return NULL;
+                #endif
+                result = (*meth)(self, arg0);
+                #if !(CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS)
+                Py_DECREF(arg0);
+                #endif
+                return result;
+            }
+            __Pyx_CyFunction_raise_argument_count_error(
+                (__pyx_CyFunctionObject*)func,
+                "takes exactly one argument", size);
+            return NULL;
+        }
+        break;
+    default:
+        PyErr_SetString(PyExc_SystemError, "Bad call flags for CyFunction");
+        return NULL;
+    }
+    __Pyx_CyFunction_raise_type_error(
+        (__pyx_CyFunctionObject*)func, "takes no keyword arguments");
+    return NULL;
+}
+static CYTHON_INLINE PyObject *__Pyx_CyFunction_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *self, *result;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    self = PyCFunction_GetSelf(((__pyx_CyFunctionObject*)func)->func);
+    if (unlikely(!self) && PyErr_Occurred()) return NULL;
+#else
+    self = ((PyCFunctionObject*)func)->m_self;
+#endif
+    result = __Pyx_CyFunction_CallMethod(func, self, arg, kw);
+    return result;
+}
+static PyObject *__Pyx_CyFunction_CallAsMethod(PyObject *func, PyObject *args, PyObject *kw) {
+    PyObject *result;
+    __pyx_CyFunctionObject *cyfunc = (__pyx_CyFunctionObject *) func;
+#if CYTHON_METH_FASTCALL && (CYTHON_VECTORCALL || CYTHON_BACKPORT_VECTORCALL)
+     __pyx_vectorcallfunc vc = __Pyx_CyFunction_func_vectorcall(cyfunc);
+    if (vc) {
+#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE
+        return __Pyx_PyVectorcall_FastCallDict(func, vc, &PyTuple_GET_ITEM(args, 0), (size_t)PyTuple_GET_SIZE(args), kw);
+#else
+        (void) &__Pyx_PyVectorcall_FastCallDict;
+        return PyVectorcall_Call(func, args, kw);
+#endif
+    }
+#endif
+    if ((cyfunc->flags & __Pyx_CYFUNCTION_CCLASS) && !(cyfunc->flags & __Pyx_CYFUNCTION_STATICMETHOD)) {
+        Py_ssize_t argc;
+        PyObject *new_args;
+        PyObject *self;
+#if CYTHON_ASSUME_SAFE_SIZE
+        argc = PyTuple_GET_SIZE(args);
+#else
+        argc = PyTuple_Size(args);
+        if (unlikely(argc < 0)) return NULL;
+#endif
+        new_args = PyTuple_GetSlice(args, 1, argc);
+        if (unlikely(!new_args))
+            return NULL;
+        self = PyTuple_GetItem(args, 0);
+        if (unlikely(!self)) {
+            Py_DECREF(new_args);
+            PyErr_Format(PyExc_TypeError,
+                         "unbound method %.200S() needs an argument",
+                         cyfunc->func_qualname);
+            return NULL;
+        }
+        result = __Pyx_CyFunction_CallMethod(func, self, new_args, kw);
+        Py_DECREF(new_args);
+    } else {
+        result = __Pyx_CyFunction_Call(func, args, kw);
+    }
+    return result;
+}
+#if CYTHON_METH_FASTCALL && (CYTHON_VECTORCALL || CYTHON_BACKPORT_VECTORCALL)
+static CYTHON_INLINE int __Pyx_CyFunction_Vectorcall_CheckArgs(__pyx_CyFunctionObject *cyfunc, Py_ssize_t nargs, PyObject *kwnames)
+{
+    int ret = 0;
+    if ((cyfunc->flags & __Pyx_CYFUNCTION_CCLASS) && !(cyfunc->flags & __Pyx_CYFUNCTION_STATICMETHOD)) {
+        if (unlikely(nargs < 1)) {
+            __Pyx_CyFunction_raise_type_error(
+                cyfunc, "needs an argument");
+            return -1;
+        }
+        ret = 1;
+    }
+    if (unlikely(kwnames) && unlikely(__Pyx_PyTuple_GET_SIZE(kwnames))) {
+        __Pyx_CyFunction_raise_type_error(
+            cyfunc, "takes no keyword arguments");
+        return -1;
+    }
+    return ret;
+}
+static PyObject * __Pyx_CyFunction_Vectorcall_NOARGS(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames)
+{
+    __pyx_CyFunctionObject *cyfunc = (__pyx_CyFunctionObject *)func;
+#if CYTHON_BACKPORT_VECTORCALL
+    Py_ssize_t nargs = (Py_ssize_t)nargsf;
+#else
+    Py_ssize_t nargs = PyVectorcall_NARGS(nargsf);
+#endif
+    PyObject *self;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyCFunction meth = PyCFunction_GetFunction(cyfunc->func);
+    if (unlikely(!meth)) return NULL;
+#else
+    PyCFunction meth = ((PyCFunctionObject*)cyfunc)->m_ml->ml_meth;
+#endif
+    switch (__Pyx_CyFunction_Vectorcall_CheckArgs(cyfunc, nargs, kwnames)) {
+    case 1:
+        self = args[0];
+        args += 1;
+        nargs -= 1;
+        break;
+    case 0:
+#if CYTHON_COMPILING_IN_LIMITED_API
+        self = PyCFunction_GetSelf(((__pyx_CyFunctionObject*)cyfunc)->func);
+        if (unlikely(!self) && PyErr_Occurred()) return NULL;
+#else
+        self = ((PyCFunctionObject*)cyfunc)->m_self;
+#endif
+        break;
+    default:
+        return NULL;
+    }
+    if (unlikely(nargs != 0)) {
+        __Pyx_CyFunction_raise_argument_count_error(
+            cyfunc, "takes no arguments", nargs);
+        return NULL;
+    }
+    return meth(self, NULL);
+}
+static PyObject * __Pyx_CyFunction_Vectorcall_O(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames)
+{
+    __pyx_CyFunctionObject *cyfunc = (__pyx_CyFunctionObject *)func;
+#if CYTHON_BACKPORT_VECTORCALL
+    Py_ssize_t nargs = (Py_ssize_t)nargsf;
+#else
+    Py_ssize_t nargs = PyVectorcall_NARGS(nargsf);
+#endif
+    PyObject *self;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyCFunction meth = PyCFunction_GetFunction(cyfunc->func);
+    if (unlikely(!meth)) return NULL;
+#else
+    PyCFunction meth = ((PyCFunctionObject*)cyfunc)->m_ml->ml_meth;
+#endif
+    switch (__Pyx_CyFunction_Vectorcall_CheckArgs(cyfunc, nargs, kwnames)) {
+    case 1:
+        self = args[0];
+        args += 1;
+        nargs -= 1;
+        break;
+    case 0:
+#if CYTHON_COMPILING_IN_LIMITED_API
+        self = PyCFunction_GetSelf(((__pyx_CyFunctionObject*)cyfunc)->func);
+        if (unlikely(!self) && PyErr_Occurred()) return NULL;
+#else
+        self = ((PyCFunctionObject*)cyfunc)->m_self;
+#endif
+        break;
+    default:
+        return NULL;
+    }
+    if (unlikely(nargs != 1)) {
+        __Pyx_CyFunction_raise_argument_count_error(
+            cyfunc, "takes exactly one argument", nargs);
+        return NULL;
+    }
+    return meth(self, args[0]);
+}
+static PyObject * __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames)
+{
+    __pyx_CyFunctionObject *cyfunc = (__pyx_CyFunctionObject *)func;
+#if CYTHON_BACKPORT_VECTORCALL
+    Py_ssize_t nargs = (Py_ssize_t)nargsf;
+#else
+    Py_ssize_t nargs = PyVectorcall_NARGS(nargsf);
+#endif
+    PyObject *self;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyCFunction meth = PyCFunction_GetFunction(cyfunc->func);
+    if (unlikely(!meth)) return NULL;
+#else
+    PyCFunction meth = ((PyCFunctionObject*)cyfunc)->m_ml->ml_meth;
+#endif
+    switch (__Pyx_CyFunction_Vectorcall_CheckArgs(cyfunc, nargs, NULL)) {
+    case 1:
+        self = args[0];
+        args += 1;
+        nargs -= 1;
+        break;
+    case 0:
+#if CYTHON_COMPILING_IN_LIMITED_API
+        self = PyCFunction_GetSelf(((__pyx_CyFunctionObject*)cyfunc)->func);
+        if (unlikely(!self) && PyErr_Occurred()) return NULL;
+#else
+        self = ((PyCFunctionObject*)cyfunc)->m_self;
+#endif
+        break;
+    default:
+        return NULL;
+    }
+    return ((__Pyx_PyCFunctionFastWithKeywords)(void(*)(void))meth)(self, args, nargs, kwnames);
+}
+static PyObject * __Pyx_CyFunction_Vectorcall_FASTCALL_KEYWORDS_METHOD(PyObject *func, PyObject *const *args, size_t nargsf, PyObject *kwnames)
+{
+    __pyx_CyFunctionObject *cyfunc = (__pyx_CyFunctionObject *)func;
+    PyTypeObject *cls = (PyTypeObject *) __Pyx_CyFunction_GetClassObj(cyfunc);
+#if CYTHON_BACKPORT_VECTORCALL
+    Py_ssize_t nargs = (Py_ssize_t)nargsf;
+#else
+    Py_ssize_t nargs = PyVectorcall_NARGS(nargsf);
+#endif
+    PyObject *self;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyCFunction meth = PyCFunction_GetFunction(cyfunc->func);
+    if (unlikely(!meth)) return NULL;
+#else
+    PyCFunction meth = ((PyCFunctionObject*)cyfunc)->m_ml->ml_meth;
+#endif
+    switch (__Pyx_CyFunction_Vectorcall_CheckArgs(cyfunc, nargs, NULL)) {
+    case 1:
+        self = args[0];
+        args += 1;
+        nargs -= 1;
+        break;
+    case 0:
+#if CYTHON_COMPILING_IN_LIMITED_API
+        self = PyCFunction_GetSelf(((__pyx_CyFunctionObject*)cyfunc)->func);
+        if (unlikely(!self) && PyErr_Occurred()) return NULL;
+#else
+        self = ((PyCFunctionObject*)cyfunc)->m_self;
+#endif
+        break;
+    default:
+        return NULL;
+    }
+    return ((__Pyx_PyCMethod)(void(*)(void))meth)(self, cls, args, (size_t)nargs, kwnames);
+}
+#endif
+static PyType_Slot __pyx_CyFunctionType_slots[] = {
+    {Py_tp_dealloc, (void *)__Pyx_CyFunction_dealloc},
+    {Py_tp_repr, (void *)__Pyx_CyFunction_repr},
+    {Py_tp_call, (void *)__Pyx_CyFunction_CallAsMethod},
+    {Py_tp_traverse, (void *)__Pyx_CyFunction_traverse},
+    {Py_tp_clear, (void *)__Pyx_CyFunction_clear},
+    {Py_tp_methods, (void *)__pyx_CyFunction_methods},
+    {Py_tp_members, (void *)__pyx_CyFunction_members},
+    {Py_tp_getset, (void *)__pyx_CyFunction_getsets},
+    {Py_tp_descr_get, (void *)__Pyx_PyMethod_New},
+    {0, 0},
+};
+static PyType_Spec __pyx_CyFunctionType_spec = {
+    __PYX_TYPE_MODULE_PREFIX "cython_function_or_method",
+    sizeof(__pyx_CyFunctionObject),
+    0,
+#ifdef Py_TPFLAGS_METHOD_DESCRIPTOR
+    Py_TPFLAGS_METHOD_DESCRIPTOR |
+#endif
+#if CYTHON_METH_FASTCALL
+#if defined(Py_TPFLAGS_HAVE_VECTORCALL)
+    Py_TPFLAGS_HAVE_VECTORCALL |
+#elif defined(_Py_TPFLAGS_HAVE_VECTORCALL)
+    _Py_TPFLAGS_HAVE_VECTORCALL |
+#endif
+#endif // CYTHON_METH_FASTCALL
+#if PY_VERSION_HEX >= 0x030A0000
+    Py_TPFLAGS_IMMUTABLETYPE |
+#endif
+    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC | Py_TPFLAGS_BASETYPE,
+    __pyx_CyFunctionType_slots
+};
+static int __pyx_CyFunction_init(PyObject *module) {
+    __pyx_mstatetype *mstate = __Pyx_PyModule_GetState(module);
+    mstate->__pyx_CyFunctionType = __Pyx_FetchCommonTypeFromSpec(
+        mstate->__pyx_CommonTypesMetaclassType, module, &__pyx_CyFunctionType_spec, NULL);
+    if (unlikely(mstate->__pyx_CyFunctionType == NULL)) {
+        return -1;
+    }
+    return 0;
+}
+static CYTHON_INLINE PyObject *__Pyx_CyFunction_InitDefaults(PyObject *func, PyTypeObject *defaults_type) {
+    __pyx_CyFunctionObject *m = (__pyx_CyFunctionObject *) func;
+    m->defaults = PyObject_CallObject((PyObject*)defaults_type, NULL); // _PyObject_New(defaults_type);
+    if (unlikely(!m->defaults))
+        return NULL;
+    return m->defaults;
+}
+static CYTHON_INLINE void __Pyx_CyFunction_SetDefaultsTuple(PyObject *func, PyObject *tuple) {
+    __pyx_CyFunctionObject *m = (__pyx_CyFunctionObject *) func;
+    m->defaults_tuple = tuple;
+    Py_INCREF(tuple);
+}
+static CYTHON_INLINE void __Pyx_CyFunction_SetDefaultsKwDict(PyObject *func, PyObject *dict) {
+    __pyx_CyFunctionObject *m = (__pyx_CyFunctionObject *) func;
+    m->defaults_kwdict = dict;
+    Py_INCREF(dict);
+}
+static CYTHON_INLINE void __Pyx_CyFunction_SetAnnotationsDict(PyObject *func, PyObject *dict) {
+    __pyx_CyFunctionObject *m = (__pyx_CyFunctionObject *) func;
+    m->func_annotations = dict;
+    Py_INCREF(dict);
+}
+
+/* CythonFunction */
+static PyObject *__Pyx_CyFunction_New(PyMethodDef *ml, int flags, PyObject* qualname,
+                                      PyObject *closure, PyObject *module, PyObject* globals, PyObject* code) {
+    PyObject *op = __Pyx_CyFunction_Init(
+        PyObject_GC_New(__pyx_CyFunctionObject, __pyx_mstate_global->__pyx_CyFunctionType),
+        ml, flags, qualname, closure, module, globals, code
+    );
+    if (likely(op)) {
+        PyObject_GC_Track(op);
+    }
+    return op;
 }
 
 /* RaiseUnexpectedTypeError */
@@ -8726,7 +11608,7 @@ __Pyx_PyType_GetFullyQualifiedName(PyTypeObject* tp)
         result = name;
         name = NULL;
     } else {
-        result = __Pyx_NewRef(__pyx_mstate_global->__pyx_kp_u__16);
+        result = __Pyx_NewRef(__pyx_mstate_global->__pyx_kp_u__4);
     }
     goto done;
 }
@@ -9400,6 +12282,147 @@ static int __Pyx_check_binary_version(unsigned long ct_version, unsigned long rt
        );
         return PyErr_WarnEx(NULL, message, 1);
     }
+}
+
+/* NewCodeObj */
+#if CYTHON_COMPILING_IN_LIMITED_API
+    static PyObject* __Pyx__PyCode_New(int a, int p, int k, int l, int s, int f,
+                                       PyObject *code, PyObject *c, PyObject* n, PyObject *v,
+                                       PyObject *fv, PyObject *cell, PyObject* fn,
+                                       PyObject *name, int fline, PyObject *lnos) {
+        PyObject *exception_table = NULL;
+        PyObject *types_module=NULL, *code_type=NULL, *result=NULL;
+        #if __PYX_LIMITED_VERSION_HEX < 0x030b0000
+        PyObject *version_info;
+        PyObject *py_minor_version = NULL;
+        #endif
+        long minor_version = 0;
+        PyObject *type, *value, *traceback;
+        PyErr_Fetch(&type, &value, &traceback);
+        #if __PYX_LIMITED_VERSION_HEX >= 0x030b0000
+        minor_version = 11;
+        #else
+        if (!(version_info = PySys_GetObject("version_info"))) goto end;
+        if (!(py_minor_version = PySequence_GetItem(version_info, 1))) goto end;
+        minor_version = PyLong_AsLong(py_minor_version);
+        Py_DECREF(py_minor_version);
+        if (minor_version == -1 && PyErr_Occurred()) goto end;
+        #endif
+        if (!(types_module = PyImport_ImportModule("types"))) goto end;
+        if (!(code_type = PyObject_GetAttrString(types_module, "CodeType"))) goto end;
+        if (minor_version <= 7) {
+            (void)p;
+            result = PyObject_CallFunction(code_type, "iiiiiOOOOOOiOOO", a, k, l, s, f, code,
+                          c, n, v, fn, name, fline, lnos, fv, cell);
+        } else if (minor_version <= 10) {
+            result = PyObject_CallFunction(code_type, "iiiiiiOOOOOOiOOO", a,p, k, l, s, f, code,
+                          c, n, v, fn, name, fline, lnos, fv, cell);
+        } else {
+            if (!(exception_table = PyBytes_FromStringAndSize(NULL, 0))) goto end;
+            result = PyObject_CallFunction(code_type, "iiiiiiOOOOOOOiOOOO", a,p, k, l, s, f, code,
+                          c, n, v, fn, name, name, fline, lnos, exception_table, fv, cell);
+        }
+    end:
+        Py_XDECREF(code_type);
+        Py_XDECREF(exception_table);
+        Py_XDECREF(types_module);
+        if (type) {
+            PyErr_Restore(type, value, traceback);
+        }
+        return result;
+    }
+#elif PY_VERSION_HEX >= 0x030B0000
+  static PyCodeObject* __Pyx__PyCode_New(int a, int p, int k, int l, int s, int f,
+                                         PyObject *code, PyObject *c, PyObject* n, PyObject *v,
+                                         PyObject *fv, PyObject *cell, PyObject* fn,
+                                         PyObject *name, int fline, PyObject *lnos) {
+    PyCodeObject *result;
+    result =
+      #if PY_VERSION_HEX >= 0x030C0000
+        PyUnstable_Code_NewWithPosOnlyArgs
+      #else
+        PyCode_NewWithPosOnlyArgs
+      #endif
+        (a, p, k, l, s, f, code, c, n, v, fv, cell, fn, name, name, fline, lnos, __pyx_mstate_global->__pyx_empty_bytes);
+    #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030c00A1
+    if (likely(result))
+        result->_co_firsttraceable = 0;
+    #endif
+    return result;
+  }
+#elif PY_VERSION_HEX >= 0x030800B2 && !CYTHON_COMPILING_IN_PYPY
+  #define __Pyx__PyCode_New(a, p, k, l, s, f, code, c, n, v, fv, cell, fn, name, fline, lnos)\
+          PyCode_NewWithPosOnlyArgs(a, p, k, l, s, f, code, c, n, v, fv, cell, fn, name, fline, lnos)
+#else
+  #define __Pyx__PyCode_New(a, p, k, l, s, f, code, c, n, v, fv, cell, fn, name, fline, lnos)\
+          PyCode_New(a, k, l, s, f, code, c, n, v, fv, cell, fn, name, fline, lnos)
+#endif
+static PyObject* __Pyx_PyCode_New(
+        const __Pyx_PyCode_New_function_description descr,
+        PyObject * const *varnames,
+        PyObject *filename,
+        PyObject *funcname,
+        const char *line_table,
+        PyObject *tuple_dedup_map
+) {
+    PyObject *code_obj = NULL, *varnames_tuple_dedup = NULL, *code_bytes = NULL, *line_table_bytes = NULL;
+    Py_ssize_t var_count = (Py_ssize_t) descr.nlocals;
+    PyObject *varnames_tuple = PyTuple_New(var_count);
+    if (unlikely(!varnames_tuple)) return NULL;
+    for (Py_ssize_t i=0; i < var_count; i++) {
+        Py_INCREF(varnames[i]);
+        if (__Pyx_PyTuple_SET_ITEM(varnames_tuple, i, varnames[i]) != (0)) goto done;
+    }
+    #if CYTHON_COMPILING_IN_LIMITED_API
+    varnames_tuple_dedup = PyDict_GetItem(tuple_dedup_map, varnames_tuple);
+    if (!varnames_tuple_dedup) {
+        if (unlikely(PyDict_SetItem(tuple_dedup_map, varnames_tuple, varnames_tuple) < 0)) goto done;
+        varnames_tuple_dedup = varnames_tuple;
+    }
+    #else
+    varnames_tuple_dedup = PyDict_SetDefault(tuple_dedup_map, varnames_tuple, varnames_tuple);
+    if (unlikely(!varnames_tuple_dedup)) goto done;
+    #endif
+    #if CYTHON_AVOID_BORROWED_REFS
+    Py_INCREF(varnames_tuple_dedup);
+    #endif
+    if (__PYX_LIMITED_VERSION_HEX >= (0x030b0000) && line_table != NULL
+        && !CYTHON_COMPILING_IN_GRAAL) {
+        line_table_bytes = PyBytes_FromStringAndSize(line_table, descr.line_table_length);
+        if (unlikely(!line_table_bytes)) goto done;
+        Py_ssize_t code_len = (descr.line_table_length * 2 + 4) & ~3;
+        code_bytes = PyBytes_FromStringAndSize(NULL, code_len);
+        if (unlikely(!code_bytes)) goto done;
+        char* c_code_bytes = PyBytes_AsString(code_bytes);
+        if (unlikely(!c_code_bytes)) goto done;
+        memset(c_code_bytes, 0, (size_t) code_len);
+    }
+    code_obj = (PyObject*) __Pyx__PyCode_New(
+        (int) descr.argcount,
+        (int) descr.num_posonly_args,
+        (int) descr.num_kwonly_args,
+        (int) descr.nlocals,
+        0,
+        (int) descr.flags,
+        code_bytes ? code_bytes : __pyx_mstate_global->__pyx_empty_bytes,
+        __pyx_mstate_global->__pyx_empty_tuple,
+        __pyx_mstate_global->__pyx_empty_tuple,
+        varnames_tuple_dedup,
+        __pyx_mstate_global->__pyx_empty_tuple,
+        __pyx_mstate_global->__pyx_empty_tuple,
+        filename,
+        funcname,
+        (int) descr.first_line,
+        (__PYX_LIMITED_VERSION_HEX >= (0x030b0000) && line_table_bytes) ? line_table_bytes : __pyx_mstate_global->__pyx_empty_bytes
+    );
+done:
+    Py_XDECREF(code_bytes);
+    Py_XDECREF(line_table_bytes);
+    #if CYTHON_AVOID_BORROWED_REFS
+    Py_XDECREF(varnames_tuple_dedup);
+    #endif
+    Py_DECREF(varnames_tuple);
+    return code_obj;
 }
 
 /* InitStrings */
